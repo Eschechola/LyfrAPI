@@ -2,9 +2,9 @@
 
 <h3><font color="red">Rotas</font></h3>
 
-<pre>
+<p><strong>Vou alterar sábado pra so aceitar POST PUT e DELETE da nossa aplicação, por enquanto usa assim.</strong></p>
 
-//vou alterar sábado pra so aceitar POST PUT e DELETE da nossa aplicação, por enquanto usa assim.
+<pre>
 
 
 -------------------------------------------------------------------------------------------------

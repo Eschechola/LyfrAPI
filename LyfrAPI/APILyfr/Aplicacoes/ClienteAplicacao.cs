@@ -1,5 +1,4 @@
 ﻿using APILyfr.Context;
-using APILyfr.Interfaces;
 using APILyfr.Models;
 using Newtonsoft.Json;
 using System;

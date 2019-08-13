@@ -33,7 +33,7 @@ namespace APILyfr.Context
         {
             if (!optionsBuilder.IsConfigured)
             {
-                 optionsBuilder.UseMySql("Server=localhost;Database=lyfr_db;Uid=root;Pwd=");
+                 optionsBuilder.UseMySql("Server=localhost;Database=lyfr_db;Uid=root;Pwd=;");
             }
         }
 

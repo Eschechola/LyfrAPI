@@ -1,0 +1,15 @@
+E:\TUDO\Documentos\Programacao\Linguagens\ASP CORE\LyfrAPI\Versão Recente\LyfrAPI\LyfrAPI\APILyfr\obj\Debug\netcoreapp2.1\APILyfr.csprojAssemblyReference.cache
+E:\TUDO\Documentos\Programacao\Linguagens\ASP CORE\LyfrAPI\Versão Recente\LyfrAPI\LyfrAPI\APILyfr\obj\Debug\netcoreapp2.1\APILyfr.csproj.CoreCompileInputs.cache
+E:\TUDO\Documentos\Programacao\Linguagens\ASP CORE\LyfrAPI\Versão Recente\LyfrAPI\LyfrAPI\APILyfr\obj\Debug\netcoreapp2.1\APILyfr.RazorAssemblyInfo.cache
+E:\TUDO\Documentos\Programacao\Linguagens\ASP CORE\LyfrAPI\Versão Recente\LyfrAPI\LyfrAPI\APILyfr\obj\Debug\netcoreapp2.1\APILyfr.RazorAssemblyInfo.cs
+E:\TUDO\Documentos\Programacao\Linguagens\ASP CORE\LyfrAPI\Versão Recente\LyfrAPI\LyfrAPI\APILyfr\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+E:\TUDO\Documentos\Programacao\Linguagens\ASP CORE\LyfrAPI\Versão Recente\LyfrAPI\LyfrAPI\APILyfr\obj\Debug\netcoreapp2.1\APILyfr.AssemblyInfoInputs.cache
+E:\TUDO\Documentos\Programacao\Linguagens\ASP CORE\LyfrAPI\Versão Recente\LyfrAPI\LyfrAPI\APILyfr\obj\Debug\netcoreapp2.1\APILyfr.AssemblyInfo.cs
+E:\TUDO\Documentos\Programacao\Linguagens\ASP CORE\LyfrAPI\Versão Recente\LyfrAPI\LyfrAPI\APILyfr\bin\Debug\netcoreapp2.1\APILyfr.deps.json
+E:\TUDO\Documentos\Programacao\Linguagens\ASP CORE\LyfrAPI\Versão Recente\LyfrAPI\LyfrAPI\APILyfr\bin\Debug\netcoreapp2.1\APILyfr.runtimeconfig.json
+E:\TUDO\Documentos\Programacao\Linguagens\ASP CORE\LyfrAPI\Versão Recente\LyfrAPI\LyfrAPI\APILyfr\bin\Debug\netcoreapp2.1\APILyfr.runtimeconfig.dev.json
+E:\TUDO\Documentos\Programacao\Linguagens\ASP CORE\LyfrAPI\Versão Recente\LyfrAPI\LyfrAPI\APILyfr\bin\Debug\netcoreapp2.1\APILyfr.dll
+E:\TUDO\Documentos\Programacao\Linguagens\ASP CORE\LyfrAPI\Versão Recente\LyfrAPI\LyfrAPI\APILyfr\bin\Debug\netcoreapp2.1\APILyfr.pdb
+E:\TUDO\Documentos\Programacao\Linguagens\ASP CORE\LyfrAPI\Versão Recente\LyfrAPI\LyfrAPI\APILyfr\obj\Debug\netcoreapp2.1\APILyfr.RazorTargetAssemblyInfo.cache
+E:\TUDO\Documentos\Programacao\Linguagens\ASP CORE\LyfrAPI\Versão Recente\LyfrAPI\LyfrAPI\APILyfr\obj\Debug\netcoreapp2.1\APILyfr.dll
+E:\TUDO\Documentos\Programacao\Linguagens\ASP CORE\LyfrAPI\Versão Recente\LyfrAPI\LyfrAPI\APILyfr\obj\Debug\netcoreapp2.1\APILyfr.pdb

@@ -204,8 +204,8 @@ namespace APILyfr.Aplicacoes
         public List<Cliente> GetAllClientes()
         {
             List<Cliente> listaDeClientes = new List<Cliente>();
-            //try
-            //{
+            try
+            {
                 listaDeClientes = _context.Cliente.Select(x => x).ToList();
 
                 if (listaDeClientes!=null)
@@ -216,16 +216,11 @@ namespace APILyfr.Aplicacoes
                 {
                     return null;
                 }
-            //}
-            //catch (Exception)
-            //{
-            //    return null;
-            //}
-        }
-
-        public string Delete(Cliente item)
-        {
-            return "";
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
     }
 }

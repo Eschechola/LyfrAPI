@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using APILyfr.Aplicacoes;
 using APILyfr.Context;
-using APILyfr.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;

@@ -33,7 +33,7 @@ namespace APILyfr.Context
         {
             if (!optionsBuilder.IsConfigured)
             {
-                 optionsBuilder.UseMySql("Server=localhost;Database=lyfr_db;Uid=root;Pwd=;");
+                 optionsBuilder.UseMySql("Server=db4free.net;Database=lyfr_db;Uid=lyfr_user;Pwd=1234abcd;");
             }
         }
 
@@ -41,7 +41,7 @@ namespace APILyfr.Context
         {
             modelBuilder.Entity<Administrador>(entity =>
             {
-                entity.HasKey(e => e.Login);
+                entity.HasKey(e => e.Cpf);
 
                 entity.ToTable("administrador");
 

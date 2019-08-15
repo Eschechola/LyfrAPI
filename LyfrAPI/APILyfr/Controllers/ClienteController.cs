@@ -21,7 +21,7 @@ namespace APILyfr.Controllers
 
         [HttpPost]
         [Route("Insert")]
-        public string Insert(string senhaAPI = "",/*[FromBody]*/string json = "")
+        public string Insert([FromBody]string senhaAPI = "",[FromBody]string json = "")
         {
             if (senhaAPI != new PasswordAPI().ReturnPassword())
             {
@@ -52,7 +52,7 @@ namespace APILyfr.Controllers
 
         [HttpDelete]
         [Route("DeleteByEmail")]
-        public string DeletByEmail(string email, string senhaAPI = "")
+        public string DeletByEmail([FromBody]string email, [FromBody]string senhaAPI = "")
         {
             if (senhaAPI != new PasswordAPI().ReturnPassword())
             {
@@ -81,7 +81,7 @@ namespace APILyfr.Controllers
 
         [HttpDelete]
         [Route("DeleteByCPF")]
-        public string DeletByCPF(string CPF, string senhaAPI = "")
+        public string DeletByCPF([FromBody]string CPF, [FromBody]string senhaAPI = "")
         {
             if (senhaAPI != new PasswordAPI().ReturnPassword())
             {
@@ -110,7 +110,7 @@ namespace APILyfr.Controllers
 
         [HttpPut]
         [Route("Alter")]
-        public string Alter(string json, string senhaAPI = "")
+        public string Alter([FromBody]string json, [FromBody]string senhaAPI = "")
         {
             if (senhaAPI != new PasswordAPI().ReturnPassword())
             {
@@ -142,7 +142,7 @@ namespace APILyfr.Controllers
 
         [HttpGet]
         [Route("GetClienteByEmail")]
-        public string GetClienteByEmail(string email, string senha, string senhaAPI = "")
+        public string GetClienteByEmail([FromBody]string email, [FromBody]string senha, [FromBody]string senhaAPI = "")
         {
             if (senhaAPI != new PasswordAPI().ReturnPassword())
             {
@@ -186,7 +186,7 @@ namespace APILyfr.Controllers
 
         [HttpGet]
         [Route("GetClienteByCPF")]
-        public string GetClienteByCPF(string CPF, string senha, string senhaAPI = "")
+        public string GetClienteByCPF([FromBody]string CPF, [FromBody]string senha, [FromBody]string senhaAPI = "")
         {
             if (senhaAPI != new PasswordAPI().ReturnPassword())
             {
@@ -230,7 +230,7 @@ namespace APILyfr.Controllers
 
         [HttpGet]
         [Route("GetAllClientes")]
-        public string GetAllCliente(string senhaAPI = "")
+        public string GetAllCliente([FromBody]string senhaAPI = "")
         {
             if (senhaAPI != new PasswordAPI().ReturnPassword())
             {

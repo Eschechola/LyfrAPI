@@ -1,0 +1,15 @@
+C:\Users\CTTarde\Desktop\api\LyfrAPI\LyfrAPI\APILyfr\bin\Debug\netcoreapp2.1\APILyfr.deps.json
+C:\Users\CTTarde\Desktop\api\LyfrAPI\LyfrAPI\APILyfr\bin\Debug\netcoreapp2.1\APILyfr.runtimeconfig.json
+C:\Users\CTTarde\Desktop\api\LyfrAPI\LyfrAPI\APILyfr\bin\Debug\netcoreapp2.1\APILyfr.runtimeconfig.dev.json
+C:\Users\CTTarde\Desktop\api\LyfrAPI\LyfrAPI\APILyfr\bin\Debug\netcoreapp2.1\APILyfr.dll
+C:\Users\CTTarde\Desktop\api\LyfrAPI\LyfrAPI\APILyfr\bin\Debug\netcoreapp2.1\APILyfr.pdb
+C:\Users\CTTarde\Desktop\api\LyfrAPI\LyfrAPI\APILyfr\obj\Debug\netcoreapp2.1\APILyfr.csprojAssemblyReference.cache
+C:\Users\CTTarde\Desktop\api\LyfrAPI\LyfrAPI\APILyfr\obj\Debug\netcoreapp2.1\APILyfr.csproj.CoreCompileInputs.cache
+C:\Users\CTTarde\Desktop\api\LyfrAPI\LyfrAPI\APILyfr\obj\Debug\netcoreapp2.1\APILyfr.RazorAssemblyInfo.cache
+C:\Users\CTTarde\Desktop\api\LyfrAPI\LyfrAPI\APILyfr\obj\Debug\netcoreapp2.1\APILyfr.RazorAssemblyInfo.cs
+C:\Users\CTTarde\Desktop\api\LyfrAPI\LyfrAPI\APILyfr\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+C:\Users\CTTarde\Desktop\api\LyfrAPI\LyfrAPI\APILyfr\obj\Debug\netcoreapp2.1\APILyfr.AssemblyInfoInputs.cache
+C:\Users\CTTarde\Desktop\api\LyfrAPI\LyfrAPI\APILyfr\obj\Debug\netcoreapp2.1\APILyfr.AssemblyInfo.cs
+C:\Users\CTTarde\Desktop\api\LyfrAPI\LyfrAPI\APILyfr\obj\Debug\netcoreapp2.1\APILyfr.RazorTargetAssemblyInfo.cache
+C:\Users\CTTarde\Desktop\api\LyfrAPI\LyfrAPI\APILyfr\obj\Debug\netcoreapp2.1\APILyfr.dll
+C:\Users\CTTarde\Desktop\api\LyfrAPI\LyfrAPI\APILyfr\obj\Debug\netcoreapp2.1\APILyfr.pdb

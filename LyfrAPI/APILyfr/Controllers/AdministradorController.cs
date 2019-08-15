@@ -21,7 +21,7 @@ namespace LyfrAPI.Controllers
 
         [HttpPost]
         [Route("Insert")]
-        public string Insert(string senhaAPI = "", /*[FromBody]*/string json = "")
+        public string Insert([FromBody]string senhaAPI = "", [FromBody]string json = "")
         {
             if (senhaAPI != new PasswordAPI().ReturnPassword())
             {
@@ -60,7 +60,7 @@ namespace LyfrAPI.Controllers
 
         [HttpGet]
         [Route("GetAdministrador")]
-        public string GetAdministrador(string login, string senha, string senhaAPI = "")
+        public string GetAdministrador([FromBody]string login, [FromBody]string senha, [FromBody]string senhaAPI = "")
         {
             if (senhaAPI != new PasswordAPI().ReturnPassword())
             {
@@ -81,6 +81,10 @@ namespace LyfrAPI.Controllers
                     if (resposta != null)
                     {
                         if (resposta.Senha != senha)
+                        {
+                            return "Login ou senha inválidos";
+                        }
+                        else if (resposta.Login!=login)
                         {
                             return "Login ou senha inválidos";
                         }
@@ -105,7 +109,7 @@ namespace LyfrAPI.Controllers
 
         [HttpGet]
         [Route("GetAllAdministradores")]
-        public string GetAllAdministradores(string senhaAPI = "")
+        public string GetAllAdministradores([FromBody]string senhaAPI = "")
         {
             if (senhaAPI != new PasswordAPI().ReturnPassword())
             {
@@ -136,7 +140,7 @@ namespace LyfrAPI.Controllers
 
         [HttpPut]
         [Route("Alter")]
-        public string Alter(string json, string senhaAPI = "")
+        public string Alter([FromBody]string json, [FromBody]string senhaAPI = "")
         {
             if (senhaAPI != new PasswordAPI().ReturnPassword())
             {
@@ -167,7 +171,7 @@ namespace LyfrAPI.Controllers
 
         [HttpDelete]
         [Route("DeleteByLogin")]
-        public string DeletByLogin(string login, string senhaAPI = "")
+        public string DeletByLogin([FromBody]string login, [FromBody]string senhaAPI = "")
         {
             if (senhaAPI != new PasswordAPI().ReturnPassword())
             {

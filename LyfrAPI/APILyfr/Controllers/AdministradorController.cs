@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using APILyfr.Aplicacoes;
 using APILyfr.Context;
 using APILyfr.Models;
-using APILyfr.Security;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -21,181 +21,156 @@ namespace LyfrAPI.Controllers
 
         [HttpPost]
         [Route("Insert")]
-        public string Insert([FromBody]string senhaAPI = "", [FromBody]string json = "")
+        [Authorize]
+        public string Insert([FromBody]string json = "")
         {
-            if (senhaAPI != new PasswordAPI().ReturnPassword())
+
+            try
             {
-                return "Você não tem acesso a esse recurso!";
-            }
-            else
-            {
-                try
+                if (json == string.Empty || json == "" || json == null || string.IsNullOrWhiteSpace(json))
                 {
-                    if (json == string.Empty || json == "" || json == null || string.IsNullOrWhiteSpace(json))
-                    {
-                        return "Dados inválidos! Tente novamente.";
-                    }
-                    else
-                    {
-                        var admin = JsonConvert.DeserializeObject<Administrador>(json);
-
-                        if (admin.Login == "" || string.IsNullOrWhiteSpace(admin.Login) ||
-                            admin.Senha == "" || string.IsNullOrWhiteSpace(admin.Senha) ||
-                            admin.Email == "" || string.IsNullOrWhiteSpace(admin.Cpf) ||
-                            admin.Senha == "" || string.IsNullOrWhiteSpace(admin.Cpf))
-                        {
-                            return "Preencha todos os campos e tente novamente!";
-                        }
-
-                        var resposta = new AdministradorAplicacao(_context).Insert(admin);
-                        return resposta;
-                    }
+                    return "Dados inválidos! Tente novamente.";
                 }
-                catch (Exception)
+                else
                 {
-                    return "Erro ao comunicar com a base de dados!";
+                    var admin = JsonConvert.DeserializeObject<Administrador>(json);
+
+                    if (admin.Login == "" || string.IsNullOrWhiteSpace(admin.Login) ||
+                        admin.Senha == "" || string.IsNullOrWhiteSpace(admin.Senha) ||
+                        admin.Email == "" || string.IsNullOrWhiteSpace(admin.Cpf) ||
+                        admin.Senha == "" || string.IsNullOrWhiteSpace(admin.Cpf))
+                    {
+                        return "Preencha todos os campos e tente novamente!";
+                    }
+
+                    var resposta = new AdministradorAplicacao(_context).Insert(admin);
+                    return resposta;
                 }
             }
+            catch (Exception)
+            {
+                return "Erro ao comunicar com a base de dados!";
+            }
+
         }
 
         [HttpGet]
         [Route("GetAdministrador")]
-        public string GetAdministrador([FromBody]string login, [FromBody]string senha, [FromBody]string senhaAPI = "")
+        [Authorize]
+        public string GetAdministrador([FromBody]string json)
         {
-            if (senhaAPI != new PasswordAPI().ReturnPassword())
+            var adm = JsonConvert.DeserializeObject<Administrador>(json);
+            try
             {
-                return "Você não tem acesso a esse recurso!";
-            }
-            else
-            {
-                try
+                if (adm.Login == string.Empty || adm.Login == "" || adm.Login == null || string.IsNullOrWhiteSpace(adm.Login))
                 {
-                    if (login == string.Empty || login == "" || login == null || string.IsNullOrWhiteSpace(login) ||
-                        senha == string.Empty || senha == "" || senha == null || string.IsNullOrWhiteSpace(senha))
+                    return "Login inválido! Tente novamente.";
+                }
+
+                var resposta = new AdministradorAplicacao(_context).GetAdminByLogin(adm.Login);
+
+                if (resposta != null)
+                {
+                    if (resposta.Senha != adm.Senha)
                     {
-                        return "Login inválido! Tente novamente.";
+                        return "Login ou senha inválidos";
                     }
-
-                    var resposta = new AdministradorAplicacao(_context).GetAdminByLogin(login);
-
-                    if (resposta != null)
+                    else if (resposta.Login != adm.Login)
                     {
-                        if (resposta.Senha != senha)
-                        {
-                            return "Login ou senha inválidos";
-                        }
-                        else if (resposta.Login!=login)
-                        {
-                            return "Login ou senha inválidos";
-                        }
-                        else
-                        {
-                            var clienteResposta = JsonConvert.SerializeObject(resposta);
-                            return clienteResposta;
-                        }
+                        return "Login ou senha inválidos";
                     }
                     else
                     {
-                        return "Administrador não cadastrado!";
+                        var clienteResposta = JsonConvert.SerializeObject(resposta);
+                        return clienteResposta;
                     }
-
                 }
-                catch (Exception)
+                else
                 {
-                    return "Erro ao comunicar com a base de dados!";
+                    return "Administrador não cadastrado!";
                 }
+
             }
+            catch (Exception)
+            {
+                return "Erro ao comunicar com a base de dados!";
+            }
+
         }
 
         [HttpGet]
         [Route("GetAllAdministradores")]
-        public string GetAllAdministradores([FromBody]string senhaAPI = "")
+        [Authorize]
+        public string GetAllAdministradores()
         {
-            if (senhaAPI != new PasswordAPI().ReturnPassword())
+            try
             {
-                return "Você não tem acesso a esse recurso!";
-            }
-            else
-            {
-                try
-                {
-                    var listaDeAdministradores = new AdministradorAplicacao(_context).GetAllAdministradores();
+                var listaDeAdministradores = new AdministradorAplicacao(_context).GetAllAdministradores();
 
-                    if (listaDeAdministradores != null)
-                    {
-                        var resposta = JsonConvert.SerializeObject(listaDeAdministradores);
-                        return resposta;
-                    }
-                    else
-                    {
-                        return "Erro ao comunicar com a base de dados!";
-                    }
+                if (listaDeAdministradores != null)
+                {
+                    var resposta = JsonConvert.SerializeObject(listaDeAdministradores);
+                    return resposta;
                 }
-                catch (Exception)
+                else
                 {
                     return "Erro ao comunicar com a base de dados!";
                 }
             }
+            catch (Exception)
+            {
+                return "Erro ao comunicar com a base de dados!";
+            }
+
         }
 
         [HttpPut]
         [Route("Alter")]
-        public string Alter([FromBody]string json, [FromBody]string senhaAPI = "")
+        [Authorize]
+        public string Alter([FromBody]string json)
         {
-            if (senhaAPI != new PasswordAPI().ReturnPassword())
+            var adminAlterado = new Administrador();
+            try
             {
-                return "Você não tem acesso a esse recurso!";
+                if (json == string.Empty || json == "" || json == null || string.IsNullOrWhiteSpace(json))
+                {
+                    return "Dados inválidos! Tente novamente.";
+                }
+                else
+                {
+                    adminAlterado = JsonConvert.DeserializeObject<Administrador>(json);
+                    var resposta = new AdministradorAplicacao(_context).Alter(adminAlterado);
+                    return resposta;
+                }
             }
-            else
+            catch (Exception)
             {
-                var adminAlterado = new Administrador();
-                try
-                {
-                    if (json == string.Empty || json == "" || json == null || string.IsNullOrWhiteSpace(json))
-                    {
-                        return "Dados inválidos! Tente novamente.";
-                    }
-                    else
-                    {
-                        adminAlterado = JsonConvert.DeserializeObject<Administrador>(json);
-                        var resposta = new AdministradorAplicacao(_context).Alter(adminAlterado);
-                        return resposta;
-                    }
-                }
-                catch (Exception)
-                {
-                    return "Erro ao comunicar com a base de dados!";
-                }
+                return "Erro ao comunicar com a base de dados!";
             }
         }
 
         [HttpDelete]
         [Route("DeleteByLogin")]
-        public string DeletByLogin([FromBody]string login, [FromBody]string senhaAPI = "")
+        [Authorize]
+        public string DeletByLogin([FromBody]string login)
         {
-            if (senhaAPI != new PasswordAPI().ReturnPassword())
+            try
             {
-                return "Você não tem acesso a esse recurso!";
-            }
-            else
-            {
-                try
+                if (login == string.Empty || login == "" || login == null || string.IsNullOrWhiteSpace(login))
                 {
-                    if (login == string.Empty || login == "" || login == null || string.IsNullOrWhiteSpace(login))
-                    {
-                        return "Login inválido! Tente novamente.";
-                    }
-                    else
-                    {
-                        var resposta = new AdministradorAplicacao(_context).DeleteByLogin(login);
-                        return resposta;
-                    }
+                    return "Login inválido! Tente novamente.";
                 }
-                catch (Exception)
+                else
                 {
-                    return "Erro ao comunicar com a base de dados!";
+                    var resposta = new AdministradorAplicacao(_context).DeleteByLogin(login);
+                    return resposta;
                 }
             }
+            catch (Exception)
+            {
+                return "Erro ao comunicar com a base de dados!";
+            }
+
         }
     }
 }

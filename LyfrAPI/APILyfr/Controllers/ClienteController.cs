@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using APILyfr.Aplicacoes;
 using APILyfr.Context;
 using APILyfr.Models;
-using APILyfr.Security;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -21,242 +17,217 @@ namespace APILyfr.Controllers
 
         [HttpPost]
         [Route("Insert")]
-        public string Insert([FromBody]string senhaAPI = "",[FromBody]string json = "")
+        [Authorize]
+        public string Insert([FromBody]string json = "")
         {
-            if (senhaAPI != new PasswordAPI().ReturnPassword())
-            {
-                return "Você não tem acesso a esse recurso!";
-            }
-            else
-            {
-                try
-                {
-                    if (json == string.Empty || json == "" || json == null || string.IsNullOrWhiteSpace(json))
-                    {
-                        return "Dados inválidos! Tente novamente.";
-                    }
-                    else
-                    {
-                        var cliente = JsonConvert.DeserializeObject<Cliente>(json);
 
-                        var resposta = new ClienteAplicacao(_context).Insert(cliente);
-                        return resposta;
-                    }
-                }
-                catch (Exception)
+            try
+            {
+                if (json == string.Empty || json == "" || json == null || string.IsNullOrWhiteSpace(json))
                 {
-                    return "Erro ao comunicar com a base de dados!";
+                    return "Dados inválidos! Tente novamente.";
+                }
+                else
+                {
+                    var cliente = JsonConvert.DeserializeObject<Cliente>(json);
+
+                    var resposta = new ClienteAplicacao(_context).Insert(cliente);
+                    return resposta;
                 }
             }
+            catch (Exception)
+            {
+                return "Erro ao comunicar com a base de dados!";
+            }
+
         }
 
         [HttpDelete]
         [Route("DeleteByEmail")]
-        public string DeletByEmail([FromBody]string email, [FromBody]string senhaAPI = "")
+        [Authorize]
+        public string DeletByEmail([FromBody]string email)
         {
-            if (senhaAPI != new PasswordAPI().ReturnPassword())
+
+
+            try
             {
-                return "Você não tem acesso a esse recurso!";
-            }
-            else
-            {
-                try
+                if (email == string.Empty || email == "" || email == null || string.IsNullOrWhiteSpace(email))
                 {
-                    if (email == string.Empty || email == "" || email == null || string.IsNullOrWhiteSpace(email))
-                    {
-                        return "Email inválido! Tente novamente.";
-                    }
-                    else
-                    {
-                        var resposta = new ClienteAplicacao(_context).DeleteByEmail(email);
-                        return resposta;
-                    }
+                    return "Email inválido! Tente novamente.";
                 }
-                catch (Exception)
+                else
                 {
-                    return "Erro ao comunicar com a base de dados!";
+                    var resposta = new ClienteAplicacao(_context).DeleteByEmail(email);
+                    return resposta;
                 }
             }
+            catch (Exception)
+            {
+                return "Erro ao comunicar com a base de dados!";
+            }
+
         }
 
         [HttpDelete]
         [Route("DeleteByCPF")]
-        public string DeletByCPF([FromBody]string CPF, [FromBody]string senhaAPI = "")
+        [Authorize]
+        public string DeletByCPF([FromBody]string CPF)
         {
-            if (senhaAPI != new PasswordAPI().ReturnPassword())
+
+            try
             {
-                return "Você não tem acesso a esse recurso!";
-            }
-            else
-            {
-                try
+                if (CPF == string.Empty || CPF == "" || CPF == null || string.IsNullOrWhiteSpace(CPF))
                 {
-                    if (CPF == string.Empty || CPF == "" || CPF == null || string.IsNullOrWhiteSpace(CPF))
-                    {
-                        return "CPF inválido! Tente novamente.";
-                    }
-                    else
-                    {
-                        var resposta = new ClienteAplicacao(_context).DeleteByCPF(CPF);
-                        return resposta;
-                    }
+                    return "CPF inválido! Tente novamente.";
                 }
-                catch (Exception)
+                else
                 {
-                    return "Erro ao comunicar com a base de dados!";
+                    var resposta = new ClienteAplicacao(_context).DeleteByCPF(CPF);
+                    return resposta;
                 }
             }
+            catch (Exception)
+            {
+                return "Erro ao comunicar com a base de dados!";
+            }
+
         }
 
         [HttpPut]
         [Route("Alter")]
-        public string Alter([FromBody]string json, [FromBody]string senhaAPI = "")
+        [Authorize]
+        public string Alter([FromBody]string json)
         {
-            if (senhaAPI != new PasswordAPI().ReturnPassword())
+
+
+            var clienteAlterado = new Cliente();
+            try
             {
-                return "Você não tem acesso a esse recurso!";
-            }
-            else
-            {
-                var clienteAlterado = new Cliente();
-                try
+                if (json == string.Empty || json == "" || json == null || string.IsNullOrWhiteSpace(json))
                 {
-                    if (json == string.Empty || json == "" || json == null || string.IsNullOrWhiteSpace(json))
-                    {
-                        return "Dados inválidos! Tente novamente.";
-                    }
-                    else
-                    {
-                        clienteAlterado = JsonConvert.DeserializeObject<Cliente>(json);
-                        var resposta = new ClienteAplicacao(_context).Alter(clienteAlterado);
-                        return resposta;
-                    }
+                    return "Dados inválidos! Tente novamente.";
                 }
-                catch (Exception)
+                else
                 {
-                    return "Erro ao comunicar com a base de dados!";
+                    clienteAlterado = JsonConvert.DeserializeObject<Cliente>(json);
+                    var resposta = new ClienteAplicacao(_context).Alter(clienteAlterado);
+                    return resposta;
                 }
             }
+            catch (Exception)
+            {
+                return "Erro ao comunicar com a base de dados!";
+            }
+
         }
 
 
         [HttpGet]
         [Route("GetClienteByEmail")]
-        public string GetClienteByEmail([FromBody]string email, [FromBody]string senha, [FromBody]string senhaAPI = "")
+        [Authorize]
+        public string GetClienteByEmail([FromBody]string json)
         {
-            if (senhaAPI != new PasswordAPI().ReturnPassword())
+            var cliente = JsonConvert.DeserializeObject<Cliente>(json);
+
+            try
             {
-                return "Você não tem acesso a esse recurso!";
-            }
-            else
-            {
-                try
+                if (cliente.Email == string.Empty || cliente.Email == "" || cliente.Email == null || string.IsNullOrWhiteSpace(cliente.Email))
                 {
-                    if (email == string.Empty || email == "" || email == null || string.IsNullOrWhiteSpace(email))
-                    {
-                        return "Email inválido! Tente novamente.";
-                    }
+                    return "Email inválido! Tente novamente.";
+                }
 
-                    var resposta = new ClienteAplicacao(_context).GetClienteByEmail(email);
+                var resposta = new ClienteAplicacao(_context).GetClienteByEmail(cliente.Email);
 
-                    if (resposta != null)
+                if (resposta != null)
+                {
+                    if (resposta.Senha != cliente.Senha)
                     {
-                        if (resposta.Senha != senha)
-                        {
-                            return "Login e/ou senha inválidos";
-                        }
-                        else
-                        {
-                            var clienteResposta = JsonConvert.SerializeObject(resposta);
-                            return clienteResposta;
-                        }
+                        return "Login e/ou senha inválidos";
                     }
                     else
                     {
-                        return "Cliente não cadastrado!";
+                        var clienteResposta = JsonConvert.SerializeObject(resposta);
+                        return clienteResposta;
                     }
-
                 }
-                catch (Exception)
+                else
                 {
-                    return "Erro ao comunicar com a base de dados!";
+                    return "Cliente não cadastrado!";
                 }
+
             }
+            catch (Exception)
+            {
+                return "Erro ao comunicar com a base de dados!";
+            }
+
         }
 
         [HttpGet]
         [Route("GetClienteByCPF")]
-        public string GetClienteByCPF([FromBody]string CPF, [FromBody]string senha, [FromBody]string senhaAPI = "")
+        [Authorize]
+        public string GetClienteByCPF([FromBody]string json)
         {
-            if (senhaAPI != new PasswordAPI().ReturnPassword())
+            var cliente = JsonConvert.DeserializeObject<Cliente>(json);
+            try
             {
-                return "Você não tem acesso a esse recurso!";
-            }
-            else
-            {
-                try
+                if (cliente.Cpf == string.Empty || cliente.Cpf == "" || cliente.Cpf == null || string.IsNullOrWhiteSpace(cliente.Cpf))
                 {
-                    if (CPF == string.Empty || CPF == "" || CPF == null || string.IsNullOrWhiteSpace(CPF))
-                    {
-                        return "CPF inválido! Tente novamente.";
-                    }
+                    return "CPF inválido! Tente novamente.";
+                }
 
-                    var resposta = new ClienteAplicacao(_context).GetClienteByCPF(CPF);
+                var resposta = new ClienteAplicacao(_context).GetClienteByCPF(cliente.Cpf);
 
-                    if (resposta != null)
+                if (resposta != null)
+                {
+                    if (resposta.Senha != cliente.Senha)
                     {
-                        if (resposta.Senha != senha)
-                        {
-                            return "Login e/ou senha inválidos";
-                        }
-                        else
-                        {
-                            var clienteResposta = JsonConvert.SerializeObject(resposta);
-                            return clienteResposta;
-                        }
+                        return "Login e/ou senha inválidos";
                     }
                     else
                     {
-                        return "Cliente não cadastrado!";
+                        var clienteResposta = JsonConvert.SerializeObject(resposta);
+                        return clienteResposta;
                     }
-
                 }
-                catch (Exception)
+                else
                 {
-                    return "Erro ao comunicar com a base de dados!";
+                    return "Cliente não cadastrado!";
                 }
+
             }
+            catch (Exception)
+            {
+                return "Erro ao comunicar com a base de dados!";
+            }
+
         }
 
         [HttpGet]
         [Route("GetAllClientes")]
-        public string GetAllCliente([FromBody]string senhaAPI = "")
+        [Authorize]
+        public string GetAllCliente()
         {
-            if (senhaAPI != new PasswordAPI().ReturnPassword())
-            {
-                return "Você não tem acesso a esse recurso!";
-            }
-            else
-            {
-                try
-                {
-                    var listaDeClientes = new ClienteAplicacao(_context).GetAllClientes();
 
-                    if (listaDeClientes != null)
-                    {
-                        var resposta = JsonConvert.SerializeObject(listaDeClientes);
-                        return resposta;
-                    }
-                    else
-                    {
-                        return "Erro ao comunicar com a base de dados!";
-                    }
+            try
+            {
+                var listaDeClientes = new ClienteAplicacao(_context).GetAllClientes();
+
+                if (listaDeClientes != null)
+                {
+                    var resposta = JsonConvert.SerializeObject(listaDeClientes);
+                    return resposta;
                 }
-                catch (Exception)
+                else
                 {
                     return "Erro ao comunicar com a base de dados!";
                 }
             }
+            catch (Exception)
+            {
+                return "Erro ao comunicar com a base de dados!";
+            }
         }
+
     }
 }

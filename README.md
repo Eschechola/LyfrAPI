@@ -10,7 +10,7 @@
     A segurança via JSON WEB TOKENS funciona da seguinte forma, todos os métodos da API (ROTAS), tem um atributo chamado  [Authorize], esse atributo deixa o método inacessível para qualquer pessoa, necessitando ter uma key para acesso a API, (como se fosse uma senha), essa key é temporária e expira com o tempo, tendo que gerar ela novamente pra acessar novamente a API, então antes de realizar qualquer requisição para dados, voce tem que pedir a key pra API na rota:
     <br>
     <br><br>
-  <strong><pre>https://lyfrapi1.herokuapp.com/api/Seguranca/LoginAPI</pre><br><br>*ÚNICO MÉTODO QUE NÃO NECESSITA DE KEY NA API*</strong><br><br>
+  <strong><pre>https://lyfrapi1.herokuapp.com/api/Seguranca/LoginAPI</pre><br>*ÚNICO MÉTODO QUE NÃO NECESSITA DE KEY NA API*</strong><br><br><br>
     Enviando via POST um json nesse formato:<br><br>
     <pre>
       {

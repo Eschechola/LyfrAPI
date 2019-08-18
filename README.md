@@ -51,7 +51,6 @@
 
 <strong><h1>CLIENTE</h1></strong>
 
-<br><br>
 
 <pre>
 

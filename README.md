@@ -10,7 +10,7 @@
 
 <br>
 
-  <h6>
+  <h5>
     A segurança via JSON WEB TOKENS funciona da seguinte forma, todos os métodos da API (ROTAS), tem um atributo chamado  [Authorize], esse atributo deixa o método inacessível para qualquer pessoa, necessitando ter uma key para acesso a API, (como se fosse uma senha), essa key é temporária e expira com o tempo, tendo que gerar ela novamente pra acessar novamente a API, então antes de realizar qualquer requisição para dados, voce tem que pedir a key pra API na rota:
     <br>
     <br>
@@ -25,7 +25,7 @@
     </pre>
     <br>
     Enviando esses dados ele irá te retornar uma key, caso os dados do json estejam errados ou inválidos vai retornar um HTTP 401 (Sem autorização), senão vai retornar um HTTP 200 (Sucesso) e a key de string, para verificar se a requisição foi bem sucedida use o método:
-  <br>
+  <br><br><br>
   <pre>
     //exemplo de post
     var response = await client.PostAsync(uri, content);
@@ -36,7 +36,7 @@
   </pre>
   <br>
    Para enviar a key no HEADER do json utilize:
-   <br>
+   <br><br><br>
    <pre>
    HttpClient client = new HttpClient();
    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "KEY AQUI");
@@ -45,7 +45,7 @@
    <br><br>
    
    <strong>Com essa key você pode utilizar qualquer rota da API e ter acesso aos dados.</strong>
-  <h6>
+  <h5>
 
 
 

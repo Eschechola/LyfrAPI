@@ -13,9 +13,9 @@
   <h5>
     A segurança via JSON WEB TOKENS funciona da seguinte forma, todos os métodos da API (ROTAS), tem um atributo chamado  [Authorize], esse atributo deixa o método inacessível para qualquer pessoa, necessitando ter uma key para acesso a API, (como se fosse uma senha), essa key é temporária e expira com o tempo, tendo que gerar ela novamente pra acessar novamente a API, então antes de realizar qualquer requisição para dados, voce tem que pedir a key pra API na rota:
     <br>
-    <br>
-    <strong> https://localhost:44397/api/Seguranca/LoginAPI<br>ÚNICO MÉTODO QUE NÃO NECESSITA DE KEY NA API</strong><br>
-    Enviando via POST um json nesse formato:
+    <br><br>
+    <strong> https://localhost:44397/api/Seguranca/LoginAPI<br>ÚNICO MÉTODO QUE NÃO NECESSITA DE KEY NA API</strong><br><br>
+    Enviando via POST um json nesse formato:<br><br>
     <pre>
       {
         "Nome":"Lyfr_User123",
@@ -42,11 +42,11 @@
    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "KEY AQUI");
    </pre>
    
-   <br><br>
+   <br>
    
    <strong>Com essa key você pode utilizar qualquer rota da API e ter acesso aos dados.</strong>
   <h5>
-
+<br><br>
 
 
 <strong><h1>CLIENTE</h1></strong>

@@ -1,5 +1,7 @@
 # LyfrAPI
 
+<br><br><br>
+
 <h2>Explicação JWT (SEGURANÇA)</h2>
 
 <br>

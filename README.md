@@ -147,7 +147,7 @@ Não enviar nada
 HTTP - GET
 https://lyfrapi1.herokuapp.com/api/Administrador/GetAdministrador/
 
-Enviar o JSON do Model Administrador via GET (Só vai conter login e senha, os outros campos deixe em branco)
+Enviar o JSON do Model Administrador via GET (Só vai conter login e senha, outros campos deixe em branco)
 
 -------------------------------------------------------------------------------------------------
 

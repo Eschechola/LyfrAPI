@@ -1,9 +1,5 @@
 # LyfrAPI
 
-<h3><font color="red">Rotas</font></h3>
-
-<br>
-
 <h2>Explicação JWT (SEGURANÇA)</h2>
 
 <br>

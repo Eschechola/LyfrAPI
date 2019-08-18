@@ -2,8 +2,6 @@
 
 <h3><font color="red">Rotas</font></h3>
 
-<p><strong>Vou alterar sábado pra so aceitar POST PUT e DELETE da nossa aplicação, por enquanto usa assim.</strong></p>
-
 <br>
 
 <h2>Explicação JWT (SEGURANÇA)</h2>

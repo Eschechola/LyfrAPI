@@ -76,17 +76,17 @@ Não enviar nada
 
 -------------------------------------------------------------------------------------------------
 
-HTTP - GET
+HTTP - Post
 https://lyfrapi1.herokuapp.com/api/Cliente/GetClienteByEmail/
 
-Enviar o Email via GET
+Enviar o Email via Post
 
 -------------------------------------------------------------------------------------------------
 
-HTTP - GET
+HTTP - Post
 https://lyfrapi1.herokuapp.com/api/Cliente/GetClienteByCPF/
 
-Enviar o CPF via GET
+Enviar o CPF via Post
 
 -------------------------------------------------------------------------------------------------
 
@@ -144,10 +144,10 @@ Não enviar nada
 
 -------------------------------------------------------------------------------------------------
 
-HTTP - GET
+HTTP - Post
 https://lyfrapi1.herokuapp.com/api/Administrador/GetAdministrador/
 
-Enviar o JSON do Model Administrador via GET (Só vai conter login e senha, outros campos deixe em branco)
+Enviar o JSON do Model Administrador via Post (Só vai conter login e senha, outros campos deixe em branco)
 
 -------------------------------------------------------------------------------------------------
 

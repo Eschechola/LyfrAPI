@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using APILyfr.Aplicacoes;
 using APILyfr.Context;
 using APILyfr.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -54,7 +50,7 @@ namespace LyfrAPI.Controllers
 
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("GetAdministrador")]
         [Authorize]
         public string GetAdministrador([FromBody]string json)

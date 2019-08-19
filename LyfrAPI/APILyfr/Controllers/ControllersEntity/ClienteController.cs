@@ -122,7 +122,7 @@ namespace APILyfr.Controllers
         }
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("GetClienteByEmail")]
         [Authorize]
         public string GetClienteByEmail([FromBody]string json)
@@ -163,7 +163,7 @@ namespace APILyfr.Controllers
 
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("GetClienteByCPF")]
         [Authorize]
         public string GetClienteByCPF([FromBody]string json)

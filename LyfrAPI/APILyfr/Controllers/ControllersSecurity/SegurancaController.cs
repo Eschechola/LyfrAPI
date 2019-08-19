@@ -4,6 +4,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using APILyfr.Models;
 using APILyfr.Models.Security;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -24,7 +25,7 @@ namespace APILyfr.Controllers
 
         [HttpPost]
         [Route("LoginAPI")]
-        public IActionResult Login([FromBody]Token login)
+        public IActionResult Login([FromBody]LoginToken login)
         {
             //verifica se o usuario tem uma credencial válida
             bool resultado = ValidarUsuario(login);
@@ -32,7 +33,10 @@ namespace APILyfr.Controllers
             {
                 //gera o token e retorna um HTTP com STATUS 200 (SUCESSO)
                 var tokenDeSeguranca = GerarTokenJWT();
-                return Ok(new { token = tokenDeSeguranca });
+                //gera o o dia e a hora que será finalizado a hora
+                string horaExpiracao = DateTime.Now.AddHours(2).ToString();
+                //retorna a hora que irá expirar e o token de segurança
+                return Ok(new Token { HoraExpiracao = horaExpiracao, TokenString = tokenDeSeguranca});
             }
             else
             {
@@ -68,12 +72,18 @@ namespace APILyfr.Controllers
             return tokenDeSeguranca;
         }
 
-        private bool ValidarUsuario(Token login)
+        private bool ValidarUsuario(LoginToken login)
         {
-            if (login.Usuario == "Lyfr_User123" && login.Senha == "LyfrAPI123" &&
-                (login.TipoUsuario == 'M'|| login.TipoUsuario == 'W'))
+            if (login.Usuario == "Lyfr_User123" && login.Senha == "LyfrAPI123")
             {
-                return true;
+                if(login.TipoUsuario == "M" || login.TipoUsuario == "W")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {

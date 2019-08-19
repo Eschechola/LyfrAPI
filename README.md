@@ -14,7 +14,7 @@
     Enviando via POST um json nesse formato:<br><br>
     <pre>
       {
-        "Nome":"Lyfr_User123",
+        "Usuario":"Lyfr_User123",
         "Senha": "LyfrAPI123",
         "TipoUsuario": "M"
       }

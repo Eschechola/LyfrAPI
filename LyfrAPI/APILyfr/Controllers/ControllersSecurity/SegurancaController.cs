@@ -33,8 +33,10 @@ namespace APILyfr.Controllers
             {
                 //gera o token e retorna um HTTP com STATUS 200 (SUCESSO)
                 var tokenDeSeguranca = GerarTokenJWT();
-                //gera o o dia e a hora que será finalizado a hora
-                string horaExpiracao = DateTime.Now.AddHours(2).ToString();
+                //gera o o dia e a hora que será finalizado pegando como padrao o horario de brasilia
+                TimeZoneInfo horarioDeBrasilia = TimeZoneInfo.FindSystemTimeZoneById("E. South America Standard Time");
+                DateTime horaAtual = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, horarioDeBrasilia);
+                string horaExpiracao = horaAtual.AddHours(2).ToString();
                 //retorna a hora que irá expirar e o token de segurança
                 return Ok(new Token { HoraExpiracao = horaExpiracao, TokenString = tokenDeSeguranca});
             }

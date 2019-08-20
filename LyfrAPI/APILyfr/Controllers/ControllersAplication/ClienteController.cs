@@ -18,26 +18,23 @@ namespace APILyfr.Controllers
         [HttpPost]
         [Route("Insert")]
         [Authorize]
-        public string Insert([FromBody]string json = "")
+        public IActionResult Insert([FromBody]Cliente clienteEnviado)
         {
-
             try
             {
-                if (json == string.Empty || json == "" || json == null || string.IsNullOrWhiteSpace(json))
+                if (clienteEnviado==null)
                 {
-                    return "Dados inválidos! Tente novamente.";
+                    return BadRequest("Dados inválidos! Tente novamente.");
                 }
                 else
                 {
-                    var cliente = JsonConvert.DeserializeObject<Cliente>(json);
-
-                    var resposta = new ClienteAplicacao(_context).Insert(cliente);
-                    return resposta;
+                    var resposta = new ClienteAplicacao(_context).Insert(clienteEnviado);
+                    return Ok(resposta);
                 }
             }
             catch (Exception)
             {
-                return "Erro ao comunicar com a base de dados!";
+                return BadRequest("Erro ao comunicar com a base de dados!");
             }
 
         }
@@ -45,25 +42,23 @@ namespace APILyfr.Controllers
         [HttpDelete]
         [Route("DeleteByEmail")]
         [Authorize]
-        public string DeletByEmail([FromBody]string email)
+        public IActionResult DeletByEmail([FromBody]string email)
         {
-
-
             try
             {
                 if (email == string.Empty || email == "" || email == null || string.IsNullOrWhiteSpace(email))
                 {
-                    return "Email inválido! Tente novamente.";
+                    return BadRequest("Email inválido! Tente novamente.");
                 }
                 else
                 {
                     var resposta = new ClienteAplicacao(_context).DeleteByEmail(email);
-                    return resposta;
+                    return Ok(resposta);
                 }
             }
             catch (Exception)
             {
-                return "Erro ao comunicar com a base de dados!";
+                return BadRequest("Erro ao comunicar com a base de dados!");
             }
 
         }
@@ -71,24 +66,24 @@ namespace APILyfr.Controllers
         [HttpDelete]
         [Route("DeleteByCPF")]
         [Authorize]
-        public string DeletByCPF([FromBody]string CPF)
+        public IActionResult DeletByCPF([FromBody]string CPF)
         {
 
             try
             {
                 if (CPF == string.Empty || CPF == "" || CPF == null || string.IsNullOrWhiteSpace(CPF))
                 {
-                    return "CPF inválido! Tente novamente.";
+                    return BadRequest("CPF inválido! Tente novamente.");
                 }
                 else
                 {
                     var resposta = new ClienteAplicacao(_context).DeleteByCPF(CPF);
-                    return resposta;
+                    return Ok(resposta);
                 }
             }
             catch (Exception)
             {
-                return "Erro ao comunicar com a base de dados!";
+                return BadRequest("Erro ao comunicar com a base de dados!");
             }
 
         }
@@ -96,27 +91,23 @@ namespace APILyfr.Controllers
         [HttpPut]
         [Route("Alter")]
         [Authorize]
-        public string Alter([FromBody]string json)
+        public IActionResult Alter([FromBody]Cliente clienteEnviado)
         {
-
-
-            var clienteAlterado = new Cliente();
             try
             {
-                if (json == string.Empty || json == "" || json == null || string.IsNullOrWhiteSpace(json))
+                if (clienteEnviado == null)
                 {
-                    return "Dados inválidos! Tente novamente.";
+                    return BadRequest("Dados inválidos! Tente novamente.");
                 }
                 else
                 {
-                    clienteAlterado = JsonConvert.DeserializeObject<Cliente>(json);
-                    var resposta = new ClienteAplicacao(_context).Alter(clienteAlterado);
-                    return resposta;
+                    var resposta = new ClienteAplicacao(_context).Alter(clienteEnviado);
+                    return Ok(resposta);
                 }
             }
             catch (Exception)
             {
-                return "Erro ao comunicar com a base de dados!";
+                return BadRequest("Erro ao comunicar com a base de dados!");
             }
 
         }
@@ -125,40 +116,38 @@ namespace APILyfr.Controllers
         [HttpPost]
         [Route("GetClienteByEmail")]
         [Authorize]
-        public string GetClienteByEmail([FromBody]string json)
+        public IActionResult GetClienteByEmail([FromBody]Cliente clienteEnviado)
         {
-            var cliente = JsonConvert.DeserializeObject<Cliente>(json);
-
             try
             {
-                if (cliente.Email == string.Empty || cliente.Email == "" || cliente.Email == null || string.IsNullOrWhiteSpace(cliente.Email))
+                if (clienteEnviado.Email == null)
                 {
-                    return "Email inválido! Tente novamente.";
+                    return BadRequest("Email inválido! Tente novamente.");
                 }
 
-                var resposta = new ClienteAplicacao(_context).GetClienteByEmail(cliente.Email);
+                var resposta = new ClienteAplicacao(_context).GetClienteByEmail(clienteEnviado.Email);
 
                 if (resposta != null)
                 {
-                    if (resposta.Senha != cliente.Senha)
+                    if (resposta.Senha != clienteEnviado.Senha)
                     {
-                        return "Login e/ou senha inválidos";
+                        return BadRequest("Login e/ou senha inválidos");
                     }
                     else
                     {
                         var clienteResposta = JsonConvert.SerializeObject(resposta);
-                        return clienteResposta;
+                        return Ok(clienteResposta);
                     }
                 }
                 else
                 {
-                    return "Cliente não cadastrado!";
+                    return BadRequest("Cliente não cadastrado!");
                 }
 
             }
             catch (Exception)
             {
-                return "Erro ao comunicar com a base de dados!";
+                return BadRequest("Erro ao comunicar com a base de dados!");
             }
 
         }
@@ -166,39 +155,38 @@ namespace APILyfr.Controllers
         [HttpPost]
         [Route("GetClienteByCPF")]
         [Authorize]
-        public string GetClienteByCPF([FromBody]string json)
+        public IActionResult GetClienteByCPF([FromBody]Cliente clienteEnviado)
         {
-            var cliente = JsonConvert.DeserializeObject<Cliente>(json);
             try
             {
-                if (cliente.Cpf == string.Empty || cliente.Cpf == "" || cliente.Cpf == null || string.IsNullOrWhiteSpace(cliente.Cpf))
+                if (clienteEnviado.Cpf == null)
                 {
-                    return "CPF inválido! Tente novamente.";
+                    return BadRequest("CPF inválido! Tente novamente.");
                 }
 
-                var resposta = new ClienteAplicacao(_context).GetClienteByCPF(cliente.Cpf);
+                var resposta = new ClienteAplicacao(_context).GetClienteByCPF(clienteEnviado.Cpf);
 
                 if (resposta != null)
                 {
-                    if (resposta.Senha != cliente.Senha)
+                    if (resposta.Senha != clienteEnviado.Senha)
                     {
-                        return "Login e/ou senha inválidos";
+                        return BadRequest("Login e/ou senha inválidos");
                     }
                     else
                     {
                         var clienteResposta = JsonConvert.SerializeObject(resposta);
-                        return clienteResposta;
+                        return Ok(clienteResposta);
                     }
                 }
                 else
                 {
-                    return "Cliente não cadastrado!";
+                    return BadRequest("Cliente não cadastrado!");
                 }
 
             }
             catch (Exception)
             {
-                return "Erro ao comunicar com a base de dados!";
+                return BadRequest("Erro ao comunicar com a base de dados!");
             }
 
         }
@@ -206,9 +194,8 @@ namespace APILyfr.Controllers
         [HttpGet]
         [Route("GetAllClientes")]
         [Authorize]
-        public string GetAllCliente()
+        public IActionResult GetAllCliente()
         {
-
             try
             {
                 var listaDeClientes = new ClienteAplicacao(_context).GetAllClientes();
@@ -216,16 +203,16 @@ namespace APILyfr.Controllers
                 if (listaDeClientes != null)
                 {
                     var resposta = JsonConvert.SerializeObject(listaDeClientes);
-                    return resposta;
+                    return Ok(resposta);
                 }
                 else
                 {
-                    return "Erro ao comunicar com a base de dados!";
+                    return BadRequest("Erro ao comunicar com a base de dados!");
                 }
             }
             catch (Exception)
             {
-                return "Erro ao comunicar com a base de dados!";
+                return BadRequest("Erro ao comunicar com a base de dados!");
             }
         }
 

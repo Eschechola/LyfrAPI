@@ -194,7 +194,7 @@ namespace APILyfr.Controllers
         [HttpGet]
         [Route("GetAllClientes")]
         [Authorize]
-        public IActionResult GetAllCliente()
+        public IActionResult GetAllClientes()
         {
             try
             {

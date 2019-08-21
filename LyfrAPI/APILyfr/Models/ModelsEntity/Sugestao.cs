@@ -8,6 +8,7 @@ namespace APILyfr.Models
         public int IdSugestao { get; set; }
         public int? FkIdCliente { get; set; }
         public string Mensagem { get; set; }
+        public char Atendido { get; set; }
 
         public Cliente FkIdClienteNavigation { get; set; }
     }

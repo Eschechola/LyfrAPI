@@ -118,6 +118,10 @@ namespace APILyfr.Context
                 entity.Property(e => e.Senha).HasColumnType("varchar(70)");
 
                 entity.Property(e => e.Telefone).HasColumnType("varchar(20)");
+
+                entity.Property(e => e.Sexo).HasColumnType("varchar(1)");
+
+                entity.Property(e => e.Plano).HasColumnType("varchar(1)");
             });
 
             modelBuilder.Entity<Editora>(entity =>
@@ -404,6 +408,8 @@ namespace APILyfr.Context
                     .HasColumnType("int(11)");
 
                 entity.Property(e => e.Mensagem).HasColumnType("text");
+
+                entity.Property(e => e.Atendido).HasColumnType("varchar(1)");
 
                 entity.HasOne(d => d.FkIdClienteNavigation)
                     .WithMany(p => p.Sugestao)

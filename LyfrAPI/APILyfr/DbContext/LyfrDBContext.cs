@@ -119,9 +119,9 @@ namespace APILyfr.Context
 
                 entity.Property(e => e.Telefone).HasColumnType("varchar(20)");
 
-                entity.Property(e => e.Sexo).HasColumnType("varchar(1)");
+                entity.Property(e => e.Sexo).HasColumnType("char(1)");
 
-                entity.Property(e => e.Plano).HasColumnType("varchar(1)");
+                entity.Property(e => e.Plano).HasColumnType("char(1)");
             });
 
             modelBuilder.Entity<Editora>(entity =>
@@ -392,15 +392,15 @@ namespace APILyfr.Context
 
             modelBuilder.Entity<Sugestao>(entity =>
             {
-                entity.HasKey(e => e.IdSugestao);
+                entity.HasKey(e => e.idSugestao);
 
                 entity.ToTable("sugestao");
 
                 entity.HasIndex(e => e.FkIdCliente)
                     .HasName("Fk_Id_Cliente5");
 
-                entity.Property(e => e.IdSugestao)
-                    .HasColumnName("Id_Sugestao")
+                entity.Property(e => e.idSugestao)
+                    .HasColumnName("idSugestao")
                     .HasColumnType("int(11)");
 
                 entity.Property(e => e.FkIdCliente)

@@ -196,8 +196,8 @@ namespace APILyfr.Controllers
         [Authorize]
         public IActionResult GetAllClientes()
         {
-            try
-            {
+            //try
+            //{
                 var listaDeClientes = new ClienteAplicacao(_context).GetAllClientes();
 
                 if (listaDeClientes != null)
@@ -207,13 +207,13 @@ namespace APILyfr.Controllers
                 }
                 else
                 {
-                    return BadRequest("Erro ao comunicar com a base de dados!");
+                    return BadRequest("Nenhum cliente cadastrado!");
                 }
-            }
-            catch (Exception)
-            {
-                return BadRequest("Erro ao comunicar com a base de dados!");
-            }
+            //}
+            //catch (Exception)
+            //{
+            //    return BadRequest("Erro ao comunicar com a base de dados!");
+            //}
         }
 
     }

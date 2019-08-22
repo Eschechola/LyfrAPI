@@ -27,8 +27,8 @@ namespace APILyfr.Models
         public string DataNasc { get; set; }
         public string Senha { get; set; }
         public string Telefone { get; set; }
-        public char Plano { get; set; }
-        public char Sexo { get; set; }
+        public string Plano { get; set; }
+        public string Sexo { get; set; }
 
         public ICollection<Favoritos> Favoritos { get; set; }
         public ICollection<Historico> Historico { get; set; }

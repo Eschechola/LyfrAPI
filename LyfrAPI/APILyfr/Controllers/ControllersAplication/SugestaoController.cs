@@ -121,7 +121,7 @@ namespace LyfrAPI.Controllers
                 }
                 else
                 {
-                    return BadRequest("Erro ao comunicar com a base de dados!");
+                    return BadRequest("Nenhum registro encontrado!");
                 }
             }
             catch (Exception)

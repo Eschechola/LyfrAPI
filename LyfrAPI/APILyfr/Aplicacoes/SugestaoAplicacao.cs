@@ -77,7 +77,7 @@ namespace APILyfr.Aplicacoes
                     return null;
                 }
 
-                var sugestao = _context.Sugestao.Where(x => x.IdSugestao == idSugestao).ToList();
+                var sugestao = _context.Sugestao.Where(x => x.idSugestao == idSugestao).ToList();
                 primeiraSugestao = sugestao.FirstOrDefault();
 
 

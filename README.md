@@ -160,3 +160,125 @@ Enviar o Login via DELETE
 -------------------------------------------------------------------------------------------------
 
 </pre>
+
+<br><br><br>
+
+<strong><h1>EDITORA</h1></strong>
+
+
+<pre>
+
+
+-------------------------------------------------------------------------------------------------
+
+Inserir
+HTTP - Post
+https://lyfrapi1.herokuapp.com/api/Editora/Insert/
+
+Enviar o JSON do Model Editora via POST
+
+-------------------------------------------------------------------------------------------------
+
+Ler
+
+HTTP - Get
+https://lyfrapi1.herokuapp.com/api/Editora/GetAllEditoras
+
+Não enviar nada
+
+HTTP - POST
+https://lyfrapi1.herokuapp.com/api/Editora/GetEditoraByNome
+
+Enivar o nome da editora
+
+-------------------------------------------------------------------------------------------------
+
+Deletar
+
+HTTP - POST
+https://lyfrapi1.herokuapp.com/api/Editora/DeleteByNome
+
+Enivar o nome da editora
+
+-------------------------------------------------------------------------------------------------
+</pre>
+
+<br><br><br>
+
+<strong><h1>SUGESTÃO</h1></strong>
+
+
+<pre>
+
+
+-------------------------------------------------------------------------------------------------
+
+Inserir
+HTTP - Post
+https://lyfrapi1.herokuapp.com/api/Sugestao/Insert/
+
+Enviar o JSON do Model Sugestao via POST
+
+-------------------------------------------------------------------------------------------------
+
+Ler
+
+HTTP - Get
+https://lyfrapi1.herokuapp.com/api/Sugestao/GetAllSugestoes
+
+Não enviar nada
+
+HTTP - POST
+https://lyfrapi1.herokuapp.com/api/Sugestao/GetSugestoesById
+
+Enviar o id da sugestao
+
+HTTP - POST
+https://lyfrapi1.herokuapp.com/api/Sugestao/GetSugestoesByIdCliente
+
+Enviar o id do cliente
+
+-------------------------------------------------------------------------------------------------
+
+</pre>
+
+<br><br><br>
+
+<strong><h1>GENERO</h1></strong>
+
+
+<pre>
+
+
+-------------------------------------------------------------------------------------------------
+
+Inserir
+HTTP - Post
+https://lyfrapi1.herokuapp.com/api/Genero/Insert/
+
+Enviar o JSON do Model Genero via POST
+
+-------------------------------------------------------------------------------------------------
+
+Ler
+
+HTTP - Get
+https://lyfrapi1.herokuapp.com/api/Genero/GetAllGeneros
+
+Não enviar nada
+
+HTTP - POST
+https://lyfrapi1.herokuapp.com/api/Genero/GetGeneroByNome
+
+Enviar o nome do genero
+
+-------------------------------------------------------------------------------------------------
+
+Deletar
+
+HTTP - Delete
+https://lyfrapi1.herokuapp.com/api/Genero/DeleteByNome
+
+Enviar o nome do genero
+
+</pre>

@@ -2,6 +2,7 @@
 using APILyfr.Aplicacoes;
 using APILyfr.Context;
 using APILyfr.Models;
+using APILyfr.Models.ModelsLogin;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -20,8 +21,8 @@ namespace APILyfr.Controllers
         [Authorize]
         public IActionResult Insert([FromBody]Cliente clienteEnviado)
         {
-            //try
-            //{
+            try
+            {
                 if (clienteEnviado == null)
                 {
                     return BadRequest("Dados inválidos! Tente novamente.");
@@ -31,11 +32,11 @@ namespace APILyfr.Controllers
                     var resposta = new ClienteAplicacao(_context).Insert(clienteEnviado);
                     return Ok(resposta);
                 }
-            //}
-            //catch (Exception)
-            //{
-            //    return BadRequest("Erro ao comunicar com a base de dados!");
-            //}
+            }
+            catch (Exception)
+            {
+                return BadRequest("Erro ao comunicar com a base de dados!");
+            }
 
         }
 
@@ -119,7 +120,7 @@ namespace APILyfr.Controllers
         [HttpPost]
         [Route("GetClienteByEmail")]
         [Authorize]
-        public IActionResult GetClienteByEmail([FromBody]Cliente clienteEnviado)
+        public IActionResult GetClienteByEmail([FromBody]ClienteLogin clienteEnviado)
         {
             try
             {
@@ -158,11 +159,11 @@ namespace APILyfr.Controllers
         [HttpPost]
         [Route("GetClienteByCPF")]
         [Authorize]
-        public IActionResult GetClienteByCPF([FromBody]Cliente clienteEnviado)
+        public IActionResult GetClienteByCPF([FromBody]ClienteLogin clienteEnviado)
         {
             try
             {
-                if (clienteEnviado.Cpf == null)
+                if (clienteEnviado.Cpf == null|| clienteEnviado.Cpf == string.Empty)
                 {
                     return BadRequest("CPF inválido! Tente novamente.");
                 }

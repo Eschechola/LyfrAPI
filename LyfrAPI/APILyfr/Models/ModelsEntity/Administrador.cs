@@ -7,7 +7,7 @@ namespace APILyfr.Models
     public partial class Administrador
     {
         [Required]
-        [RegularExpression(@"\w\D*")]
+        [RegularExpression(@"\w\d*")]
         [MinLength(3)]
         [MaxLength(40)]
         public string Login { get; set; }
@@ -17,13 +17,11 @@ namespace APILyfr.Models
         [MaxLength(50)]
         public string Senha { get; set; }
 
-        [Required]
         [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*")]
         [MinLength(5)]
         [MaxLength(50)]
         public string Email { get; set; }
 
-        [Required]
         [RegularExpression(@"^\d{3}\.?\d{3}\.?\d{3}-?\d{2}$")]
         [StringLength(20)]
         public string Cpf { get; set; }

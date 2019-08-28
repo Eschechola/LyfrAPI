@@ -2,6 +2,7 @@
 using APILyfr.Aplicacoes;
 using APILyfr.Context;
 using APILyfr.Models;
+using APILyfr.Models.ModelsLogin;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -51,7 +52,7 @@ namespace LyfrAPI.Controllers
         [HttpPost]
         [Route("GetAdministrador")]
         [Authorize]
-        public IActionResult GetAdministrador([FromBody]Administrador adminEnviado)
+        public IActionResult GetAdministrador([FromBody]AdministradorLogin adminEnviado)
         {
             try
             {

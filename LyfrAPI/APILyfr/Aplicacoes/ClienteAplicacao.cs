@@ -1,11 +1,8 @@
 ﻿using APILyfr.Context;
 using APILyfr.Models;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace APILyfr.Aplicacoes
 {
@@ -20,11 +17,11 @@ namespace APILyfr.Aplicacoes
 
         public string Insert(Cliente cliente)
         {
-            //try
-            //{
+            try
+            {
                 if (cliente != null)
                 {
-                    if (GetClienteByEmail(cliente.Email)!=null)
+                    if (GetClienteByEmail(cliente.Email) != null)
                     {
                         return "Email já cadastrado na base de dados!";
                     }
@@ -44,11 +41,11 @@ namespace APILyfr.Aplicacoes
                 {
                     return "Cliente é nulo! Por - favor preencha todos os campos e tente novamente!";
                 }
-            //}
-            //catch (Exception)
-            //{
-            //    return "Não foi possível se comunicar com a base de dados!";
-            //}
+            }
+            catch (Exception)
+            {
+                return "Não foi possível se comunicar com a base de dados!";
+            }
         }
 
         public string DeleteByEmail(string email)
@@ -68,7 +65,7 @@ namespace APILyfr.Aplicacoes
                         _context.Cliente.Remove(cliente);
                         _context.SaveChanges();
 
-                        return "Cliente " + cliente.Nome +" deletado com sucesso!";
+                        return "Cliente " + cliente.Nome + " deletado com sucesso!";
                     }
                     else
                     {
@@ -155,7 +152,7 @@ namespace APILyfr.Aplicacoes
 
                 var cliente = _context.Cliente.Where(x => x.Email == email).ToList();
                 primeiroCliente = cliente.FirstOrDefault();
-                
+
 
                 if (primeiroCliente != null)
                 {
@@ -204,12 +201,12 @@ namespace APILyfr.Aplicacoes
         public List<Cliente> GetAllClientes()
         {
             List<Cliente> listaDeClientes = new List<Cliente>();
-            //try
-            //{
-                
+            try
+            {
+
                 listaDeClientes = _context.Cliente.Select(x => x).ToList();
 
-                if (listaDeClientes!=null)
+                if (listaDeClientes != null)
                 {
                     return listaDeClientes;
                 }
@@ -217,11 +214,11 @@ namespace APILyfr.Aplicacoes
                 {
                     return null;
                 }
-            //}
-            //catch (Exception)
-            //{
-            //    return null;
-            //}
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
     }
 }

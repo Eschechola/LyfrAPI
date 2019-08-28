@@ -26,13 +26,12 @@ namespace LyfrAPI.Controllers
                 {
                     return BadRequest("Dados inválidos! Tente novamente.");
                 }
+                else if (ModelState.IsValid)
+                {
+                    return BadRequest("Dados inválidos! Tente novamente.");
+                }
                 else
                 {
-                    if (editoraEnviada.Nome == "")
-                    {
-                        return BadRequest("Preencha todos os campos e tente novamente!");
-                    }
-
                     var resposta = new EditoraAplicacao(_context).Insert(editoraEnviada);
                     return Ok(resposta);
                 }

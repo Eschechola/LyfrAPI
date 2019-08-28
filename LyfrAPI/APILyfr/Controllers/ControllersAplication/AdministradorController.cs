@@ -26,6 +26,10 @@ namespace LyfrAPI.Controllers
                 {
                     return BadRequest("Dados inválidos! Tente novamente.");
                 }
+                else if (ModelState.IsValid)
+                {
+                    return BadRequest("Dados inválidos! Tente novamente.");
+                }
                 else
                 {
                     if (adminEnviado.Cpf == "" || adminEnviado.Email =="" || adminEnviado.Login == ""|| adminEnviado.Senha=="")
@@ -117,6 +121,10 @@ namespace LyfrAPI.Controllers
             try
             {
                 if (adminEnviado == null)
+                {
+                    return BadRequest("Dados inválidos! Tente novamente.");
+                }
+                else if (!ModelState.IsValid)
                 {
                     return BadRequest("Dados inválidos! Tente novamente.");
                 }

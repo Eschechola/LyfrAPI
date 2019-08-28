@@ -26,13 +26,12 @@ namespace LyfrAPI.Controllers
                 {
                     return BadRequest("Dados inválidos! Tente novamente.");
                 }
+                else if (ModelState.IsValid)
+                {
+                    return BadRequest("Dados inválidos! Tente novamente.");
+                }
                 else
                 {
-                    if (generoEnviado.Nome == "")
-                    {
-                        return BadRequest("Preencha todos os campos e tente novamente!");
-                    }
-
                     var resposta = new GeneroAplicacao(_context).Insert(generoEnviado);
                     return Ok(resposta);
                 }

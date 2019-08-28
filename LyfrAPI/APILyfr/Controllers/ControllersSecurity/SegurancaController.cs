@@ -4,6 +4,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using APILyfr.Encryption;
 using APILyfr.Models;
 using APILyfr.Models.Security;
 using Microsoft.AspNetCore.Http;
@@ -74,7 +75,16 @@ namespace APILyfr.Controllers
 
         private bool ValidarUsuario(LoginToken login)
         {
-            if (login.Usuario == "Lyfr_User123" && login.Senha == "LyfrAPI123")
+            //criptografa as credenciais que estao na appsettings.json
+            string usuarioLogiCriptografado = new Criptografia().Encrypt(_config["Autenticacao:Usuario"]);
+            string senhaLoginCriptografada = new Criptografia().Encrypt(_config["Autenticacao:Senha"]);
+
+            //criptografa os dados enviados pelo usuario
+            string usuarioEnviado = new Criptografia().Encrypt(login.Usuario);
+            string senhaEnviada = new Criptografia().Encrypt(login.Senha);
+
+            //compara pra ver se o usuario pode se autenticar
+            if (usuarioLogiCriptografado.Equals(usuarioEnviado) && senhaLoginCriptografada.Equals(senhaEnviada))
             {
                 if(login.TipoUsuario == "M" || login.TipoUsuario == "W")
                 {

@@ -20,8 +20,8 @@ namespace APILyfr.Aplicacoes
 
         public string Insert(Cliente cliente)
         {
-            try
-            {
+            //try
+            //{
                 if (cliente != null)
                 {
                     if (GetClienteByEmail(cliente.Email)!=null)
@@ -44,11 +44,11 @@ namespace APILyfr.Aplicacoes
                 {
                     return "Cliente é nulo! Por - favor preencha todos os campos e tente novamente!";
                 }
-            }
-            catch (Exception)
-            {
-                return "Não foi possível se comunicar com a base de dados!";
-            }
+            //}
+            //catch (Exception)
+            //{
+            //    return "Não foi possível se comunicar com a base de dados!";
+            //}
         }
 
         public string DeleteByEmail(string email)

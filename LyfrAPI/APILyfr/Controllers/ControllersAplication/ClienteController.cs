@@ -20,9 +20,9 @@ namespace APILyfr.Controllers
         [Authorize]
         public IActionResult Insert([FromBody]Cliente clienteEnviado)
         {
-            try
-            {
-                if (clienteEnviado==null)
+            //try
+            //{
+                if (clienteEnviado == null)
                 {
                     return BadRequest("Dados inválidos! Tente novamente.");
                 }
@@ -31,11 +31,11 @@ namespace APILyfr.Controllers
                     var resposta = new ClienteAplicacao(_context).Insert(clienteEnviado);
                     return Ok(resposta);
                 }
-            }
-            catch (Exception)
-            {
-                return BadRequest("Erro ao comunicar com a base de dados!");
-            }
+            //}
+            //catch (Exception)
+            //{
+            //    return BadRequest("Erro ao comunicar com a base de dados!");
+            //}
 
         }
 
@@ -99,6 +99,10 @@ namespace APILyfr.Controllers
                 {
                     return BadRequest("Dados inválidos! Tente novamente.");
                 }
+                else if (!ModelState.IsValid)
+                {
+                    return BadRequest("Dados inválidos! Tente novamente");
+                }
                 else
                 {
                     var resposta = new ClienteAplicacao(_context).Alter(clienteEnviado);
@@ -109,7 +113,6 @@ namespace APILyfr.Controllers
             {
                 return BadRequest("Erro ao comunicar com a base de dados!");
             }
-
         }
 
 
@@ -196,8 +199,8 @@ namespace APILyfr.Controllers
         [Authorize]
         public IActionResult GetAllClientes()
         {
-            //try
-            //{
+            try
+            {
                 var listaDeClientes = new ClienteAplicacao(_context).GetAllClientes();
 
                 if (listaDeClientes != null)
@@ -209,11 +212,11 @@ namespace APILyfr.Controllers
                 {
                     return BadRequest("Nenhum cliente cadastrado!");
                 }
-            //}
-            //catch (Exception)
-            //{
-            //    return BadRequest("Erro ao comunicar com a base de dados!");
-            //}
+            }
+            catch (Exception)
+            {
+                return BadRequest("Erro ao comunicar com a base de dados!");
+            }
         }
 
     }

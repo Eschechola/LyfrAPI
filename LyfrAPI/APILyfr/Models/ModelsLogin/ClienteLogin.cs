@@ -9,7 +9,6 @@ namespace APILyfr.Models.ModelsLogin
     public class ClienteLogin
     {
         [Required]
-        [RegularExpression(@"\w\d*")]
         public string Email { get; set; }
 
         [Required]

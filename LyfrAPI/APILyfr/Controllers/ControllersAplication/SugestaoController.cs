@@ -22,11 +22,7 @@ namespace LyfrAPI.Controllers
         {
             try
             {
-                if (sugestaoEnviada == null)
-                {
-                    return BadRequest("Dados inválidos! Tente novamente.");
-                }
-                else if (ModelState.IsValid)
+                if (!ModelState.IsValid|| sugestaoEnviada == null)
                 {
                     return BadRequest("Dados inválidos! Tente novamente.");
                 }

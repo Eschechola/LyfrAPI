@@ -3,6 +3,7 @@ using APILyfr.Aplicacoes;
 using APILyfr.Context;
 using APILyfr.Models;
 using APILyfr.Models.ModelsLogin;
+using APILyfr.Validations;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -23,21 +24,12 @@ namespace LyfrAPI.Controllers
         {
             try
             {
-                if (adminEnviado == null)
+                if (!ModelState.IsValid || adminEnviado == null)
                 {
-                    return BadRequest("Dados inválidos! Tente novamente.");
-                }
-                else if (ModelState.IsValid)
-                {
-                    return BadRequest("Dados inválidos! Tente novamente.");
+                    return BadRequest("Preencha todos os campos CORRETAMENTE e tente novamente!");
                 }
                 else
                 {
-                    if (adminEnviado.Cpf == "" || adminEnviado.Email =="" || adminEnviado.Login == ""|| adminEnviado.Senha=="")
-                    {
-                        return BadRequest("Preencha todos os campos e tente novamente!");
-                    }
-
                     var resposta = new AdministradorAplicacao(_context).Insert(adminEnviado);
                     return Ok(resposta);
                 }
@@ -56,30 +48,31 @@ namespace LyfrAPI.Controllers
         {
             try
             {
-                if (adminEnviado == null || adminEnviado.Login == "" || adminEnviado.Senha =="")
+                if (!ModelState.IsValid || adminEnviado == null)
                 {
                     return BadRequest("Login inválido! Tente novamente.");
                 }
-
-                var resposta = new AdministradorAplicacao(_context).GetAdminByLogin(adminEnviado.Login);
-
-                if (resposta != null)
+                else
                 {
-                    if (resposta.Senha != adminEnviado.Senha)
+                    var resposta = new AdministradorAplicacao(_context).GetAdminByLogin(adminEnviado.Login);
+
+                    if (resposta != null)
                     {
-                        return BadRequest("Login ou senha inválidos");
+                        if (resposta.Senha != adminEnviado.Senha)
+                        {
+                            return BadRequest("Login ou senha inválidos");
+                        }
+                        else
+                        {
+                            var clienteResposta = JsonConvert.SerializeObject(resposta);
+                            return Ok(clienteResposta);
+                        }
                     }
                     else
                     {
-                        var clienteResposta = JsonConvert.SerializeObject(resposta);
-                        return Ok(clienteResposta);
+                        return BadRequest("Administrador não cadastrado!");
                     }
                 }
-                else
-                {
-                    return BadRequest("Administrador não cadastrado!");
-                }
-
             }
             catch (Exception)
             {
@@ -121,11 +114,7 @@ namespace LyfrAPI.Controllers
         {
             try
             {
-                if (adminEnviado == null)
-                {
-                    return BadRequest("Dados inválidos! Tente novamente.");
-                }
-                else if (!ModelState.IsValid)
+                if (!ModelState.IsValid || adminEnviado == null)
                 {
                     return BadRequest("Dados inválidos! Tente novamente.");
                 }
@@ -148,7 +137,7 @@ namespace LyfrAPI.Controllers
         {
             try
             {
-                if (login == string.Empty || login == "" || login == null || string.IsNullOrWhiteSpace(login))
+                if (!new ValidationFields().ValidateLogin(login))
                 {
                     return BadRequest("Login inválido! Tente novamente.");
                 }

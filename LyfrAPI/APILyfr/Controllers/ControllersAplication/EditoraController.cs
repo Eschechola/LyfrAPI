@@ -1,6 +1,7 @@
 ﻿using APILyfr.Aplicacoes;
 using APILyfr.Context;
 using APILyfr.Models;
+using APILyfr.Validations;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -22,11 +23,7 @@ namespace LyfrAPI.Controllers
         {
             try
             {
-                if (editoraEnviada == null)
-                {
-                    return BadRequest("Dados inválidos! Tente novamente.");
-                }
-                else if (ModelState.IsValid)
+                if (!ModelState.IsValid|| editoraEnviada == null)
                 {
                     return BadRequest("Dados inválidos! Tente novamente.");
                 }
@@ -49,30 +46,31 @@ namespace LyfrAPI.Controllers
         {
             try
             {
-                if (nome == null || nome == "" || string.IsNullOrWhiteSpace(nome))
+                if (new ValidationFields().ValidateNome(nome))
                 {
                     return BadRequest("Editora inválida! Tente novamente.");
                 }
-
-                var resposta = new EditoraAplicacao(_context).GetEditoraByNome(nome);
-
-                if (resposta != null)
+                else
                 {
-                    if (resposta.Nome == "")
+                    var resposta = new EditoraAplicacao(_context).GetEditoraByNome(nome);
+
+                    if (resposta != null)
                     {
-                        return BadRequest("Nome inválido");
+                        if (resposta.Nome == "")
+                        {
+                            return BadRequest("Nome inválido");
+                        }
+                        else
+                        {
+                            var EditoraResposta = JsonConvert.SerializeObject(resposta);
+                            return Ok(EditoraResposta);
+                        }
                     }
                     else
                     {
-                        var EditoraResposta = JsonConvert.SerializeObject(resposta);
-                        return Ok(EditoraResposta);
+                        return BadRequest("Editora não cadastrado!");
                     }
                 }
-                else
-                {
-                    return BadRequest("Editora não cadastrado!");
-                }
-
             }
             catch (Exception)
             {
@@ -113,7 +111,7 @@ namespace LyfrAPI.Controllers
         {
             try
             {
-                if (nome == "" || nome == null || string.IsNullOrWhiteSpace(nome))
+                if (new ValidationFields().ValidateNome(nome))
                 {
                     return BadRequest("Nome inválido! Tente novamente.");
                 }

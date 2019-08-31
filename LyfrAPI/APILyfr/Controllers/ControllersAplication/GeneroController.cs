@@ -1,6 +1,7 @@
 ﻿using APILyfr.Aplicacoes;
 using APILyfr.Context;
 using APILyfr.Models;
+using APILyfr.Validations;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -22,11 +23,7 @@ namespace LyfrAPI.Controllers
         {
             try
             {
-                if (generoEnviado == null)
-                {
-                    return BadRequest("Dados inválidos! Tente novamente.");
-                }
-                else if (ModelState.IsValid)
+                if (ModelState.IsValid || generoEnviado == null)
                 {
                     return BadRequest("Dados inválidos! Tente novamente.");
                 }
@@ -49,28 +46,30 @@ namespace LyfrAPI.Controllers
         {
             try
             {
-                if (nome == null || nome == "" || string.IsNullOrWhiteSpace(nome))
+                if (!new ValidationFields().ValidateNome(nome))
                 {
                     return BadRequest("Gênero inválido! Tente novamente.");
                 }
-
-                var resposta = new GeneroAplicacao(_context).GetGeneroByNome(nome);
-
-                if (resposta != null)
+                else
                 {
-                    if (resposta.Nome == "")
+                    var resposta = new GeneroAplicacao(_context).GetGeneroByNome(nome);
+
+                    if (resposta != null)
                     {
-                        return BadRequest("Nome inválido");
+                        if (resposta.Nome == "")
+                        {
+                            return BadRequest("Nome inválido");
+                        }
+                        else
+                        {
+                            var generoResposta = JsonConvert.SerializeObject(resposta);
+                            return Ok(generoResposta);
+                        }
                     }
                     else
                     {
-                        var generoResposta = JsonConvert.SerializeObject(resposta);
-                        return Ok(generoResposta);
+                        return BadRequest("Genero não cadastrado!");
                     }
-                }
-                else
-                {
-                    return BadRequest("Genero não cadastrado!");
                 }
 
             }
@@ -113,7 +112,7 @@ namespace LyfrAPI.Controllers
         {
             try
             {
-                if (nome == "" || nome == null ||string.IsNullOrWhiteSpace(nome))
+                if (!new ValidationFields().ValidateNome(nome))
                 {
                     return BadRequest("Nome inválido! Tente novamente.");
                 }

@@ -13,10 +13,10 @@ namespace APILyfr.Models
 
         public int IdEditora { get; set; }
 
-        [Required]
-        [RegularExpression(@"\w\D*")]
-        [MinLength(3)]
-        [MaxLength(70)]
+        [Required(ErrorMessage = "O nome deve ser inserido.")]
+        [RegularExpression(@"\w\D*", ErrorMessage = "O nome deve conter apenas letras.")]
+        [MinLength(3, ErrorMessage = "O nome deve conter no mínimo 3 caracteres.")]
+        [MaxLength(70, ErrorMessage = "O nome deve conter no máximo 70 caracteres.")]
         public string Nome { get; set; }
 
         public ICollection<Livros> Livros { get; set; }

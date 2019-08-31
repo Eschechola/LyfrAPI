@@ -3,6 +3,7 @@ using APILyfr.Aplicacoes;
 using APILyfr.Context;
 using APILyfr.Models;
 using APILyfr.Models.ModelsLogin;
+using APILyfr.Validations;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -23,7 +24,7 @@ namespace APILyfr.Controllers
         {
             try
             {
-                if (clienteEnviado == null)
+                if (!ModelState.IsValid || clienteEnviado == null)
                 {
                     return BadRequest("Dados inválidos! Tente novamente.");
                 }
@@ -47,7 +48,7 @@ namespace APILyfr.Controllers
         {
             try
             {
-                if (email == string.Empty || email == "" || email == null || string.IsNullOrWhiteSpace(email))
+                if (!new ValidationFields().ValidateEmail(email))
                 {
                     return BadRequest("Email inválido! Tente novamente.");
                 }
@@ -72,7 +73,7 @@ namespace APILyfr.Controllers
 
             try
             {
-                if (CPF == string.Empty || CPF == "" || CPF == null || string.IsNullOrWhiteSpace(CPF))
+                if (!new ValidationFields().ValidateCpf(CPF))
                 {
                     return BadRequest("CPF inválido! Tente novamente.");
                 }
@@ -96,11 +97,7 @@ namespace APILyfr.Controllers
         {
             try
             {
-                if (clienteEnviado == null)
-                {
-                    return BadRequest("Dados inválidos! Tente novamente.");
-                }
-                else if (!ModelState.IsValid)
+                if (!ModelState.IsValid || clienteEnviado == null)
                 {
                     return BadRequest("Dados inválidos! Tente novamente");
                 }
@@ -124,30 +121,31 @@ namespace APILyfr.Controllers
         {
             try
             {
-                if (clienteEnviado.Email == null)
+                if (!new ValidationFields().ValidateEmail(clienteEnviado.Email) || clienteEnviado.Email == null)
                 {
                     return BadRequest("Email inválido! Tente novamente.");
                 }
-
-                var resposta = new ClienteAplicacao(_context).GetClienteByEmail(clienteEnviado.Email);
-
-                if (resposta != null)
+                else
                 {
-                    if (resposta.Senha != clienteEnviado.Senha)
+                    var resposta = new ClienteAplicacao(_context).GetClienteByEmail(clienteEnviado.Email);
+
+                    if (resposta != null)
                     {
-                        return BadRequest("Login e/ou senha inválidos");
+                        if (resposta.Senha != clienteEnviado.Senha)
+                        {
+                            return BadRequest("Login e/ou senha inválidos");
+                        }
+                        else
+                        {
+                            var clienteResposta = JsonConvert.SerializeObject(resposta);
+                            return Ok(clienteResposta);
+                        }
                     }
                     else
                     {
-                        var clienteResposta = JsonConvert.SerializeObject(resposta);
-                        return Ok(clienteResposta);
+                        return BadRequest("Cliente não cadastrado!");
                     }
                 }
-                else
-                {
-                    return BadRequest("Cliente não cadastrado!");
-                }
-
             }
             catch (Exception)
             {
@@ -163,30 +161,31 @@ namespace APILyfr.Controllers
         {
             try
             {
-                if (clienteEnviado.Cpf == null|| clienteEnviado.Cpf == string.Empty)
+                if (!new ValidationFields().ValidateCpf(clienteEnviado.Cpf) || clienteEnviado.Cpf == null)
                 {
                     return BadRequest("CPF inválido! Tente novamente.");
                 }
-
-                var resposta = new ClienteAplicacao(_context).GetClienteByCPF(clienteEnviado.Cpf);
-
-                if (resposta != null)
+                else
                 {
-                    if (resposta.Senha != clienteEnviado.Senha)
+                    var resposta = new ClienteAplicacao(_context).GetClienteByCPF(clienteEnviado.Cpf);
+
+                    if (resposta != null)
                     {
-                        return BadRequest("Login e/ou senha inválidos");
+                        if (resposta.Senha != clienteEnviado.Senha)
+                        {
+                            return BadRequest("Login e/ou senha inválidos");
+                        }
+                        else
+                        {
+                            var clienteResposta = JsonConvert.SerializeObject(resposta);
+                            return Ok(clienteResposta);
+                        }
                     }
                     else
                     {
-                        var clienteResposta = JsonConvert.SerializeObject(resposta);
-                        return Ok(clienteResposta);
+                        return BadRequest("Cliente não cadastrado!");
                     }
                 }
-                else
-                {
-                    return BadRequest("Cliente não cadastrado!");
-                }
-
             }
             catch (Exception)
             {

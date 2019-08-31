@@ -8,10 +8,9 @@ namespace APILyfr.Models.ModelsLogin
 {
     public class ClienteLogin
     {
-        [Required]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "A senha deve ser inserida")]
         public string Senha { get; set; }
 
         public string Cpf { get; set; }

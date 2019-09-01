@@ -113,9 +113,9 @@ namespace LyfrAPI.Controllers
         }
 
         [HttpPut]
-        [Route("Alter")]
+        [Route("Update")]
         [Authorize]
-        public IActionResult Alter([FromBody]Administrador adminEnviado)
+        public IActionResult Update([FromBody]Administrador adminEnviado)
         {
             try
             {
@@ -125,7 +125,7 @@ namespace LyfrAPI.Controllers
                 }
                 else
                 {
-                    var resposta = new AdministradorAplicacao(_context).Alter(adminEnviado);
+                    var resposta = new AdministradorAplicacao(_context).Update(adminEnviado);
                     return Ok(resposta);
                 }
             }

@@ -110,7 +110,7 @@ namespace LyfrAPI.Aplicacoes
             }
         }
 
-        public string Alter(Cliente cliente)
+        public string Update(Cliente cliente)
         {
             try
             {

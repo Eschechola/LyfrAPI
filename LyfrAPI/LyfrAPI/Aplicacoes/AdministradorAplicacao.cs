@@ -127,7 +127,7 @@ namespace LyfrAPI.Aplicacoes
             }
         }
 
-        public string Alter(Administrador administrador)
+        public string Update(Administrador administrador)
         {
             try
             {

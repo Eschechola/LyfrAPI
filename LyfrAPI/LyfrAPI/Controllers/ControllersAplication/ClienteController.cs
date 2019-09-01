@@ -96,9 +96,9 @@ namespace LyfrAPI.Controllers
         }
 
         [HttpPut]
-        [Route("Alter")]
+        [Route("Update")]
         [Authorize]
-        public IActionResult Alter([FromBody]Cliente clienteEnviado)
+        public IActionResult Update([FromBody]Cliente clienteEnviado)
         {
             try
             {
@@ -108,7 +108,7 @@ namespace LyfrAPI.Controllers
                 }
                 else
                 {
-                    var resposta = new ClienteAplicacao(_context).Alter(clienteEnviado);
+                    var resposta = new ClienteAplicacao(_context).Update(clienteEnviado);
                     return Ok(resposta);
                 }
             }

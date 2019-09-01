@@ -62,7 +62,7 @@ Enviar o JSON do Model Cliente via POST
 
 Alterar
 HTTP - PUT
-https://lyfrapi1.herokuapp.com/api/Cliente/Alter/
+https://lyfrapi1.herokuapp.com/api/Cliente/Update/
 
 Enviar o JSON do Model Cliente via PUT (Com os dados ja alterados)
 
@@ -129,7 +129,7 @@ Enviar o JSON do Model Administrador via POST
 
 Alterar
 HTTP - PUT
-https://lyfrapi1.herokuapp.com/api/Administrador/Alter/
+https://lyfrapi1.herokuapp.com/api/Administrador/Update/
 
 
 Enviar o JSON do Model Administrador via PUT

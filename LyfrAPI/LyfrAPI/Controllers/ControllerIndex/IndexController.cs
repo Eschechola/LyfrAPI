@@ -10,8 +10,6 @@ namespace LyfrAPI.Controllers
     {
         public string Index()
         {
-            //new EmailMessages().WelcomeEmail("lucas.eschechola@outlook.com");
-            //new EmailMessages().WelcomeEmail("lucas.eschechola@gmail.com");
             return "Index";
         }
     }

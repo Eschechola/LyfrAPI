@@ -1,4 +1,5 @@
 ﻿using LyfrAPI.Context;
+using LyfrAPI.Emails.Functions;
 using LyfrAPI.Models;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace LyfrAPI.Aplicacoes
             try
             {
                 if (cliente != null)
-                {
+                {   
                     if (GetClienteByEmail(cliente.Email) != null)
                     {
                         return "Email já cadastrado na base de dados!";
@@ -33,6 +34,9 @@ namespace LyfrAPI.Aplicacoes
                     {
                         _context.Add(cliente);
                         _context.SaveChanges();
+
+                        //chama a função que irá enviar um email de boas vindas
+                        new EmailMessages().WelcomeEmail(cliente.Email);
 
                         return "Cliente cadastrado com sucesso!";
                     }

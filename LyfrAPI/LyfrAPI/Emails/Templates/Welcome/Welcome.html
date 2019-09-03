@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<head>
+    <title>Seja bem - vindo ao Lyfr!</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300&display=swap" rel="stylesheet">
+	<meta charset="utf8">
+    <style>
+
+        *{
+            margin:0;
+            padding: 0;
+        }
+
+        html{
+            overflow-x: hidden;
+        }
+
+        .content{
+            background-color: #436477;
+            width: 100vw;
+            height: 210%;
+            max-width: 1920px;
+            position: absolute;
+        }
+
+        .content-description{
+            width: 600px;
+            height: 940px;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            position: relative;
+        }
+
+        .logo{
+            width: 100%;
+            height: 120px;
+            margin-top: 2%;
+            position: relative;
+            border-bottom: 2px dotted white;
+        }
+
+        .logo-icon{
+            width: 20%;
+            height: 100%;
+            position: relative;
+            float: left;
+        }
+
+        .logo-icon img{
+            width: 80%;
+            margin-left: 50%;
+            margin-top: 10%;
+            transform: translateX(-50%);
+        }
+
+        .logo-text{
+            width: 79%;
+            height: 100%;
+            float: left;
+        }
+
+        .logo-text h2{
+            font-size: 35px;
+            color:white;
+            margin-left: 5%;
+            font-family: Ubuntu;
+        }
+
+        .logo-text p{
+            color:white;
+            margin-top: 1%;
+            margin-left: 5%;
+            font-size: 30px;
+            font-family: Ubuntu;
+        }
+
+        .description-app{
+            width: 100%;
+            height: 420px;
+            position: relative;
+            margin-top: 10%;
+        }
+
+        .description-app-text{
+            width: 60%;
+            height: 100%;
+            float: right;
+        }
+
+        .description-app-image{
+            width: 39%;
+            height: 100%;
+            float: right;
+        }
+
+        .description-app-image img{
+            width: 85%;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            margin-top: -2%;
+        }
+
+        .description-app-text h2{
+            color: white;
+            font-family: Ubuntu;
+            position: relative;
+            margin-top: 4%;
+            margin-left: 8%;
+            font-size: 25px;
+            line-height: 35px;
+        }
+
+        .description-app-text p{
+            color: white;
+            font-family: Ubuntu;
+            position: relative;
+            margin-top: 4%;
+            margin-left: 8%;
+            font-size: 20px;
+            line-height: 28px;
+        }
+
+        .available{
+            color: lightgray;
+            font-size: 15px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .content-rodape{
+            width: 100%;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            height: 350px;
+            margin-top: 10%;
+            position: relative;
+            border-top: 2px dotted white;
+        }
+
+        .image-rodape{
+            width: 50%;
+            height: 100%;
+            float: left;
+        }
+
+        .content-rodape-image{
+            width: 100%;
+            height: 80%;
+        }
+
+
+        .content-rodape-image img{
+            width: 70%;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            margin-top: 10%;
+        }
+
+        .text-rodape{
+            width: 100%;
+        }
+
+        .text-rodape p{
+            color: lightgray;
+            font-size: 20px;
+            font-family: Ubuntu;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        .text-rodape button{
+            width: 80%;
+            padding: 8px;
+            border-radius: 3px;
+            border: none;
+            background-color: white;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            cursor: pointer;
+            font-size: 20px;
+            color: #436477;
+            outline: 0;
+        }
+
+        .copyright{
+            width: 100%;
+            height: 150px;
+            position: relative;
+            margin-top: 25%;
+        }
+
+        .copyright p{
+            color: white;
+            font-family: Ubuntu;
+            margin-left: 53%;
+            transform: translateX(-50%);
+            width: 55%;
+            margin-top: 0%;
+            font-size: 16px;
+            line-height: 40px;
+        }
+
+        #p2{
+            width: 80%;
+            text-align: center;
+            font-size: 22px;
+            margin-left: 50%;  
+        }
+
+        @media only screen and (max-width: 1000px) {
+            html{
+                background-color: #436477;
+                height: 5500px;
+            }
+
+
+            .content{
+                width: 100vw;
+                margin-left: 50%;
+                transform: translateX(-20%);
+            }
+
+            .content-description{
+                width: 100%;    
+            }
+
+            .logo{
+                margin-top: 5%;
+                width: 100% !important;
+                height: 350px;
+                border-bottom: 15px dotted white;
+            }
+
+            .logo-icon{
+                width: 30%;                
+            }
+
+            .logo-text{
+                width: 50%;
+            }
+
+            .logo-text h2{
+                font-size: 100px;
+            } 
+
+            .logo-text p{
+                font-size: 90px;
+            }
+
+            .description-app-image{
+                margin-top: 15%;
+                width: 100%;
+                height: 1800px;
+            }
+
+            .description-app-text{
+                width: 100% !important;
+                position: relative;
+                line-height: 50px;
+                height: 1200px;
+            }
+
+            .description-app-text h2{
+                height: 300px !important;
+                font-size: 100px;
+                width: 100% !important;
+                text-align: center;
+                margin-left: 0;
+                line-height: 100px;
+
+            }
+
+            .description-app-text p{
+                font-size: 80px;
+                line-height: 100px;
+            }
+
+            .content-rodape{
+                margin-top: 330% !important;
+                position: absolute;
+                border-top: 15px dotted white;
+            }
+            
+            .image-rodape{
+                width: 100%;
+                margin-top: 10%;
+                height: 1350px;;
+                border: 1px solid white;
+            }
+
+            .text-rodape p{
+                margin-top: -15%;
+                font-size: 80px;
+            }
+
+            .text-rodape button{
+                font-size: 90px;
+                margin-top: 5%;
+            }
+
+            .available{
+                font-size: 50px;
+            }
+
+            #p2{
+                margin-top: 650%;
+                font-size: 70px;
+                line-height: 90px;
+                width: 100%;
+            }
+
+            .copyright p{
+                font-size: 50px;
+                line-height: 100px;
+                margin-top: 60%;
+                width: 100%;
+                text-align: center;
+            }      
+        }
+    </style>
+
+</head>
+<body>
+    <div class="content">
+        <div class="content-description">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="https://i.ibb.co/61wMdP9/Icon-Lyfr3.png" alt="logo">
+                </div>
+
+                <div class="logo-text">
+                    <br>
+                    <h2>Lyfr</h2>
+                    <p>Bookstream</p>
+                </div>
+            </div>
+
+            <div class="description-app">
+                <div class="description-app-image">
+                    <img src="https://ap.imagensbrasil.org/images/2019/08/28/Print_Smart-1.png" alt="Print-Smart-1">
+                </div>
+
+                <div class="description-app-text">
+                    <h2>UMA BIBLIOTECA DENTRO DO SEU BOLSO.</h2>
+
+                    <br>
+
+                    <p>
+                            <strong>Bem-vindo ao Lyfr.</strong>
+                            <br>
+                            <br> 
+
+                            Agradecemos sua inscrição, <strong>você acaba de receber 1 hora de leitura gratuita</strong>
+                            como presente de boas vindas.
+                            
+                            <br>
+                            <br>
+                            
+                            Aproveite nosso acervo de livros!
+
+                            <br>
+                            <span class="available">Disponível para Android e na Web.</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="content-rodape">
+                <div class="image-rodape">
+                    <div class="content-rodape-image">
+                        <img src="https://i.ibb.co/B2LtStQ/classroom-pc-1.png" alt="computador">
+                    </div>
+
+                    <div class="text-rodape">
+                        <p>Disponível para Web</p>
+                        <br>
+                        <button>Site</button>
+                    </div>
+                </div>
+
+                <div class="image-rodape">
+                    <div class="content-rodape-image">
+                        <img src="https://i.ibb.co/601r4nW/smartphone-1.png" alt="celular">
+                    </div>
+
+                    <div class="text-rodape">
+                        <p>Disponível para Android</p>
+                        <br>
+                        <button>Baixar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p id="p2"><strong>Em caso de dúvidas ou problemas estamos a disposição: contato.lyfr@gmail.com</strong></p>
+                <br><br><br>
+
+                <p>Endeavour Ⓒ Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </div>
+</body>

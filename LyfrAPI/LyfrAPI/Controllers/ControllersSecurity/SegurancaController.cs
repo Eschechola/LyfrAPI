@@ -25,7 +25,7 @@ namespace APILyfr.Controllers
         }
 
         [HttpPost]
-        [Route("LoginAPI")]
+        [Route("Login")]
         public IActionResult Login([FromBody]LoginToken login)
         {
             //verifica se o usuario tem uma credencial válida

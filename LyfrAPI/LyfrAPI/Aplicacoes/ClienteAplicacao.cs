@@ -33,10 +33,15 @@ namespace LyfrAPI.Aplicacoes
                     else
                     {
                         _context.Add(cliente);
-                        _context.SaveChanges();
 
-                        //chama a função que irá enviar um email de boas vindas
-                        new EmailMessages().WelcomeEmail(cliente.Email);
+                        //retorna 0 quando nao consegue inserir
+                        var sucesso = _context.SaveChanges();
+
+                        if (sucesso > 0)
+                        {
+                            //chama a função que irá enviar um email de boas vindas
+                            new EmailMessages().WelcomeEmail(cliente.Email);
+                        }
 
                         return "Cliente cadastrado com sucesso!";
                     }
@@ -221,7 +226,29 @@ namespace LyfrAPI.Aplicacoes
             }
             catch (Exception)
             {
-                throw new Exception();
+                return null;
+            }
+        }
+
+        public string ForgotPassword(string emailCliente)
+        {
+            try
+            {
+                var cliente = GetClienteByEmail(emailCliente.ToLower());
+
+                if (cliente != null)
+                {
+                    var resposta = new EmailMessages().UpdatePasswordEmail(cliente.Email, cliente.Senha);
+                    return resposta;
+                }
+                else
+                {
+                    return "Cliente não encontrado!";
+                }
+            }
+            catch (Exception)
+            {
+                return "Não foi possível se comunicar com a base de dados!";
             }
         }
     }

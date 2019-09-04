@@ -74,9 +74,7 @@ namespace LyfrAPI.Models
         [StringLength(1, ErrorMessage = "O plano só pode ser 'P' ou 'G'")]
         public string Plano { get; set; }
 
-        [Required(ErrorMessage = "O sexo deve ser inserido.")]
-        [StringLength(1, ErrorMessage = "O sexo só pode ser 'M', 'F' ou 'O'.")]
-        public string Sexo { get; set; }
+        public string DataDeCadastro { get; set; }
 
         public ICollection<Favoritos> Favoritos { get; set; }
         public ICollection<Historico> Historico { get; set; }

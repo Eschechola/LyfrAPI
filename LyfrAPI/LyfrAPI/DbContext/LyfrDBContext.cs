@@ -29,14 +29,6 @@ namespace LyfrAPI.Context
         public virtual DbSet<Paginasmarcadas> Paginasmarcadas { get; set; }
         public virtual DbSet<Sugestao> Sugestao { get; set; }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    if (!optionsBuilder.IsConfigured)
-        //    {
-        //         optionsBuilder.UseMySql("Server=db4free.net;Database=lyfr_db;Uid=lyfr_user;Pwd=1234abcd;");
-        //    }
-        //}
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Administrador>(entity =>
@@ -119,9 +111,9 @@ namespace LyfrAPI.Context
 
                 entity.Property(e => e.Telefone).HasColumnType("varchar(20)");
 
-                entity.Property(e => e.Sexo).HasColumnType("char(1)");
-
                 entity.Property(e => e.Plano).HasColumnType("char(1)");
+
+                entity.Property(e => e.DataDeCadastro).HasColumnType("Data_Cadastro");
             });
 
             modelBuilder.Entity<Editora>(entity =>
@@ -269,8 +261,8 @@ namespace LyfrAPI.Context
                     .HasColumnName("Id_Livro")
                     .HasColumnType("int(11)");
 
-                entity.Property(e => e.AnoNasc)
-                    .HasColumnName("Ano_Nasc")
+                entity.Property(e => e.AnoLancamento)
+                    .HasColumnName("Ano_Lance")
                     .HasColumnType("varchar(30)");
 
                 entity.Property(e => e.Arquivo).HasColumnType("varchar(200)");

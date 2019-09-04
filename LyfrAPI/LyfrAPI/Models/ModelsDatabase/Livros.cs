@@ -17,7 +17,7 @@ namespace LyfrAPI.Models
         public string Titulo { get; set; }
         public int? FkAutor { get; set; }
         public int? FkEditora { get; set; }
-        public string AnoNasc { get; set; }
+        public string AnoLancamento { get; set; }
         public string Genero { get; set; }
         public string Sinopse { get; set; }
         public string Capa { get; set; }

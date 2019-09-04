@@ -32,8 +32,11 @@ namespace LyfrAPI.Aplicacoes
                     }
                     else
                     {
+                        //atribui a data atual na variavel data de cadastro
+                        cliente.DataDeCadastro = DateTime.Now.AddHours(-1).ToString();
+                        //
                         _context.Add(cliente);
-
+                        //
                         //retorna 0 quando nao consegue inserir
                         var sucesso = _context.SaveChanges();
 
@@ -51,9 +54,9 @@ namespace LyfrAPI.Aplicacoes
                     return "Cliente é nulo! Por - favor preencha todos os campos e tente novamente!";
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return "Não foi possível se comunicar com a base de dados!";
+                return ex.ToString();
             }
         }
 

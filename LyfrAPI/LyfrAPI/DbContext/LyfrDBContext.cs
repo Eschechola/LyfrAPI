@@ -113,7 +113,7 @@ namespace LyfrAPI.Context
 
                 entity.Property(e => e.Plano).HasColumnType("char(1)");
 
-                entity.Property(e => e.DataDeCadastro).HasColumnType("Data_Cadastro");
+                entity.Property(e => e.Data_Cadastro).HasColumnType("varchar(30)");
             });
 
             modelBuilder.Entity<Editora>(entity =>

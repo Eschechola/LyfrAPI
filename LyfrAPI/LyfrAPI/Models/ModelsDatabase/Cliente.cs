@@ -74,7 +74,7 @@ namespace LyfrAPI.Models
         [StringLength(1, ErrorMessage = "O plano só pode ser 'P' ou 'G'")]
         public string Plano { get; set; }
 
-        public string DataDeCadastro { get; set; }
+        public string Data_Cadastro { get; set; }
 
         public ICollection<Favoritos> Favoritos { get; set; }
         public ICollection<Historico> Historico { get; set; }

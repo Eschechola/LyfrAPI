@@ -7,7 +7,7 @@ namespace LyfrAPI.Models
     public partial class Administrador
     {
         [Required(ErrorMessage = "O login deve ser inserido.")]
-        [RegularExpression(@"\w\d*", ErrorMessage = "O login deve conter apenas letras e números")]
+        [RegularExpression(@"\w*", ErrorMessage = "O login deve conter apenas letras e números")]
         [MinLength(3, ErrorMessage = "O nome deve conter no mínimo 3 caracteres")]
         [MaxLength(40, ErrorMessage = "O nome deve conter no máximo 40 caracteres")]
         public string Login { get; set; }

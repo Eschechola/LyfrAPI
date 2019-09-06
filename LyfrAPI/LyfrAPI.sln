@@ -5,6 +5,20 @@ VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LyfrAPI", "LyfrAPI\LyfrAPI.csproj", "{A903ED51-B8EC-4C1C-AF6A-FE55552EF222}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LyfrAPI.Models", "LyfrAPI.Models\LyfrAPI.Models.csproj", "{F67136F4-6C77-4D47-A951-303E1137691D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LyfrAPI.Aplicacoes", "LyfrAPI.Aplicacoes\LyfrAPI.Aplicacoes.csproj", "{0A07CC07-3A79-424A-AC9A-EACB62DFC88B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LyfrAPI.Context", "LyfrAPI.Context\LyfrAPI.Context.csproj", "{F245E04C-D639-4948-BDD6-EB939E3F7105}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LyfrAPI.Encryption", "LyfrAPI.Encryption\LyfrAPI.Encryption.csproj", "{1CDB2093-63EF-49F5-AE4B-ED1A69E49C76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LyfrAPI.Emails", "LyfrAPI.Emails\LyfrAPI.Emails.csproj", "{4429785D-547E-401C-BEB1-CA3B4BE64C17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LyfrAPI.Validations", "LyfrAPI.Validations\LyfrAPI.Validations.csproj", "{DE2C9F30-1305-499B-B384-BCE565D5FD5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LyfrAPI.Files", "LyfrAPI.Files\LyfrAPI.Files.csproj", "{FDDC95A2-1C43-4118-AE2D-F6211E85E646}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +29,34 @@ Global
 		{A903ED51-B8EC-4C1C-AF6A-FE55552EF222}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A903ED51-B8EC-4C1C-AF6A-FE55552EF222}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A903ED51-B8EC-4C1C-AF6A-FE55552EF222}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F67136F4-6C77-4D47-A951-303E1137691D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F67136F4-6C77-4D47-A951-303E1137691D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F67136F4-6C77-4D47-A951-303E1137691D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F67136F4-6C77-4D47-A951-303E1137691D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A07CC07-3A79-424A-AC9A-EACB62DFC88B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A07CC07-3A79-424A-AC9A-EACB62DFC88B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A07CC07-3A79-424A-AC9A-EACB62DFC88B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A07CC07-3A79-424A-AC9A-EACB62DFC88B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F245E04C-D639-4948-BDD6-EB939E3F7105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F245E04C-D639-4948-BDD6-EB939E3F7105}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F245E04C-D639-4948-BDD6-EB939E3F7105}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F245E04C-D639-4948-BDD6-EB939E3F7105}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CDB2093-63EF-49F5-AE4B-ED1A69E49C76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CDB2093-63EF-49F5-AE4B-ED1A69E49C76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CDB2093-63EF-49F5-AE4B-ED1A69E49C76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CDB2093-63EF-49F5-AE4B-ED1A69E49C76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4429785D-547E-401C-BEB1-CA3B4BE64C17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4429785D-547E-401C-BEB1-CA3B4BE64C17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4429785D-547E-401C-BEB1-CA3B4BE64C17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4429785D-547E-401C-BEB1-CA3B4BE64C17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE2C9F30-1305-499B-B384-BCE565D5FD5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE2C9F30-1305-499B-B384-BCE565D5FD5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE2C9F30-1305-499B-B384-BCE565D5FD5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE2C9F30-1305-499B-B384-BCE565D5FD5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDDC95A2-1C43-4118-AE2D-F6211E85E646}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDDC95A2-1C43-4118-AE2D-F6211E85E646}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDDC95A2-1C43-4118-AE2D-F6211E85E646}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDDC95A2-1C43-4118-AE2D-F6211E85E646}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

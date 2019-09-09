@@ -13,7 +13,7 @@ namespace LyfrAPI.Emails.Functions
     public class EmailMessages
     {
 
-        public bool WelcomeEmail(string emailCliente)
+        public bool WelcomeEmail(string emailCliente, string nomeCliente)
         {
             try
             {
@@ -23,7 +23,7 @@ namespace LyfrAPI.Emails.Functions
                     ClienteEmail = emailCliente,
                     AssuntoEmail = "Seja bem - vindo ao Lyfr",
                     //variavel vai ate o arquivo.html, lê todo o conteúdo e retorna em formato de texto
-                    ConteudoEmail = System.IO.File.ReadAllText(@"../LyfrAPI/Emails/Templates/Welcome/Welcome.html")
+                    ConteudoEmail = String.Format(System.IO.File.ReadAllText(@"../LyfrAPI/Emails/Templates/Welcome/Welcome.html"), nomeCliente)
                 };
 
                 var sucesso = SendEmail(email);

@@ -43,7 +43,7 @@ namespace LyfrAPI.Aplicacoes
                         if (sucesso > 0)
                         {
                             //chama a função que irá enviar um email de boas vindas
-                            new EmailMessages().WelcomeEmail(cliente.Email);
+                            new EmailMessages().WelcomeEmail(cliente.Email, cliente.Nome);
                         }
 
                         return "Cliente cadastrado com sucesso!";

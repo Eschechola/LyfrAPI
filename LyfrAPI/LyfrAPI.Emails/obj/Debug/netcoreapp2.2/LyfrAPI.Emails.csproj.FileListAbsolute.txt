@@ -10,3 +10,15 @@ C:\Users\Lucas\Desktop\Git\LyfrAPI\LyfrAPI\LyfrAPI.Emails\obj\Debug\netcoreapp2.
 C:\Users\Lucas\Desktop\Git\LyfrAPI\LyfrAPI\LyfrAPI.Emails\obj\Debug\netcoreapp2.2\LyfrAPI.Emails.csproj.CopyComplete
 C:\Users\Lucas\Desktop\Git\LyfrAPI\LyfrAPI\LyfrAPI.Emails\obj\Debug\netcoreapp2.2\LyfrAPI.Emails.dll
 C:\Users\Lucas\Desktop\Git\LyfrAPI\LyfrAPI\LyfrAPI.Emails\obj\Debug\netcoreapp2.2\LyfrAPI.Emails.pdb
+C:\Users\CTTarde\Desktop\LyfrAPI\LyfrAPI\LyfrAPI.Emails\bin\Debug\netcoreapp2.2\LyfrAPI.Emails.deps.json
+C:\Users\CTTarde\Desktop\LyfrAPI\LyfrAPI\LyfrAPI.Emails\bin\Debug\netcoreapp2.2\LyfrAPI.Emails.dll
+C:\Users\CTTarde\Desktop\LyfrAPI\LyfrAPI\LyfrAPI.Emails\bin\Debug\netcoreapp2.2\LyfrAPI.Emails.pdb
+C:\Users\CTTarde\Desktop\LyfrAPI\LyfrAPI\LyfrAPI.Emails\bin\Debug\netcoreapp2.2\LyfrAPI.Models.dll
+C:\Users\CTTarde\Desktop\LyfrAPI\LyfrAPI\LyfrAPI.Emails\bin\Debug\netcoreapp2.2\LyfrAPI.Models.pdb
+C:\Users\CTTarde\Desktop\LyfrAPI\LyfrAPI\LyfrAPI.Emails\obj\Debug\netcoreapp2.2\LyfrAPI.Emails.csprojAssemblyReference.cache
+C:\Users\CTTarde\Desktop\LyfrAPI\LyfrAPI\LyfrAPI.Emails\obj\Debug\netcoreapp2.2\LyfrAPI.Emails.csproj.CoreCompileInputs.cache
+C:\Users\CTTarde\Desktop\LyfrAPI\LyfrAPI\LyfrAPI.Emails\obj\Debug\netcoreapp2.2\LyfrAPI.Emails.AssemblyInfoInputs.cache
+C:\Users\CTTarde\Desktop\LyfrAPI\LyfrAPI\LyfrAPI.Emails\obj\Debug\netcoreapp2.2\LyfrAPI.Emails.AssemblyInfo.cs
+C:\Users\CTTarde\Desktop\LyfrAPI\LyfrAPI\LyfrAPI.Emails\obj\Debug\netcoreapp2.2\LyfrAPI.Emails.csproj.CopyComplete
+C:\Users\CTTarde\Desktop\LyfrAPI\LyfrAPI\LyfrAPI.Emails\obj\Debug\netcoreapp2.2\LyfrAPI.Emails.dll
+C:\Users\CTTarde\Desktop\LyfrAPI\LyfrAPI\LyfrAPI.Emails\obj\Debug\netcoreapp2.2\LyfrAPI.Emails.pdb

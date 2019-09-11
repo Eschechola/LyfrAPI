@@ -7,6 +7,7 @@ using LyfrAPI.Validations;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace LyfrAPI.Controllers
 {
@@ -46,7 +47,6 @@ namespace LyfrAPI.Controllers
             {
                 return BadRequest("Erro ao comunicar com a base de dados!");
             }
-
         }
 
         [HttpDelete]
@@ -159,7 +159,6 @@ namespace LyfrAPI.Controllers
             {
                 return BadRequest("Erro ao comunicar com a base de dados!");
             }
-
         }
 
         [HttpPost]
@@ -205,11 +204,12 @@ namespace LyfrAPI.Controllers
         [HttpGet]
         [Route("GetAllClientes")]
         [Authorize]
-        public IActionResult GetAllClientes()
+        public IActionResult GetAllClientes(int numeroDeClientes = 0)
         {
             try
             {
-                var listaDeClientes = new ClienteAplicacao(_context).GetAllClientes();
+                
+                var listaDeClientes = new ClienteAplicacao(_context).GetAllClientes(numeroDeClientes);
 
                 if (listaDeClientes != null)
                 {

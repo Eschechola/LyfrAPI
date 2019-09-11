@@ -15,3 +15,4 @@ C:\Users\CTTarde\Desktop\LyfrAPI\LyfrAPI\LyfrAPI.Encryption\obj\Debug\netcoreapp
 C:\Users\CTTarde\Desktop\LyfrAPI\LyfrAPI\LyfrAPI.Encryption\obj\Debug\netcoreapp2.2\LyfrAPI.Encryption.AssemblyInfo.cs
 C:\Users\CTTarde\Desktop\LyfrAPI\LyfrAPI\LyfrAPI.Encryption\obj\Debug\netcoreapp2.2\LyfrAPI.Encryption.dll
 C:\Users\CTTarde\Desktop\LyfrAPI\LyfrAPI\LyfrAPI.Encryption\obj\Debug\netcoreapp2.2\LyfrAPI.Encryption.pdb
+C:\Users\Lucas\Desktop\Git\LyfrAPI\LyfrAPI\LyfrAPI.Encryption\obj\Debug\netcoreapp2.2\LyfrAPI.Encryption.csprojAssemblyReference.cache

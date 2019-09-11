@@ -56,7 +56,7 @@ namespace LyfrAPI.Aplicacoes
             }
             catch (Exception ex)
             {
-                return ex.ToString();
+                return "Não foi possível se comunicar com a base de dados!";
             }
         }
 
@@ -210,7 +210,7 @@ namespace LyfrAPI.Aplicacoes
             }
         }
 
-        public List<Cliente> GetAllClientes()
+        public List<Cliente> GetAllClientes(int numeroDeClientes = 0)
         {
             List<Cliente> listaDeClientes = new List<Cliente>();
             try
@@ -220,7 +220,29 @@ namespace LyfrAPI.Aplicacoes
 
                 if (listaDeClientes != null)
                 {
-                    return listaDeClientes;
+                    //caso o numero passado for igual a 0 ele vai retornar todos
+                    if (numeroDeClientes != 0)
+                    {
+                        //lista auxiliar caso tenha sido passado uma limitação, por exemplo retornar os 5 ou os 6 ultimos clientes
+                        var listaDeClientesComNumeroDeClientes = new List<Cliente>();
+
+                        //contador ja começa com o número do ultimo cliente da lista
+                        int indiceUltimoCliente = listaDeClientes.Count - 1;
+                        //contador para se comparar com o número passado
+                        int i = 0;
+                        while (i < numeroDeClientes)
+                        {
+                            listaDeClientesComNumeroDeClientes.Add(listaDeClientes[indiceUltimoCliente]);
+                            indiceUltimoCliente--;
+                            i++;
+                        }
+
+                        return listaDeClientesComNumeroDeClientes;
+                    }
+                    else
+                    {
+                        return listaDeClientes;
+                    }
                 }
                 else
                 {

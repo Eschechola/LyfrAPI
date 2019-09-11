@@ -686,25 +686,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\CTTarde\\.nuget\\packages\\": {},
+    "C:\\Users\\Lucas\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Encryption\\LyfrAPI.Encryption.csproj",
+      "projectUniqueName": "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Encryption\\LyfrAPI.Encryption.csproj",
       "projectName": "LyfrAPI.Encryption",
-      "projectPath": "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Encryption\\LyfrAPI.Encryption.csproj",
-      "packagesPath": "C:\\Users\\CTTarde\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Encryption\\obj\\",
+      "projectPath": "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Encryption\\LyfrAPI.Encryption.csproj",
+      "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Encryption\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\CTTarde\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],

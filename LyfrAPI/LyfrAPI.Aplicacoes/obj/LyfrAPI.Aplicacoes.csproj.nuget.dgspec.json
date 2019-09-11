@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Aplicacoes\\LyfrAPI.Aplicacoes.csproj": {}
+    "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Aplicacoes\\LyfrAPI.Aplicacoes.csproj": {}
   },
   "projects": {
-    "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Aplicacoes\\LyfrAPI.Aplicacoes.csproj": {
+    "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Aplicacoes\\LyfrAPI.Aplicacoes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Aplicacoes\\LyfrAPI.Aplicacoes.csproj",
+        "projectUniqueName": "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Aplicacoes\\LyfrAPI.Aplicacoes.csproj",
         "projectName": "LyfrAPI.Aplicacoes",
-        "projectPath": "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Aplicacoes\\LyfrAPI.Aplicacoes.csproj",
-        "packagesPath": "C:\\Users\\CTTarde\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Aplicacoes\\obj\\",
+        "projectPath": "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Aplicacoes\\LyfrAPI.Aplicacoes.csproj",
+        "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Aplicacoes\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\CTTarde\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -32,14 +32,14 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Context\\LyfrAPI.Context.csproj": {
-                "projectPath": "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Context\\LyfrAPI.Context.csproj"
+              "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Context\\LyfrAPI.Context.csproj": {
+                "projectPath": "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Context\\LyfrAPI.Context.csproj"
               },
-              "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Emails\\LyfrAPI.Emails.csproj": {
-                "projectPath": "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Emails\\LyfrAPI.Emails.csproj"
+              "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Emails\\LyfrAPI.Emails.csproj": {
+                "projectPath": "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Emails\\LyfrAPI.Emails.csproj"
               },
-              "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Models\\LyfrAPI.Models.csproj": {
-                "projectPath": "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Models\\LyfrAPI.Models.csproj"
+              "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Models\\LyfrAPI.Models.csproj": {
+                "projectPath": "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Models\\LyfrAPI.Models.csproj"
               }
             }
           }
@@ -68,21 +68,21 @@
         }
       }
     },
-    "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Context\\LyfrAPI.Context.csproj": {
+    "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Context\\LyfrAPI.Context.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Context\\LyfrAPI.Context.csproj",
+        "projectUniqueName": "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Context\\LyfrAPI.Context.csproj",
         "projectName": "LyfrAPI.Context",
-        "projectPath": "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Context\\LyfrAPI.Context.csproj",
-        "packagesPath": "C:\\Users\\CTTarde\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Context\\obj\\",
+        "projectPath": "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Context\\LyfrAPI.Context.csproj",
+        "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Context\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\CTTarde\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -96,8 +96,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Models\\LyfrAPI.Models.csproj": {
-                "projectPath": "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Models\\LyfrAPI.Models.csproj"
+              "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Models\\LyfrAPI.Models.csproj": {
+                "projectPath": "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Models\\LyfrAPI.Models.csproj"
               }
             }
           }
@@ -130,21 +130,21 @@
         }
       }
     },
-    "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Emails\\LyfrAPI.Emails.csproj": {
+    "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Emails\\LyfrAPI.Emails.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Emails\\LyfrAPI.Emails.csproj",
+        "projectUniqueName": "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Emails\\LyfrAPI.Emails.csproj",
         "projectName": "LyfrAPI.Emails",
-        "projectPath": "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Emails\\LyfrAPI.Emails.csproj",
-        "packagesPath": "C:\\Users\\CTTarde\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Emails\\obj\\",
+        "projectPath": "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Emails\\LyfrAPI.Emails.csproj",
+        "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Emails\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\CTTarde\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -158,8 +158,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Models\\LyfrAPI.Models.csproj": {
-                "projectPath": "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Models\\LyfrAPI.Models.csproj"
+              "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Models\\LyfrAPI.Models.csproj": {
+                "projectPath": "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Models\\LyfrAPI.Models.csproj"
               }
             }
           }
@@ -188,21 +188,21 @@
         }
       }
     },
-    "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Models\\LyfrAPI.Models.csproj": {
+    "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Models\\LyfrAPI.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Models\\LyfrAPI.Models.csproj",
+        "projectUniqueName": "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Models\\LyfrAPI.Models.csproj",
         "projectName": "LyfrAPI.Models",
-        "projectPath": "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Models\\LyfrAPI.Models.csproj",
-        "packagesPath": "C:\\Users\\CTTarde\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Models\\obj\\",
+        "projectPath": "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Models\\LyfrAPI.Models.csproj",
+        "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\CTTarde\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],

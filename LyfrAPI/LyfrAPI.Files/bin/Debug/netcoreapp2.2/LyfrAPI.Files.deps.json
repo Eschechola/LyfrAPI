@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v2.2": {
       "LyfrAPI.Files/1.0.0": {
+        "dependencies": {
+          "LyfrAPI.Models": "1.0.0"
+        },
         "runtime": {
           "LyfrAPI.Files.dll": {}
+        }
+      },
+      "LyfrAPI.Models/1.0.0": {
+        "runtime": {
+          "LyfrAPI.Models.dll": {}
         }
       }
     }
   },
   "libraries": {
     "LyfrAPI.Files/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LyfrAPI.Models/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

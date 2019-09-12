@@ -1,9 +1,9 @@
 ﻿using LyfrAPI.Context;
+using LyfrAPI.Emails.Functions;
 using LyfrAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace LyfrAPI.Aplicacoes
 {
@@ -57,6 +57,36 @@ namespace LyfrAPI.Aplicacoes
                 }
 
                 var administrador = _context.Administrador.Where(x => x.Login == login).ToList();
+                primeiroAdmin = administrador.FirstOrDefault();
+
+
+                if (primeiroAdmin != null)
+                {
+                    return primeiroAdmin;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public Administrador GetAdminByEmail(string email)
+        {
+            Administrador primeiroAdmin = new Administrador();
+
+            try
+            {
+                if (email == string.Empty || email == null || email == "" || string.IsNullOrWhiteSpace(email))
+                {
+                    return null;
+                }
+
+                var administrador = _context.Administrador.Where(x => x.Email == email).ToList();
                 primeiroAdmin = administrador.FirstOrDefault();
 
 
@@ -142,11 +172,11 @@ namespace LyfrAPI.Aplicacoes
                         _context.Administrador.Update(administrador);
                         _context.SaveChanges();
 
-                        return "Cliente " + administrador.Login + " alterado com sucesso!";
+                        return "Administrador " + administrador.Login + " alterado com sucesso!";
                     }
                     else
                     {
-                        return "Cliente não cadastrado!";
+                        return "Administrador não cadastrado!";
                     }
                 }
             }
@@ -162,7 +192,7 @@ namespace LyfrAPI.Aplicacoes
             {
                 if (login == string.Empty || login == null || login == "" || string.IsNullOrWhiteSpace(login))
                 {
-                    return "Email inválido! Por favor tente novamente.";
+                    return "Login inválido! Por favor tente novamente.";
                 }
                 else
                 {
@@ -173,12 +203,34 @@ namespace LyfrAPI.Aplicacoes
                         _context.Administrador.Remove(admin);
                         _context.SaveChanges();
 
-                        return "Cliente " + admin.Login + " deletado com sucesso!";
+                        return "Administrador " + admin.Login + " deletado com sucesso!";
                     }
                     else
                     {
-                        return "Cliente não cadastrado!";
+                        return "Administrador não cadastrado!";
                     }
+                }
+            }
+            catch (Exception)
+            {
+                return "Não foi possível se comunicar com a base de dados!";
+            }
+        }
+
+        public string ForgotPassword(string emailAdministrador)
+        {
+            try
+            {
+                var administrador = GetAdminByEmail(emailAdministrador.ToLower());
+
+                if (administrador != null)
+                {
+                    var resposta = new EmailMessages().UpdatePasswordEmail(administrador.Email, administrador.Senha);
+                    return resposta;
+                }
+                else
+                {
+                    return "Administrador não encontrado!";
                 }
             }
             catch (Exception)

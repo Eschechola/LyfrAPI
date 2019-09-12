@@ -156,7 +156,29 @@ namespace LyfrAPI.Controllers
             {
                 return BadRequest("Erro ao comunicar com a base de dados!");
             }
+        }
 
+        [HttpPost]
+        [Route("ForgotPassword")]
+        [Authorize]
+        public IActionResult ForgotPassword([FromBody]string email)
+        {
+            try
+            {
+                if (!new ValidationFields().ValidateEmail(email))
+                {
+                    return BadRequest("Email inválido! Tente novamente.");
+                }
+                else
+                {
+                    var resposta = new AdministradorAplicacao(_context).ForgotPassword(email);
+                    return Ok(resposta);
+                }
+            }
+            catch (Exception)
+            {
+                return BadRequest("Tivemos alguns problemas de conexão. Tente novamente mais tarde.");
+            }
         }
     }
 }

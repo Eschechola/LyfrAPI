@@ -24,7 +24,7 @@ namespace LyfrAPI.Aplicacoes
                 {
                     if (GetAutorByNome(autor.Nome) != null)
                     {
-                        return "Email já cadastrado na base de dados!";
+                        return "Autor já cadastrado na base de dados!";
                     }
                     else
                     {

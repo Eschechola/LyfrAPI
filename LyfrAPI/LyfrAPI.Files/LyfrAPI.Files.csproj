@@ -4,4 +4,12 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="FilesManipulation\FilesManipulation.cs~RF5cdb4d.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LyfrAPI.Models\LyfrAPI.Models.csproj" />
+  </ItemGroup>
+
 </Project>

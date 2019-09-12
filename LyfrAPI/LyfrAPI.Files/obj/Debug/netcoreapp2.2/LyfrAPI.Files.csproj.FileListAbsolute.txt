@@ -16,3 +16,6 @@ C:\Users\Lucas\Desktop\Git\LyfrAPI\LyfrAPI\LyfrAPI.Files\obj\Debug\netcoreapp2.2
 C:\Users\Lucas\Desktop\Git\LyfrAPI\LyfrAPI\LyfrAPI.Files\obj\Debug\netcoreapp2.2\LyfrAPI.Files.AssemblyInfo.cs
 C:\Users\Lucas\Desktop\Git\LyfrAPI\LyfrAPI\LyfrAPI.Files\obj\Debug\netcoreapp2.2\LyfrAPI.Files.dll
 C:\Users\Lucas\Desktop\Git\LyfrAPI\LyfrAPI\LyfrAPI.Files\obj\Debug\netcoreapp2.2\LyfrAPI.Files.pdb
+C:\Users\CTTarde\Desktop\LyfrAPI\LyfrAPI\LyfrAPI.Files\bin\Debug\netcoreapp2.2\LyfrAPI.Models.dll
+C:\Users\CTTarde\Desktop\LyfrAPI\LyfrAPI\LyfrAPI.Files\bin\Debug\netcoreapp2.2\LyfrAPI.Models.pdb
+C:\Users\CTTarde\Desktop\LyfrAPI\LyfrAPI\LyfrAPI.Files\obj\Debug\netcoreapp2.2\LyfrAPI.Files.csproj.CopyComplete

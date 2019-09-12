@@ -5,11 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Templates\DeletePassword\" />
-    <Folder Include="Templates\ForgotPassword\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\LyfrAPI.Models\LyfrAPI.Models.csproj" />
   </ItemGroup>
 

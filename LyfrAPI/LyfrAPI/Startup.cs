@@ -62,6 +62,10 @@ namespace APILyfr
 
             app.UseHttpsRedirection();
             app.UseAuthentication();
+
+            //usado quando queremos acessar as imagens no arquivo wwwroot
+			app.UseStaticFiles();
+
             app.UseMvc();
         }
     }

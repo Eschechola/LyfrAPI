@@ -702,25 +702,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\CTTarde\\.nuget\\packages\\": {},
+    "C:\\Users\\Lucas\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Files\\LyfrAPI.Files.csproj",
+      "projectUniqueName": "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Files\\LyfrAPI.Files.csproj",
       "projectName": "LyfrAPI.Files",
-      "projectPath": "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Files\\LyfrAPI.Files.csproj",
-      "packagesPath": "C:\\Users\\CTTarde\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Files\\obj\\",
+      "projectPath": "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Files\\LyfrAPI.Files.csproj",
+      "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Files\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\CTTarde\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -734,8 +734,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Models\\LyfrAPI.Models.csproj": {
-              "projectPath": "C:\\Users\\CTTarde\\Desktop\\LyfrAPI\\LyfrAPI\\LyfrAPI.Models\\LyfrAPI.Models.csproj"
+            "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Models\\LyfrAPI.Models.csproj": {
+              "projectPath": "C:\\Users\\Lucas\\Desktop\\Git\\LyfrAPI\\LyfrAPI\\LyfrAPI.Models\\LyfrAPI.Models.csproj"
             }
           }
         }

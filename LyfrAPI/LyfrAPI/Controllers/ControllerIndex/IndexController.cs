@@ -1,7 +1,6 @@
-﻿using LyfrAPI.Emails.Functions;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
+using System.IO;
 
 namespace LyfrAPI.Controllers
 {
@@ -9,17 +8,9 @@ namespace LyfrAPI.Controllers
     [ApiController]
     public class IndexController : ControllerBase
     {
-        private readonly IHostingEnvironment _hostingEnvironment;
-
-        public IndexController(IHostingEnvironment hostingEnvironment)
-        {
-            _hostingEnvironment = hostingEnvironment;
-        }
         public string Index()
         {
-            string webRootPath = _hostingEnvironment.WebRootPath;
-
-            return "Index"+"\n"+ webRootPath;
+            return "Index page - Lyfr API";
         }
     }
 }

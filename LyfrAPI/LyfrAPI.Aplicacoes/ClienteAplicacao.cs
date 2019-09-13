@@ -21,7 +21,7 @@ namespace LyfrAPI.Aplicacoes
             try
             {
                 if (cliente != null)
-                {   
+                {
                     if (GetClienteByEmail(cliente.Email) != null)
                     {
                         return "Email já cadastrado na base de dados!";
@@ -38,13 +38,11 @@ namespace LyfrAPI.Aplicacoes
                         _context.Add(cliente);
                         //
                         //retorna 0 quando nao consegue inserir
-                        var sucesso = _context.SaveChanges();
+                        _context.SaveChanges();
 
-                        if (sucesso > 0)
-                        {
-                            //chama a função que irá enviar um email de boas vindas
-                            new EmailMessages().WelcomeEmail(cliente.Email, cliente.Nome);
-                        }
+                        //chama a função que irá enviar um email de boas vindas
+                        new EmailMessages().WelcomeEmail(cliente.Email, cliente.Nome);
+
 
                         return "Cliente cadastrado com sucesso!";
                     }

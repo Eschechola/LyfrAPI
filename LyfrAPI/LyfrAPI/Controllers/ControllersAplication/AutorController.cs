@@ -72,11 +72,11 @@ namespace LyfrAPI.Controllers
         [HttpGet]
         [Route("GetAllAutores")]
         [Authorize]
-        public IActionResult GetAllAutores()
+        public IActionResult GetAllAutores(int numeroDeAutores = 0)
         {
             try
             {
-                var listaDeAutores = new AutorAplicacao(_context).GetAllAutores();
+                var listaDeAutores = new AutorAplicacao(_context).GetAllAutores(numeroDeAutores);
 
                 if (listaDeAutores != null)
                 {

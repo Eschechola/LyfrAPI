@@ -87,11 +87,11 @@ namespace LyfrAPI.Controllers
         [HttpGet]
         [Route("GetAllEditoras")]
         [Authorize]
-        public IActionResult GetAllEditoras()
+        public IActionResult GetAllEditoras(int numeroDeEditoras = 0)
         {
             try
             {
-                var listaDeEditoras = new EditoraAplicacao(_context).GetAllEditoras();
+                var listaDeEditoras = new EditoraAplicacao(_context).GetAllEditoras(numeroDeEditoras);
 
                 if (listaDeEditoras != null)
                 {

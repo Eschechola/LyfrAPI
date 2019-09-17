@@ -37,9 +37,8 @@ namespace LyfrAPI.Aplicacoes
                         //
                         _context.Add(cliente);
                         //
-                        //retorna 0 quando nao consegue inserir
                         _context.SaveChanges();
-
+                        //
                         //chama a função que irá enviar um email de boas vindas
                         new EmailMessages().WelcomeEmail(cliente.Email, cliente.Nome);
 
@@ -52,7 +51,7 @@ namespace LyfrAPI.Aplicacoes
                     return "Cliente é nulo! Por - favor preencha todos os campos e tente novamente!";
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return "Não foi possível se comunicar com a base de dados!";
             }
@@ -223,6 +222,12 @@ namespace LyfrAPI.Aplicacoes
                     {
                         //lista auxiliar caso tenha sido passado uma limitação, por exemplo retornar os 5 ou os 6 ultimos clientes
                         var listaDeClientesComNumeroDeClientes = new List<Cliente>();
+
+                        //verifica se existe a quantidade de clientes que foi pedida (evitar exceção)
+                        if (numeroDeClientes > listaDeClientes.Count)
+                        {
+                            numeroDeClientes = listaDeClientes.Count;
+                        }
 
                         //contador ja começa com o número do ultimo cliente da lista
                         int indiceUltimoCliente = listaDeClientes.Count - 1;

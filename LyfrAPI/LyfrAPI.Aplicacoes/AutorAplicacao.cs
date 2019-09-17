@@ -75,7 +75,7 @@ namespace LyfrAPI.Aplicacoes
             }
         }
 
-        public List<Autores> GetAllAutores()
+        public List<Autores> GetAllAutores(int numeroDeAutores=0)
         {
             List<Autores> listaDeAutores = new List<Autores>();
             try
@@ -85,7 +85,35 @@ namespace LyfrAPI.Aplicacoes
 
                 if (listaDeAutores != null)
                 {
-                    return listaDeAutores;
+                    //caso o numero passado for igual a 0 ele vai retornar todos
+                    if (numeroDeAutores != 0)
+                    {
+                        //lista auxiliar caso tenha sido passado uma limitação, por exemplo retornar os 5 ou os 6 ultimos autores
+                        var listaDeAutoresComNumeroDeAutores = new List<Autores>();
+
+                        //verifica se existe a quantidade de clientes que foi pedida (evitar exceção)
+                        if (numeroDeAutores > listaDeAutores.Count)
+                        {
+                            numeroDeAutores = listaDeAutores.Count;
+                        }
+
+                        //contador ja começa com o número do ultimo cliente da lista
+                        int indiceUltimoAutor = listaDeAutores.Count - 1;
+                        //contador para se comparar com o número passado
+                        int i = 0;
+                        while (i < numeroDeAutores)
+                        {
+                            listaDeAutoresComNumeroDeAutores.Add(listaDeAutores[indiceUltimoAutor]);
+                            indiceUltimoAutor--;
+                            i++;
+                        }
+
+                        return listaDeAutoresComNumeroDeAutores;
+                    }
+                    else
+                    {
+                        return listaDeAutores;
+                    }
                 }
                 else
                 {

@@ -25,8 +25,8 @@ namespace LyfrAPI.Controllers
         [Authorize]
         public IActionResult Insert([FromBody]Sugestao sugestaoEnviada)
         {
-            try
-            {
+            //try
+            //{
                 if (!ModelState.IsValid|| sugestaoEnviada == null)
                 {
                     return BadRequest("Dados inválidos! Tente novamente.");
@@ -37,11 +37,11 @@ namespace LyfrAPI.Controllers
                     var resposta = new SugestaoAplicacao(_context).Insert(sugestaoEnviada);
                     return Ok(resposta);
                 }
-            }
-            catch (Exception)
-            {
-                return BadRequest("Erro ao comunicar com a base de dados!");
-            }
+            //}
+            //catch (Exception)
+            //{
+            //    return BadRequest("Erro ao comunicar com a base de dados!");
+            //}
         }
 
         [HttpPost]

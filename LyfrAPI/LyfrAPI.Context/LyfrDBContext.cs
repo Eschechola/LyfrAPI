@@ -388,6 +388,10 @@ namespace LyfrAPI.Context
 
                 entity.ToTable("sugestao");
 
+                entity.Property(e => e.idSugestao)
+                    .HasColumnName("idSugestao")
+                    .HasColumnType("int(11)");
+
                 entity.HasIndex(e => e.FkIdCliente)
                     .HasName("Fk_Id_Cliente5");
 

@@ -50,7 +50,7 @@ namespace LyfrAPI.Aplicacoes
                 }
 
                 listaDeSugestoes = _context.Sugestao.Where(x => x.FkIdCliente == idCliente).ToList();
-                
+
                 if (listaDeSugestoes != null)
                 {
                     return listaDeSugestoes;

@@ -74,7 +74,7 @@ namespace LyfrAPI.Aplicacoes
             }
         }
 
-        public List<Editora> GetAllEditoras()
+        public List<Editora> GetAllEditoras(int numeroDeEditoras=0)
         {
             List<Editora> listaDeEditoras = new List<Editora>();
             try
@@ -83,7 +83,37 @@ namespace LyfrAPI.Aplicacoes
 
                 if (listaDeEditoras != null)
                 {
-                    return listaDeEditoras;
+                    //caso o numero passado for igual a 0 ele vai retornar todos
+                    if (numeroDeEditoras != 0)
+                    {
+                        //lista auxiliar caso tenha sido passado uma limitação, por exemplo retornar as 5 ou as 6 ultimas editoras
+                        var listaDeAutoresComNumeroDeAutores = new List<Editora>();
+
+                        //verifica se existe a quantidade de editoras que foi pedida (evitar exceção)
+                        if (numeroDeEditoras > listaDeEditoras.Count)
+                        {
+                            numeroDeEditoras = listaDeEditoras.Count;
+                        }
+
+                        //contador ja começa com o número do ultimo cliente da lista
+                        int indiceUltimaEditora = listaDeEditoras.Count - 1;
+
+
+                        //contador para se comparar com o número passado
+                        int i = 0;
+                        while (i < numeroDeEditoras)
+                        {
+                            listaDeAutoresComNumeroDeAutores.Add(listaDeEditoras[indiceUltimaEditora]);
+                            indiceUltimaEditora--;
+                            i++;
+                        }
+
+                        return listaDeAutoresComNumeroDeAutores;
+                    }
+                    else
+                    {
+                        return listaDeEditoras;
+                    }
                 }
                 else
                 {

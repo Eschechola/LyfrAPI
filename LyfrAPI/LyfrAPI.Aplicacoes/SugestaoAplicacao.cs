@@ -25,7 +25,7 @@ namespace LyfrAPI.Aplicacoes
                     _context.Add(sugestao);
                     _context.SaveChanges();
 
-                    return "Sugestao cadastrada com sucesso!";
+                    return "Sugestao enviada com sucesso! Logo entraremos em contato.\nEquipe Lyfr agradece seu feedback";
                 }
                 else
                 {

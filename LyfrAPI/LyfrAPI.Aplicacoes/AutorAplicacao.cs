@@ -91,12 +91,6 @@ namespace LyfrAPI.Aplicacoes
                         //lista auxiliar caso tenha sido passado uma limitação, por exemplo retornar os 5 ou os 6 ultimos autores
                         var listaDeAutoresComNumeroDeAutores = new List<Autores>();
 
-                        //verifica se existe a quantidade de clientes que foi pedida (evitar exceção)
-                        if (numeroDeAutores > listaDeAutores.Count)
-                        {
-                            numeroDeAutores = listaDeAutores.Count;
-                        }
-
                         //contador ja começa com o número do ultimo cliente da lista
                         int indiceUltimoAutor = listaDeAutores.Count - 1;
                         //contador para se comparar com o número passado

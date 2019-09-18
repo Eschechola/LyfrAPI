@@ -24,11 +24,11 @@ namespace LyfrAPI.Aplicacoes
                 {
                     if (GetClienteByEmail(cliente.Email) != null)
                     {
-                        return "Email já cadastrado na base de dados!";
+                        return "Email indisponível para cadastro. Por favor, tente outro.";
                     }
                     else if (GetClienteByCPF(cliente.Cpf) != null)
                     {
-                        return "CPF já cadastrado na base de dados!";
+                        return "CPF indisponível para cadastro. Por favor, tente outro.";
                     }
                     else
                     {
@@ -43,12 +43,12 @@ namespace LyfrAPI.Aplicacoes
                         new EmailMessages().WelcomeEmail(cliente.Email, cliente.Nome);
 
 
-                        return "Cliente cadastrado com sucesso!";
+                        return "Usuário cadastrado com sucesso!";
                     }
                 }
                 else
                 {
-                    return "Cliente é nulo! Por - favor preencha todos os campos e tente novamente!";
+                    return "Usuário é nulo! Por - favor preencha todos os campos e tente novamente!";
                 }
             }
             catch (Exception)
@@ -74,11 +74,11 @@ namespace LyfrAPI.Aplicacoes
                         _context.Cliente.Remove(cliente);
                         _context.SaveChanges();
 
-                        return "Cliente " + cliente.Nome + " deletado com sucesso!";
+                        return "Usuário " + cliente.Nome + " deletado com sucesso!";
                     }
                     else
                     {
-                        return "Cliente não cadastrado!";
+                        return "Usuário não encontrado!";
                     }
                 }
             }
@@ -105,11 +105,11 @@ namespace LyfrAPI.Aplicacoes
                         _context.Cliente.Remove(cliente);
                         _context.SaveChanges();
 
-                        return "Cliente " + cliente.Nome + " deletado com sucesso!";
+                        return "Usuário " + cliente.Nome + " deletado com sucesso!";
                     }
                     else
                     {
-                        return "Cliente não cadastrado!";
+                        return "Usuário não encontrado!";
                     }
                 }
             }
@@ -134,11 +134,11 @@ namespace LyfrAPI.Aplicacoes
                         _context.Cliente.Update(cliente);
                         _context.SaveChanges();
 
-                        return "Cliente " + cliente.Nome + " alterado com sucesso!";
+                        return "Usuário " + cliente.Nome + " alterado com sucesso!";
                     }
                     else
                     {
-                        return "Cliente não cadastrado!";
+                        return "Usuário não encontrado!";
                     }
                 }
             }
@@ -223,12 +223,6 @@ namespace LyfrAPI.Aplicacoes
                         //lista auxiliar caso tenha sido passado uma limitação, por exemplo retornar os 5 ou os 6 ultimos clientes
                         var listaDeClientesComNumeroDeClientes = new List<Cliente>();
 
-                        //verifica se existe a quantidade de clientes que foi pedida (evitar exceção)
-                        if (numeroDeClientes > listaDeClientes.Count)
-                        {
-                            numeroDeClientes = listaDeClientes.Count;
-                        }
-
                         //contador ja começa com o número do ultimo cliente da lista
                         int indiceUltimoCliente = listaDeClientes.Count - 1;
                         //contador para se comparar com o número passado
@@ -271,7 +265,7 @@ namespace LyfrAPI.Aplicacoes
                 }
                 else
                 {
-                    return "Cliente não encontrado!";
+                    return "Usuário não encontrado!";
                 }
             }
             catch (Exception)

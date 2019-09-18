@@ -141,7 +141,7 @@ namespace LyfrAPI.Controllers
                     {
                         if (resposta.Senha != clienteEnviado.Senha)
                         {
-                            return BadRequest("Login e/ou senha inválidos");
+                            return BadRequest("Email e/ou senha inválidos");
                         }
                         else
                         {
@@ -180,7 +180,7 @@ namespace LyfrAPI.Controllers
                     {
                         if (resposta.Senha != clienteEnviado.Senha)
                         {
-                            return BadRequest("Login e/ou senha inválidos");
+                            return BadRequest("CPF e/ou senha inválidos");
                         }
                         else
                         {
@@ -190,7 +190,7 @@ namespace LyfrAPI.Controllers
                     }
                     else
                     {
-                        return BadRequest("Cliente não cadastrado!");
+                        return BadRequest("Usuário não encontrado!");
                     }
                 }
             }

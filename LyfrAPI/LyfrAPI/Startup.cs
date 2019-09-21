@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.IO;
+using System.Text;
 using LyfrAPI.Context;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -8,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 
 namespace APILyfr
@@ -27,6 +29,9 @@ namespace APILyfr
             services.AddDbContext<LyfrDBContext>(options => {
                 options.UseMySql(Configuration.GetConnectionString("MyConnection"));
             });
+
+            //abre uma pastinha no browser com os arquivos
+            //services.AddDirectoryBrowser();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
@@ -65,6 +70,14 @@ namespace APILyfr
 
             //usado quando queremos acessar as imagens no arquivo wwwroot
 			app.UseStaticFiles();
+
+            //app.UseDirectoryBrowser(new DirectoryBrowserOptions
+            //{
+            //    FileProvider = new PhysicalFileProvider(
+            //        Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")),
+            //    RequestPath = "/AcessarArquivos"
+            //});
+
 
             app.UseMvc();
         }

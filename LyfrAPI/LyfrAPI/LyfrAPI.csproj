@@ -7,27 +7,27 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="wwwroot\EmailTemplates\DeletePassword\**" />
-    <Compile Remove="wwwroot\EmailTemplates\ForgotPassword\**" />
-    <Content Remove="wwwroot\EmailTemplates\DeletePassword\**" />
-    <Content Remove="wwwroot\EmailTemplates\ForgotPassword\**" />
-    <EmbeddedResource Remove="wwwroot\EmailTemplates\DeletePassword\**" />
-    <EmbeddedResource Remove="wwwroot\EmailTemplates\ForgotPassword\**" />
-    <None Remove="wwwroot\EmailTemplates\DeletePassword\**" />
-    <None Remove="wwwroot\EmailTemplates\ForgotPassword\**" />
+    <Compile Remove="wwwroot\Email\DeletePassword\**" />
+    <Compile Remove="wwwroot\Email\ForgotPassword\**" />
+    <Content Remove="wwwroot\Email\DeletePassword\**" />
+    <Content Remove="wwwroot\Email\ForgotPassword\**" />
+    <EmbeddedResource Remove="wwwroot\Email\DeletePassword\**" />
+    <EmbeddedResource Remove="wwwroot\Email\ForgotPassword\**" />
+    <None Remove="wwwroot\Email\DeletePassword\**" />
+    <None Remove="wwwroot\Email\ForgotPassword\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\EmailTemplates\Welcome\images\1.png" />
-    <Content Remove="wwwroot\EmailTemplates\Welcome\images\2.png" />
-    <Content Remove="wwwroot\EmailTemplates\Welcome\images\3.png" />
-    <Content Remove="wwwroot\EmailTemplates\Welcome\images\facebook%402x.png" />
-    <Content Remove="wwwroot\EmailTemplates\Welcome\images\fundo1.png" />
-    <Content Remove="wwwroot\EmailTemplates\Welcome\images\Icon_Lyfr3.png" />
-    <Content Remove="wwwroot\EmailTemplates\Welcome\images\instagram%402x.png" />
-    <Content Remove="wwwroot\EmailTemplates\Welcome\images\linkedin%402x.png" />
-    <Content Remove="wwwroot\EmailTemplates\Welcome\images\twitter%402x.png" />
-    <Content Remove="wwwroot\EmailTemplates\Welcome\Welcome.html" />
+    <Content Remove="wwwroot\Email\Templates\Welcome\images\1.png" />
+    <Content Remove="wwwroot\Email\Templates\Welcome\images\2.png" />
+    <Content Remove="wwwroot\Email\Templates\Welcome\images\3.png" />
+    <Content Remove="wwwroot\Email\Templates\Welcome\images\facebook%402x.png" />
+    <Content Remove="wwwroot\Email\Templates\Welcome\images\fundo1.png" />
+    <Content Remove="wwwroot\Email\Templates\Welcome\images\Icon_Lyfr3.png" />
+    <Content Remove="wwwroot\Email\Templates\Welcome\images\instagram%402x.png" />
+    <Content Remove="wwwroot\Email\Templates\Welcome\images\linkedin%402x.png" />
+    <Content Remove="wwwroot\Email\Templates\Welcome\images\twitter%402x.png" />
+    <Content Remove="wwwroot\Email\Templates\Welcome\Welcome.html" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,16 +46,20 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\EmailTemplates\Welcome\images\1.png" />
-    <None Include="wwwroot\EmailTemplates\Welcome\images\2.png" />
-    <None Include="wwwroot\EmailTemplates\Welcome\images\3.png" />
-    <None Include="wwwroot\EmailTemplates\Welcome\images\facebook@2x.png" />
-    <None Include="wwwroot\EmailTemplates\Welcome\images\fundo1.png" />
-    <None Include="wwwroot\EmailTemplates\Welcome\images\Icon_Lyfr3.png" />
-    <None Include="wwwroot\EmailTemplates\Welcome\images\instagram@2x.png" />
-    <None Include="wwwroot\EmailTemplates\Welcome\images\linkedin@2x.png" />
-    <None Include="wwwroot\EmailTemplates\Welcome\images\twitter@2x.png" />
-    <None Include="wwwroot\EmailTemplates\Welcome\Welcome.html" />
+    <None Include="wwwroot\Email\Templates\Welcome\images\1.png" />
+    <None Include="wwwroot\Email\Templates\Welcome\images\2.png" />
+    <None Include="wwwroot\Email\Templates\Welcome\images\3.png" />
+    <None Include="wwwroot\Email\Templates\Welcome\images\facebook@2x.png" />
+    <None Include="wwwroot\Email\Templates\Welcome\images\fundo1.png" />
+    <None Include="wwwroot\Email\Templates\Welcome\images\Icon_Lyfr3.png" />
+    <None Include="wwwroot\Email\Templates\Welcome\images\instagram@2x.png" />
+    <None Include="wwwroot\Email\Templates\Welcome\images\linkedin@2x.png" />
+    <None Include="wwwroot\Email\Templates\Welcome\images\twitter@2x.png" />
+    <None Include="wwwroot\Email\Templates\Welcome\Welcome.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Autores\Fotos\" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>

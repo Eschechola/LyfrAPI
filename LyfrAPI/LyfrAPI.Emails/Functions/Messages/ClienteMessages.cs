@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace LyfrAPI.Emails.Functions
 {
-    public class EmailMessages
+    public class ClienteMessages
     {
 
         public bool WelcomeEmail(string emailCliente, string nomeCliente)
@@ -75,7 +75,6 @@ namespace LyfrAPI.Emails.Functions
             }
             catch (Exception)
             {
-
                 return "Tivemos alguns problemas de conexão. Por favor tente novamente mais tarde.";
             }
         }

@@ -40,7 +40,7 @@ namespace LyfrAPI.Aplicacoes
                         _context.SaveChanges();
                         //
                         //chama a função que irá enviar um email de boas vindas
-                        new EmailMessages().WelcomeEmail(cliente.Email, cliente.Nome);
+                        new ClienteMessages().WelcomeEmail(cliente.Email, cliente.Nome);
 
 
                         return "Usuário cadastrado com sucesso!";
@@ -260,7 +260,7 @@ namespace LyfrAPI.Aplicacoes
 
                 if (cliente != null)
                 {
-                    var resposta = new EmailMessages().UpdatePasswordEmail(cliente.Email, cliente.Senha);
+                    var resposta = new ClienteMessages().UpdatePasswordEmail(cliente.Email, cliente.Senha);
                     return resposta;
                 }
                 else

@@ -225,7 +225,7 @@ namespace LyfrAPI.Aplicacoes
 
                 if (administrador != null)
                 {
-                    var resposta = new EmailMessages().UpdatePasswordEmail(administrador.Email, administrador.Senha);
+                    var resposta = new ClienteMessages().UpdatePasswordEmail(administrador.Email, administrador.Senha);
                     return resposta;
                 }
                 else

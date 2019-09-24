@@ -245,7 +245,7 @@ https://lyfrapi1.herokuapp.com/api/Sugestao/GetAllSugestoes
 Não enviar nada
 
 HTTP - POST
-https://lyfrapi1.herokuapp.com/api/Sugestao/GetSugestoesById
+https://lyfrapi1.herokuapp.com/api/Sugestao/GetSugestaoById
 
 Enviar o id da sugestao
 
@@ -255,6 +255,17 @@ https://lyfrapi1.herokuapp.com/api/Sugestao/GetSugestoesByIdCliente
 Enviar o id do cliente
 
 -------------------------------------------------------------------------------------------------
+
+RESPOSTA
+
+HTTP - POST
+https://lyfrapi1.herokuapp.com/api/Sugestao/SugestaoResposta
+
+Enviar o model SugestaoResposta via POST
+
+-------------------------------------------------------------------------------------------------
+
+
 
 </pre>
 

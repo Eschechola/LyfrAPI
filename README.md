@@ -105,6 +105,14 @@ Enviar o CPF via DELETE
 
 -------------------------------------------------------------------------------------------------
 
+Esqueceu Senha
+HTTP - POST
+https://lyfrapi1.herokuapp.com/api/Cliente/ForgotPassword/
+
+Enviar o senha via POST
+
+-------------------------------------------------------------------------------------------------
+
 </pre>
 
 
@@ -156,6 +164,14 @@ HTTP - DELETE
 https://lyfrapi1.herokuapp.com/api/Administrador/DeleteByLogin/
 
 Enviar o Login via DELETE
+
+-------------------------------------------------------------------------------------------------
+
+Esqueceu senha
+HTTP - POST
+https://lyfrapi1.herokuapp.com/api/Administrador/ForgotPassword/
+
+Enviar o Email via POST
 
 -------------------------------------------------------------------------------------------------
 
@@ -282,3 +298,47 @@ https://lyfrapi1.herokuapp.com/api/Genero/DeleteByNome
 Enviar o nome do genero
 
 </pre>
+ 
+<br><br><br>
+
+<h3><strong>* A parte da imagem ainda está em desenvolvimento, enviar uma string em base64 e o formato da imagem no final</strong></h3>
+
+<strong><h1>AUTOR</h1></strong>
+
+<pre>
+
+
+-------------------------------------------------------------------------------------------------
+
+Inserir
+HTTP - Post
+https://lyfrapi1.herokuapp.com/api/Autor/Insert/
+
+Enviar o JSON do Model Autor via POST
+
+-------------------------------------------------------------------------------------------------
+
+Ler
+
+HTTP - Get
+https://lyfrapi1.herokuapp.com/api/Autor/GetAllAutores
+
+Não enviar nada
+
+HTTP - POST
+https://lyfrapi1.herokuapp.com/api/Autor/GetAutorByNome
+
+Enivar o nome da editora
+
+-------------------------------------------------------------------------------------------------
+
+Deletar
+
+HTTP - POST
+https://lyfrapi1.herokuapp.com/api/Autor/DeleteByNome
+
+Enivar o nome do autor
+
+-------------------------------------------------------------------------------------------------
+</pre>
+

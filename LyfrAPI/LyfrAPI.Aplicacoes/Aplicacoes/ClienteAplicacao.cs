@@ -10,10 +10,12 @@ namespace LyfrAPI.Aplicacoes
     public class ClienteAplicacao
     {
         private LyfrDBContext _context;
+        private string _pathArquivos;
 
-        public ClienteAplicacao(LyfrDBContext context)
+        public ClienteAplicacao(LyfrDBContext context, string pathArquivos)
         {
             _context = context;
+            _pathArquivos = pathArquivos;
         }
 
         public string Insert(Cliente cliente)
@@ -40,7 +42,7 @@ namespace LyfrAPI.Aplicacoes
                         _context.SaveChanges();
                         //
                         //chama a função que irá enviar um email de boas vindas
-                        new ClienteMessages().WelcomeEmail(cliente.Email, cliente.Nome);
+                        new ClienteMessages().WelcomeEmail(cliente.Email, cliente.Nome, _pathArquivos);
 
 
                         return "Usuário cadastrado com sucesso!";
@@ -51,8 +53,9 @@ namespace LyfrAPI.Aplicacoes
                     return "Usuário é nulo! Por - favor preencha todos os campos e tente novamente!";
                 }
             }
-            catch (Exception)
+            catch (Exception /*ex*/)
             {
+				//return ex.ToString();
                 return "Não foi possível se comunicar com a base de dados!";
             }
         }

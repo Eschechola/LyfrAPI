@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Hosting;
+using System.IO;
 
 namespace LyfrAPI.Controllers
 {
@@ -18,9 +20,12 @@ namespace LyfrAPI.Controllers
         //variavel de contexto para acesso as utilidades do entity
         private LyfrDBContext _context;
 
-        public ClienteController(LyfrDBContext context)
+        private readonly IHostingEnvironment _hostingEnvironment;
+
+        public ClienteController(LyfrDBContext context, IHostingEnvironment hostingEnvironment)
         {
             _context = context;
+            _hostingEnvironment = hostingEnvironment;
         }
 
         [HttpPost]
@@ -39,7 +44,7 @@ namespace LyfrAPI.Controllers
                     //deixa o email minúsculo para poder inserir no banco
                     clienteEnviado.Email = clienteEnviado.Email.ToLower();
 
-                    var resposta = new ClienteAplicacao(_context).Insert(clienteEnviado);
+                    var resposta = new ClienteAplicacao(_context, Directory.GetCurrentDirectory()).Insert(clienteEnviado);
                     return Ok(resposta);
                 }
             }
@@ -62,7 +67,7 @@ namespace LyfrAPI.Controllers
                 }
                 else
                 {
-                    var resposta = new ClienteAplicacao(_context).DeleteByEmail(email);
+                    var resposta = new ClienteAplicacao(_context, _hostingEnvironment.WebRootPath).DeleteByEmail(email);
                     return Ok(resposta);
                 }
             }
@@ -87,7 +92,7 @@ namespace LyfrAPI.Controllers
                 }
                 else
                 {
-                    var resposta = new ClienteAplicacao(_context).DeleteByCPF(CPF);
+                    var resposta = new ClienteAplicacao(_context, _hostingEnvironment.WebRootPath).DeleteByCPF(CPF);
                     return Ok(resposta);
                 }
             }
@@ -111,7 +116,7 @@ namespace LyfrAPI.Controllers
                 }
                 else
                 {
-                    var resposta = new ClienteAplicacao(_context).Update(clienteEnviado);
+                    var resposta = new ClienteAplicacao(_context, _hostingEnvironment.WebRootPath).Update(clienteEnviado);
                     return Ok(resposta);
                 }
             }
@@ -135,7 +140,7 @@ namespace LyfrAPI.Controllers
                 }
                 else
                 {
-                    var resposta = new ClienteAplicacao(_context).GetClienteByEmail(clienteEnviado.Email);
+                    var resposta = new ClienteAplicacao(_context, _hostingEnvironment.WebRootPath).GetClienteByEmail(clienteEnviado.Email);
 
                     if (resposta != null)
                     {
@@ -174,7 +179,7 @@ namespace LyfrAPI.Controllers
                 }
                 else
                 {
-                    var resposta = new ClienteAplicacao(_context).GetClienteByCPF(clienteEnviado.Cpf);
+                    var resposta = new ClienteAplicacao(_context, _hostingEnvironment.WebRootPath).GetClienteByCPF(clienteEnviado.Cpf);
 
                     if (resposta != null)
                     {
@@ -209,7 +214,7 @@ namespace LyfrAPI.Controllers
             try
             {
                 
-                var listaDeClientes = new ClienteAplicacao(_context).GetAllClientes(numeroDeClientes);
+                var listaDeClientes = new ClienteAplicacao(_context, _hostingEnvironment.WebRootPath).GetAllClientes(numeroDeClientes);
 
                 if (listaDeClientes != null)
                 {
@@ -240,7 +245,7 @@ namespace LyfrAPI.Controllers
                 }
                 else
                 {
-                    var resposta = new ClienteAplicacao(_context).ForgotPassword(email);
+                    var resposta = new ClienteAplicacao(_context, _hostingEnvironment.WebRootPath).ForgotPassword(email);
                     return Ok(resposta);
                 }
             }

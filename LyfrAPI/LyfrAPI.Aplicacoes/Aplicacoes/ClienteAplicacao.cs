@@ -42,7 +42,7 @@ namespace LyfrAPI.Aplicacoes
                         _context.SaveChanges();
                         //
                         //chama a função que irá enviar um email de boas vindas
-                        new ClienteMessages().WelcomeEmail(cliente.Email, cliente.Nome, _pathArquivos);
+                        new ClienteMessages().WelcomeEmail(cliente.Email, cliente.Nome);
 
 
                         return "Usuário cadastrado com sucesso!";

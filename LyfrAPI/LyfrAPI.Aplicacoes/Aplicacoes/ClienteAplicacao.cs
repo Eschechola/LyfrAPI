@@ -1,8 +1,10 @@
 ﻿using LyfrAPI.Context;
 using LyfrAPI.Emails.Functions;
 using LyfrAPI.Models;
+using Microsoft.Extensions.FileProviders;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace LyfrAPI.Aplicacoes
@@ -10,12 +12,22 @@ namespace LyfrAPI.Aplicacoes
     public class ClienteAplicacao
     {
         private LyfrDBContext _context;
-        private string _pathArquivos;
 
-        public ClienteAplicacao(LyfrDBContext context, string pathArquivos)
+        //variavel para poder acessar a pasta wwwroot nas funçoes que necessitam de email
+        //dependencia será injetada na classe ClienteMessages
+        private PhysicalFileProvider _provedorDiretoriosArquivos;
+
+        //construtor usado para quando NÂO FOR UTILIZAR ARQUIVOS
+        public ClienteAplicacao(LyfrDBContext context)
+        {
+            _context = context; 
+        }
+
+        //construtor usado para quando FORMOS UTILIZAR ARQUIVOS, COMO NO CASO DO EMAIL
+        public ClienteAplicacao(LyfrDBContext context, PhysicalFileProvider provedorDiretoriosArquivos)
         {
             _context = context;
-            _pathArquivos = pathArquivos;
+            _provedorDiretoriosArquivos = provedorDiretoriosArquivos;
         }
 
         public string Insert(Cliente cliente)
@@ -42,7 +54,7 @@ namespace LyfrAPI.Aplicacoes
                         _context.SaveChanges();
                         //
                         //chama a função que irá enviar um email de boas vindas
-                        new ClienteMessages().WelcomeEmail(cliente.Email, cliente.Nome);
+                        new ClienteMessages(_provedorDiretoriosArquivos).WelcomeEmail(cliente.Email, cliente.Nome);
 
 
                         return "Usuário cadastrado com sucesso!";
@@ -53,9 +65,8 @@ namespace LyfrAPI.Aplicacoes
                     return "Usuário é nulo! Por - favor preencha todos os campos e tente novamente!";
                 }
             }
-            catch (Exception /*ex*/)
+            catch (Exception)
             {
-				//return ex.ToString();
                 return "Não foi possível se comunicar com a base de dados!";
             }
         }
@@ -263,7 +274,7 @@ namespace LyfrAPI.Aplicacoes
 
                 if (cliente != null)
                 {
-                    var resposta = new ClienteMessages().UpdatePasswordEmail(cliente.Email, cliente.Senha);
+                    var resposta = new ClienteMessages(_provedorDiretoriosArquivos).ForgotPasswordEmail(cliente.Email, cliente.Senha);
                     return resposta;
                 }
                 else

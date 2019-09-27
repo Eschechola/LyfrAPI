@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
+using Microsoft.Extensions.FileProviders;
 
 namespace LyfrAPI.Controllers
 {
@@ -20,12 +21,13 @@ namespace LyfrAPI.Controllers
         //variavel de contexto para acesso as utilidades do entity
         private LyfrDBContext _context;
 
-        private readonly IHostingEnvironment _hostingEnvironment;
+        //variavel para poder acessar a pasta wwwroot nas funçoes que necessitam de email
+        //dependencia será injetada nas classes necessarias
+        private PhysicalFileProvider _provedorDiretoriosArquivos = new PhysicalFileProvider(Directory.GetCurrentDirectory());
 
-        public ClienteController(LyfrDBContext context, IHostingEnvironment hostingEnvironment)
+        public ClienteController(LyfrDBContext context)
         {
             _context = context;
-            _hostingEnvironment = hostingEnvironment;
         }
 
         [HttpPost]
@@ -44,7 +46,7 @@ namespace LyfrAPI.Controllers
                     //deixa o email minúsculo para poder inserir no banco
                     clienteEnviado.Email = clienteEnviado.Email.ToLower();
 
-                    var resposta = new ClienteAplicacao(_context, Directory.GetCurrentDirectory()).Insert(clienteEnviado);
+                    var resposta = new ClienteAplicacao(_context, _provedorDiretoriosArquivos).Insert(clienteEnviado);
                     return Ok(resposta);
                 }
             }
@@ -67,7 +69,7 @@ namespace LyfrAPI.Controllers
                 }
                 else
                 {
-                    var resposta = new ClienteAplicacao(_context, _hostingEnvironment.WebRootPath).DeleteByEmail(email);
+                    var resposta = new ClienteAplicacao(_context).DeleteByEmail(email);
                     return Ok(resposta);
                 }
             }
@@ -92,7 +94,7 @@ namespace LyfrAPI.Controllers
                 }
                 else
                 {
-                    var resposta = new ClienteAplicacao(_context, _hostingEnvironment.WebRootPath).DeleteByCPF(CPF);
+                    var resposta = new ClienteAplicacao(_context).DeleteByCPF(CPF);
                     return Ok(resposta);
                 }
             }
@@ -116,7 +118,7 @@ namespace LyfrAPI.Controllers
                 }
                 else
                 {
-                    var resposta = new ClienteAplicacao(_context, _hostingEnvironment.WebRootPath).Update(clienteEnviado);
+                    var resposta = new ClienteAplicacao(_context).Update(clienteEnviado);
                     return Ok(resposta);
                 }
             }
@@ -140,7 +142,7 @@ namespace LyfrAPI.Controllers
                 }
                 else
                 {
-                    var resposta = new ClienteAplicacao(_context, _hostingEnvironment.WebRootPath).GetClienteByEmail(clienteEnviado.Email);
+                    var resposta = new ClienteAplicacao(_context).GetClienteByEmail(clienteEnviado.Email);
 
                     if (resposta != null)
                     {
@@ -179,7 +181,7 @@ namespace LyfrAPI.Controllers
                 }
                 else
                 {
-                    var resposta = new ClienteAplicacao(_context, _hostingEnvironment.WebRootPath).GetClienteByCPF(clienteEnviado.Cpf);
+                    var resposta = new ClienteAplicacao(_context).GetClienteByCPF(clienteEnviado.Cpf);
 
                     if (resposta != null)
                     {
@@ -214,7 +216,7 @@ namespace LyfrAPI.Controllers
             try
             {
                 
-                var listaDeClientes = new ClienteAplicacao(_context, _hostingEnvironment.WebRootPath).GetAllClientes(numeroDeClientes);
+                var listaDeClientes = new ClienteAplicacao(_context).GetAllClientes(numeroDeClientes);
 
                 if (listaDeClientes != null)
                 {
@@ -245,7 +247,7 @@ namespace LyfrAPI.Controllers
                 }
                 else
                 {
-                    var resposta = new ClienteAplicacao(_context, _hostingEnvironment.WebRootPath).ForgotPassword(email);
+                    var resposta = new ClienteAplicacao(_context, _provedorDiretoriosArquivos).ForgotPassword(email);
                     return Ok(resposta);
                 }
             }

@@ -1,19 +1,32 @@
 ﻿using LyfrAPI.Context;
 using LyfrAPI.Emails.Functions;
 using LyfrAPI.Models;
+using Microsoft.Extensions.FileProviders;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace LyfrAPI.Aplicacoes
 {
     public class AdministradorAplicacao
     {
+        //variavel de contexto entity framework
         private LyfrDBContext _context;
+
+        //variavel para poder acessar a pasta wwwroot nas funçoes que necessitam de email
+        //dependencia será injetada na classe ClienteMessages
+        private PhysicalFileProvider _provedorDiretoriosArquivos;
 
         public AdministradorAplicacao(LyfrDBContext context)
         {
             _context = context;
+        }
+
+        public AdministradorAplicacao(LyfrDBContext context, PhysicalFileProvider provedorDiretorioArquivos)
+        {
+            _context = context;
+            _provedorDiretoriosArquivos = provedorDiretorioArquivos;
         }
 
         public string Insert(Administrador admin)
@@ -225,7 +238,7 @@ namespace LyfrAPI.Aplicacoes
 
                 if (administrador != null)
                 {
-                    var resposta = new ClienteMessages().UpdatePasswordEmail(administrador.Email, administrador.Senha);
+                    var resposta = new ClienteMessages(_provedorDiretoriosArquivos).ForgotPasswordEmail(administrador.Email, administrador.Senha);
                     return resposta;
                 }
                 else

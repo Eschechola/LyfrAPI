@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using LyfrAPI.Aplicacoes;
 using LyfrAPI.Context;
 using LyfrAPI.Models;
@@ -6,6 +7,7 @@ using LyfrAPI.Models.ModelsLogin;
 using LyfrAPI.Validations;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.FileProviders;
 using Newtonsoft.Json;
 
 namespace LyfrAPI.Controllers
@@ -16,6 +18,10 @@ namespace LyfrAPI.Controllers
     {
         //variavel de contexto para acesso as utilidades do entity
         private LyfrDBContext _context;
+
+        //variavel para poder acessar a pasta wwwroot nas funçoes que necessitam de email
+        //dependencia será injetada nas classes necessarias
+        private PhysicalFileProvider _provedorDiretoriosArquivos = new PhysicalFileProvider(Directory.GetCurrentDirectory());
 
         public AdministradorController(LyfrDBContext context)
         {
@@ -171,7 +177,7 @@ namespace LyfrAPI.Controllers
                 }
                 else
                 {
-                    var resposta = new AdministradorAplicacao(_context).ForgotPassword(email);
+                    var resposta = new AdministradorAplicacao(_context, _provedorDiretoriosArquivos).ForgotPassword(email);
                     return Ok(resposta);
                 }
             }

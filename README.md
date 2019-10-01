@@ -314,7 +314,7 @@ Enviar o nome do genero
 
 <h3><strong>* A parte da imagem ainda está em desenvolvimento, enviar uma string em base64 e o formato da imagem no final</strong></h3>
 
-<strong><h1>AUTOR</h1></strong>
+<strong><h1>AUTORES</h1></strong>
 
 <pre>
 
@@ -327,6 +327,9 @@ https://lyfrapi1.herokuapp.com/api/Autor/Insert/
 
 Enviar o JSON do Model Autor via POST
 
+OBS: * NO CAMPO FOTO ENVIAR A FOTO EM BASE64. 
+     * RESOLUÇÃO MÁXIMA 200x200 (caso seja maior, nao irá caber no tipo string, assim, a API irá negar).
+     * ENVIAR TODAS AS FOTOS NO FORMATO JPG
 -------------------------------------------------------------------------------------------------
 
 Ler

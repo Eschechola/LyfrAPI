@@ -7,6 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\LyfrAPI.Context\LyfrAPI.Context.csproj" />
     <ProjectReference Include="..\LyfrAPI.Emails\LyfrAPI.Emails.csproj" />
+    <ProjectReference Include="..\LyfrAPI.Files\LyfrAPI.Files.csproj" />
     <ProjectReference Include="..\LyfrAPI.Models\LyfrAPI.Models.csproj" />
   </ItemGroup>
 

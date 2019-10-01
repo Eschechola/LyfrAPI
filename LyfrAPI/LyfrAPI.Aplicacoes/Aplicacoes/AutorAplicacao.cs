@@ -1,5 +1,7 @@
 ﻿using LyfrAPI.Context;
+using LyfrAPI.Files;
 using LyfrAPI.Models;
+using Microsoft.Extensions.FileProviders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +13,24 @@ namespace LyfrAPI.Aplicacoes
     {
         private LyfrDBContext _context;
 
+        //variavel para poder acessar a pasta wwwroot nas funçoes que necessitam de imagem
+        //dependencia será injetada na classe ClienteMessages
+        private PhysicalFileProvider _provedorDiretoriosArquivos;
+
+        //varivel onde vai guardar a extensão do diretório das fotos
+        private string diretorioFotos = "wwwroot/Autores/Fotos";
+
+        //construtor usado para quando NÂO FOR UTILIZAR ARQUIVOS
         public AutorAplicacao(LyfrDBContext context)
         {
             _context = context;
+        }
+
+        //construtor usado para quando FORMOS UTILIZAR ARQUIVOS, COMO NO CASO DO EMAIL
+        public AutorAplicacao(LyfrDBContext context, PhysicalFileProvider provedorDiretoriosArquivos)
+        {
+            _context = context;
+            _provedorDiretoriosArquivos = provedorDiretoriosArquivos;
         }
 
         public string Insert(Autores autor)
@@ -28,6 +45,23 @@ namespace LyfrAPI.Aplicacoes
                     }
                     else
                     {
+                        //chama o método que formata o novo nome do autor
+                        var nomeFoto = new GetNameFiles().GetNovoNomeAutor();
+                        //chama o método para salvar a foto
+                        var salvarFoto = new FilesManipulation().ConverterDeBase64EmArquivo(_provedorDiretoriosArquivos.GetFileInfo(diretorioFotos).PhysicalPath, nomeFoto, autor.Foto);
+
+                        //caso tenha conseguido salvar a foto, atribui o link a ela
+                        //senão utiliza uma foto not found
+                        if (salvarFoto)
+                        {
+                            autor.Foto = "https://lyfrapi1.herokuapp.com/Autores/Fotos/" + nomeFoto;
+                            
+                        }
+                        else
+                        {
+                            autor.Foto = "https://lyfrapi1.herokuapp.com/Autores/None/notFound.jpg";
+                        }
+
                         _context.Add(autor);
                         _context.SaveChanges();
 

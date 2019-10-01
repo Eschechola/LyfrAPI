@@ -109,7 +109,7 @@ Esqueceu Senha
 HTTP - POST
 https://lyfrapi1.herokuapp.com/api/Cliente/ForgotPassword/
 
-Enviar o senha via POST
+Enviar o model RecoveryPassword via POST
 
 -------------------------------------------------------------------------------------------------
 
@@ -171,7 +171,7 @@ Esqueceu senha
 HTTP - POST
 https://lyfrapi1.herokuapp.com/api/Administrador/ForgotPassword/
 
-Enviar o Email via POST
+Enviar o model RecoveryPassword via POST
 
 -------------------------------------------------------------------------------------------------
 

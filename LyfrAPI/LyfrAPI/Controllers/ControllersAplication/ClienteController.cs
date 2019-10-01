@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
 using Microsoft.Extensions.FileProviders;
+using LyfrAPI.Models.ModelsEmail;
 
 namespace LyfrAPI.Controllers
 {
@@ -237,17 +238,17 @@ namespace LyfrAPI.Controllers
         [HttpPost]
         [Route("ForgotPassword")]
         [Authorize]
-        public IActionResult ForgotPassword([FromBody]string email)
+        public IActionResult ForgotPassword([FromBody]RecoveryPassword recuperarSenha)
         {
             try
             {
-                if(!new ValidationFields().ValidateEmail(email))
+                if(!new ValidationFields().ValidateEmail(recuperarSenha.Email))
                 {
                     return BadRequest("Email inválido! Tente novamente.");
                 }
                 else
                 {
-                    var resposta = new ClienteAplicacao(_context, _provedorDiretoriosArquivos).ForgotPassword(email);
+                    var resposta = new ClienteAplicacao(_context, _provedorDiretoriosArquivos).ForgotPassword(recuperarSenha);
                     return Ok(resposta);
                 }
             }

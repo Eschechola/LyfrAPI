@@ -1,6 +1,7 @@
 ﻿using LyfrAPI.Context;
 using LyfrAPI.Emails.Functions;
 using LyfrAPI.Models;
+using LyfrAPI.Models.ModelsEmail;
 using Microsoft.Extensions.FileProviders;
 using System;
 using System.Collections.Generic;
@@ -266,15 +267,15 @@ namespace LyfrAPI.Aplicacoes
             }
         }
 
-        public string ForgotPassword(string emailCliente)
+        public string ForgotPassword(RecoveryPassword recuperarSenha)
         {
             try
             {
-                var cliente = GetClienteByEmail(emailCliente.ToLower());
+                var cliente = GetClienteByEmail(recuperarSenha.Email.ToLower());
 
                 if (cliente != null)
                 {
-                    var resposta = new ClienteMessages(_provedorDiretoriosArquivos).ForgotPasswordEmail(cliente.Email, cliente.Senha);
+                    var resposta = new ClienteMessages(_provedorDiretoriosArquivos).ForgotPasswordEmail(recuperarSenha);
                     return resposta;
                 }
                 else

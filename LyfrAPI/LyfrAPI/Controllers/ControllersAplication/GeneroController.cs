@@ -28,7 +28,7 @@ namespace LyfrAPI.Controllers
         {
             try
             {
-                if (ModelState.IsValid || generoEnviado == null)
+                if (!ModelState.IsValid || generoEnviado == null)
                 {
                     return BadRequest("Dados inválidos! Tente novamente.");
                 }

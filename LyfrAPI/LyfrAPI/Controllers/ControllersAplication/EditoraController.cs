@@ -116,7 +116,7 @@ namespace LyfrAPI.Controllers
         {
             try
             {
-                if (new ValidationFields().ValidateNome(nome))
+                if (!new ValidationFields().ValidateNome(nome))
                 {
                     return BadRequest("Nome inválido! Tente novamente.");
                 }

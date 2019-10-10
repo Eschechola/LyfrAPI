@@ -11,12 +11,13 @@ namespace LyfrAPI.Files
         //a api vai receber o arquivo em formato base64,
         //vai transformar em arquivo e vai salvar no diretório informado 
 
-        public string ConverterArquivoBase64(string diretorioArquivo, string nomeArquivo)
+        public string ConverterDeArquivoEmBase64(string diretorioArquivo)
         {
+            var diretorioArquivoArrumado = diretorioArquivo.Replace(@"\\", @"\");
             try
             {
                 //le todos os bytes do arquivo que está no diretorio informado
-                byte[] bytesDoArquivo = File.ReadAllBytes(diretorioArquivo + nomeArquivo);
+                byte[] bytesDoArquivo = File.ReadAllBytes(Path.Combine(diretorioArquivoArrumado));
                 //converte esses bytes para a base64
                 string arquivoBase64 = Convert.ToBase64String(bytesDoArquivo);
                 //retorna a base64 em formato de stringg

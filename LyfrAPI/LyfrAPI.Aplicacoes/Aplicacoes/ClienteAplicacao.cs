@@ -233,7 +233,7 @@ namespace LyfrAPI.Aplicacoes
                 if (listaDeClientes != null)
                 {
                     //caso o numero passado for igual a 0 ele vai retornar todos
-                    if (numeroDeClientes != 0)
+                    if (numeroDeClientes != 0 && numeroDeClientes > 0)
                     {
                         //lista auxiliar caso tenha sido passado uma limitação, por exemplo retornar os 5 ou os 6 ultimos clientes
                         var listaDeClientesComNumeroDeClientes = new List<Cliente>();

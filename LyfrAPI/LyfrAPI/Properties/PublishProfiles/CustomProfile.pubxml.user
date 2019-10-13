@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Esse arquivo é usado pelo processo de publicação/pacote do seu projeto Web. É possível personalizar o comportamento deste processo
+ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>
+    </EncryptedPassword>
+    <_PublishTargetUrl>ftp://marte.hostingzone.com.br/wwwroot</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="appsettings.Development.json">
+      <publishTime>10/10/2019 00:25:30</publishTime>
+    </File>
+    <File Include="appsettings.json">
+      <publishTime>10/10/2019 00:25:30</publishTime>
+    </File>
+    <File Include="dotnet-aspnet-codegenerator-design.dll">
+      <publishTime>03/02/2019 19:52:30</publishTime>
+    </File>
+    <File Include="LyfrAPI.Aplicacoes.dll">
+      <publishTime>10/13/2019 20:39:16</publishTime>
+    </File>
+    <File Include="LyfrAPI.Aplicacoes.pdb">
+      <publishTime>10/13/2019 20:39:16</publishTime>
+    </File>
+    <File Include="LyfrAPI.Context.dll">
+      <publishTime>10/13/2019 20:39:15</publishTime>
+    </File>
+    <File Include="LyfrAPI.Context.pdb">
+      <publishTime>10/13/2019 20:39:15</publishTime>
+    </File>
+    <File Include="LyfrAPI.deps.json">
+      <publishTime>10/13/2019 20:42:06</publishTime>
+    </File>
+    <File Include="LyfrAPI.dll">
+      <publishTime>10/13/2019 20:42:06</publishTime>
+    </File>
+    <File Include="LyfrAPI.Emails.dll">
+      <publishTime>10/13/2019 20:39:15</publishTime>
+    </File>
+    <File Include="LyfrAPI.Emails.pdb">
+      <publishTime>10/13/2019 20:39:15</publishTime>
+    </File>
+    <File Include="LyfrAPI.Encryption.dll">
+      <publishTime>10/13/2019 20:39:12</publishTime>
+    </File>
+    <File Include="LyfrAPI.Encryption.pdb">
+      <publishTime>10/13/2019 20:39:12</publishTime>
+    </File>
+    <File Include="LyfrAPI.Files.dll">
+      <publishTime>10/13/2019 20:39:15</publishTime>
+    </File>
+    <File Include="LyfrAPI.Files.pdb">
+      <publishTime>10/13/2019 20:39:15</publishTime>
+    </File>
+    <File Include="LyfrAPI.Models.dll">
+      <publishTime>10/13/2019 20:39:12</publishTime>
+    </File>
+    <File Include="LyfrAPI.Models.pdb">
+      <publishTime>10/13/2019 20:39:12</publishTime>
+    </File>
+    <File Include="LyfrAPI.pdb">
+      <publishTime>10/13/2019 20:42:06</publishTime>
+    </File>
+    <File Include="LyfrAPI.runtimeconfig.json">
+      <publishTime>10/13/2019 20:39:18</publishTime>
+    </File>
+    <File Include="LyfrAPI.Validations.dll">
+      <publishTime>10/13/2019 20:39:12</publishTime>
+    </File>
+    <File Include="LyfrAPI.Validations.pdb">
+      <publishTime>10/13/2019 20:39:12</publishTime>
+    </File>
+    <File Include="Microsoft.CodeAnalysis.CSharp.Workspaces.dll">
+      <publishTime>08/26/2019 20:33:01</publishTime>
+    </File>
+    <File Include="Microsoft.CodeAnalysis.Workspaces.dll">
+      <publishTime>08/26/2019 20:32:51</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll">
+      <publishTime>03/02/2019 19:51:56</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Core.dll">
+      <publishTime>03/02/2019 19:52:00</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.dll">
+      <publishTime>03/02/2019 19:52:04</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll">
+      <publishTime>03/02/2019 19:52:02</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll">
+      <publishTime>03/02/2019 19:51:58</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll">
+      <publishTime>03/02/2019 19:51:56</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll">
+      <publishTime>03/02/2019 19:52:04</publishTime>
+    </File>
+    <File Include="MySqlConnector.dll">
+      <publishTime>01/16/2019 15:11:42</publishTime>
+    </File>
+    <File Include="NuGet.Frameworks.dll">
+      <publishTime>08/26/2019 20:32:54</publishTime>
+    </File>
+    <File Include="Pomelo.EntityFrameworkCore.MySql.dll">
+      <publishTime>02/07/2019 23:10:26</publishTime>
+    </File>
+    <File Include="Pomelo.JsonObject.dll">
+      <publishTime>02/07/2019 22:47:50</publishTime>
+    </File>
+    <File Include="System.Composition.AttributedModel.dll">
+      <publishTime>08/26/2019 20:33:00</publishTime>
+    </File>
+    <File Include="System.Composition.Convention.dll">
+      <publishTime>08/26/2019 20:33:00</publishTime>
+    </File>
+    <File Include="System.Composition.Hosting.dll">
+      <publishTime>08/26/2019 20:33:00</publishTime>
+    </File>
+    <File Include="System.Composition.Runtime.dll">
+      <publishTime>08/26/2019 20:33:00</publishTime>
+    </File>
+    <File Include="System.Composition.TypedParts.dll">
+      <publishTime>08/26/2019 20:33:00</publishTime>
+    </File>
+    <File Include="web.config">
+      <publishTime>10/13/2019 20:42:07</publishTime>
+    </File>
+    <File Include="wwwroot/Autores/Fotos/30_09_2019_21_49_27.jpg">
+      <publishTime>10/10/2019 00:25:30</publishTime>
+    </File>
+    <File Include="wwwroot/Autores/None/notFound.jpg">
+      <publishTime>10/10/2019 00:25:30</publishTime>
+    </File>
+    <File Include="wwwroot/Email/Templates/Welcome/images/1.png">
+      <publishTime>10/10/2019 00:25:30</publishTime>
+    </File>
+    <File Include="wwwroot/Email/Templates/Welcome/images/2.png">
+      <publishTime>10/10/2019 00:25:30</publishTime>
+    </File>
+    <File Include="wwwroot/Email/Templates/Welcome/images/3.png">
+      <publishTime>10/10/2019 00:25:30</publishTime>
+    </File>
+    <File Include="wwwroot/Email/Templates/Welcome/images/facebook%402x.png">
+      <publishTime>10/10/2019 00:25:30</publishTime>
+    </File>
+    <File Include="wwwroot/Email/Templates/Welcome/images/fundo1.png">
+      <publishTime>10/10/2019 00:25:30</publishTime>
+    </File>
+    <File Include="wwwroot/Email/Templates/Welcome/images/Icon_Lyfr3.png">
+      <publishTime>10/10/2019 00:25:30</publishTime>
+    </File>
+    <File Include="wwwroot/Email/Templates/Welcome/images/instagram%402x.png">
+      <publishTime>10/10/2019 00:25:30</publishTime>
+    </File>
+    <File Include="wwwroot/Email/Templates/Welcome/images/linkedin%402x.png">
+      <publishTime>10/10/2019 00:25:30</publishTime>
+    </File>
+    <File Include="wwwroot/Email/Templates/Welcome/images/twitter%402x.png">
+      <publishTime>10/10/2019 00:25:30</publishTime>
+    </File>
+    <File Include="wwwroot/Email/Templates/Welcome/Welcome.html">
+      <publishTime>10/10/2019 00:25:30</publishTime>
+    </File>
+    <File Include="wwwroot/Livros/Capas/lyfr_cover10_10_2019_17_12_02.jpg">
+      <publishTime>10/13/2019 19:52:01</publishTime>
+    </File>
+    <File Include="wwwroot/Livros/Epubs/lyfr_book10_10_2019_17_12_02.epub">
+      <publishTime>10/13/2019 19:52:01</publishTime>
+    </File>
+    <File Include="wwwroot/Livros/Epubs/None/imgs/icon.png">
+      <publishTime>10/13/2019 19:52:01</publishTime>
+    </File>
+    <File Include="wwwroot/Livros/Epubs/None/NotFound.html">
+      <publishTime>10/13/2019 19:52:01</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -4,6 +4,7 @@ using LyfrAPI.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.FileProviders;
+using Newtonsoft.Json;
 using System;
 using System.IO;
 
@@ -47,6 +48,59 @@ namespace LyfrAPI.Controllers
             {
                 return BadRequest("Erro ao comunicar com a base de dados!");
             }
+        }
+
+        [HttpGet]
+        [Route("GetAllLivros")]
+        [Authorize]
+        public IActionResult GetAllLivros(int numeroDeLivros = 0)
+        {
+            try
+            {
+
+                var listaDeLivros = new LivroAplicacao(_context).GetAllLivros(numeroDeLivros);
+
+                if (listaDeLivros != null)
+                {
+                    var resposta = JsonConvert.SerializeObject(listaDeLivros);
+                    return Ok(resposta);
+                }
+                else
+                {
+                    return BadRequest("Nenhum cliente cadastrado!");
+                }
+            }
+            catch (Exception)
+            {
+                return BadRequest("Erro ao comunicar com a base de dados!");
+            }
+        }
+
+
+        [HttpPost]
+        [Route("GetLivroByTitulo")]
+        [Authorize]
+        public IActionResult GetLivroByTitulo([FromBody]string titulo)
+        {
+            try
+            {
+                var resposta = new LivroAplicacao(_context).GetLivroByTitulo(titulo);
+
+                if (resposta != null)
+                {
+                    var livroResposta = JsonConvert.SerializeObject(resposta);
+                    return Ok(livroResposta);
+                }
+                else
+                {
+                    return BadRequest("Usuário não encontrado!");
+                }
+            }
+            catch (Exception)
+            {
+                return BadRequest("Erro ao comunicar com a base de dados!");
+            }
+
         }
     }
 }

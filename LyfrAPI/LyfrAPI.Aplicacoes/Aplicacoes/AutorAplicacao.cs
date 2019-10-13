@@ -1,6 +1,7 @@
 ﻿using LyfrAPI.Context;
 using LyfrAPI.Files;
 using LyfrAPI.Models;
+using LyfrAPI.Models.ModelRoute;
 using Microsoft.Extensions.FileProviders;
 using System;
 using System.Collections.Generic;
@@ -46,7 +47,7 @@ namespace LyfrAPI.Aplicacoes
                     else
                     {
                         //chama o método que formata o novo nome do autor
-                        var nomeFoto = new GetNameFiles().GetNovoNomeAutor();
+                        var nomeFoto = new GetNameFiles().GetNovoNome("",".jpg");
                         //chama o método para salvar a foto
                         var salvarFoto = new FilesManipulation().ConverterDeBase64EmArquivo(_provedorDiretoriosArquivos.GetFileInfo(diretorioFotos).PhysicalPath, nomeFoto, autor.Foto);
 
@@ -54,12 +55,12 @@ namespace LyfrAPI.Aplicacoes
                         //senão utiliza uma foto not found
                         if (salvarFoto)
                         {
-                            autor.Foto = "https://lyfrapi1.herokuapp.com/Autores/Fotos/" + nomeFoto;
+                            autor.Foto = DefaultRoute.RotaPadrao + "/Autores/Fotos/" + nomeFoto;
                             
                         }
                         else
                         {
-                            autor.Foto = "https://lyfrapi1.herokuapp.com/Autores/None/notFound.jpg";
+                            autor.Foto = DefaultRoute.RotaPadrao + "/Autores/None/notFound.jpg";
                         }
 
                         _context.Add(autor);

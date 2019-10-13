@@ -312,8 +312,6 @@ Enviar o nome do genero
  
 <br><br><br>
 
-<h3><strong>* A parte da imagem ainda está em desenvolvimento, enviar uma string em base64 e o formato da imagem no final</strong></h3>
-
 <strong><h1>AUTORES</h1></strong>
 
 <pre>

@@ -111,8 +111,6 @@ namespace LyfrAPI.Context
 
                 entity.Property(e => e.Telefone).HasColumnType("varchar(20)");
 
-                entity.Property(e => e.Plano).HasColumnType("char(1)");
-
                 entity.Property(e => e.Data_Cadastro).HasColumnType("varchar(30)");
             });
 

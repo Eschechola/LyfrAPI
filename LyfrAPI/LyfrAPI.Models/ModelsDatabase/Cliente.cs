@@ -70,10 +70,6 @@ namespace LyfrAPI.Models
         [Required(ErrorMessage = "O telefone deve ser inserido.")]
         public string Telefone { get; set; }
 
-        [Required(ErrorMessage = "O plano deve ser inserido.")]
-        [StringLength(1, ErrorMessage = "O plano só pode ser 'P' ou 'G'")]
-        public string Plano { get; set; }
-
         public string Data_Cadastro { get; set; }
 
         public ICollection<Favoritos> Favoritos { get; set; }

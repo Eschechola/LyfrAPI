@@ -6,8 +6,7 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <EncryptedPassword>
-    </EncryptedPassword>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfXaSp4YMbUSOCtibqC5LDwAAAAACAAAAAAAQZgAAAAEAACAAAAArNo4d48r6Pi0O0rCXoUWbTXFmVLTCrTCH9wpupFNlOwAAAAAOgAAAAAIAACAAAACsoRPjuAIPqyhtLYgJNGbj6C33UBF4cvQ3tJmSACKg/yAAAADrH2h4enlQ0ycu59d81Jje7sloR00b0FeNB/S5TGjEzUAAAAAc91VgBhVSF0NkkM/tztBX07HJJv79bPls2si3qnyXrX+PgVsdH7Q3HOg0vLQW2FiLWrKDy93ngyPf1of3K806</EncryptedPassword>
     <_PublishTargetUrl>ftp://marte.hostingzone.com.br/wwwroot</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
@@ -17,62 +16,65 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
     <File Include="appsettings.json">
       <publishTime>10/10/2019 00:25:30</publishTime>
     </File>
+    <File Include="appsettings.production.json">
+      <publishTime>10/15/2019 01:32:18</publishTime>
+    </File>
     <File Include="dotnet-aspnet-codegenerator-design.dll">
       <publishTime>03/02/2019 19:52:30</publishTime>
     </File>
     <File Include="LyfrAPI.Aplicacoes.dll">
-      <publishTime>10/13/2019 20:39:16</publishTime>
+      <publishTime>10/15/2019 01:25:54</publishTime>
     </File>
     <File Include="LyfrAPI.Aplicacoes.pdb">
-      <publishTime>10/13/2019 20:39:16</publishTime>
+      <publishTime>10/15/2019 01:25:54</publishTime>
     </File>
     <File Include="LyfrAPI.Context.dll">
-      <publishTime>10/13/2019 20:39:15</publishTime>
+      <publishTime>10/15/2019 01:25:51</publishTime>
     </File>
     <File Include="LyfrAPI.Context.pdb">
-      <publishTime>10/13/2019 20:39:15</publishTime>
+      <publishTime>10/15/2019 01:25:51</publishTime>
     </File>
     <File Include="LyfrAPI.deps.json">
-      <publishTime>10/13/2019 20:42:06</publishTime>
+      <publishTime>10/15/2019 01:32:18</publishTime>
     </File>
     <File Include="LyfrAPI.dll">
-      <publishTime>10/13/2019 20:42:06</publishTime>
+      <publishTime>10/15/2019 01:32:17</publishTime>
     </File>
     <File Include="LyfrAPI.Emails.dll">
-      <publishTime>10/13/2019 20:39:15</publishTime>
+      <publishTime>10/15/2019 01:25:52</publishTime>
     </File>
     <File Include="LyfrAPI.Emails.pdb">
-      <publishTime>10/13/2019 20:39:15</publishTime>
+      <publishTime>10/15/2019 01:25:52</publishTime>
     </File>
     <File Include="LyfrAPI.Encryption.dll">
-      <publishTime>10/13/2019 20:39:12</publishTime>
+      <publishTime>10/13/2019 21:59:45</publishTime>
     </File>
     <File Include="LyfrAPI.Encryption.pdb">
-      <publishTime>10/13/2019 20:39:12</publishTime>
+      <publishTime>10/13/2019 21:59:45</publishTime>
     </File>
     <File Include="LyfrAPI.Files.dll">
-      <publishTime>10/13/2019 20:39:15</publishTime>
+      <publishTime>10/15/2019 01:25:52</publishTime>
     </File>
     <File Include="LyfrAPI.Files.pdb">
-      <publishTime>10/13/2019 20:39:15</publishTime>
+      <publishTime>10/15/2019 01:25:52</publishTime>
     </File>
     <File Include="LyfrAPI.Models.dll">
-      <publishTime>10/13/2019 20:39:12</publishTime>
+      <publishTime>10/15/2019 01:25:49</publishTime>
     </File>
     <File Include="LyfrAPI.Models.pdb">
-      <publishTime>10/13/2019 20:39:12</publishTime>
+      <publishTime>10/15/2019 01:25:49</publishTime>
     </File>
     <File Include="LyfrAPI.pdb">
-      <publishTime>10/13/2019 20:42:06</publishTime>
+      <publishTime>10/15/2019 01:32:17</publishTime>
     </File>
     <File Include="LyfrAPI.runtimeconfig.json">
-      <publishTime>10/13/2019 20:39:18</publishTime>
+      <publishTime>10/13/2019 22:00:08</publishTime>
     </File>
     <File Include="LyfrAPI.Validations.dll">
-      <publishTime>10/13/2019 20:39:12</publishTime>
+      <publishTime>10/13/2019 21:59:48</publishTime>
     </File>
     <File Include="LyfrAPI.Validations.pdb">
-      <publishTime>10/13/2019 20:39:12</publishTime>
+      <publishTime>10/13/2019 21:59:48</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.CSharp.Workspaces.dll">
       <publishTime>08/26/2019 20:33:01</publishTime>
@@ -129,7 +131,7 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>08/26/2019 20:33:00</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>10/13/2019 20:42:07</publishTime>
+      <publishTime>10/15/2019 01:32:18</publishTime>
     </File>
     <File Include="wwwroot/Autores/Fotos/30_09_2019_21_49_27.jpg">
       <publishTime>10/10/2019 00:25:30</publishTime>
@@ -179,5 +181,10 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
     <File Include="wwwroot/Livros/Epubs/None/NotFound.html">
       <publishTime>10/13/2019 19:52:01</publishTime>
     </File>
+  </ItemGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="MyConnection">
+      <Value>Server=mysql8.hostingzone.com.br%3bDatabase=lyfr_db%3bUid=lyfr%3bPwd=l1fr_endeavour%3b</Value>
+    </DestinationConnectionStrings>
   </ItemGroup>
 </Project>

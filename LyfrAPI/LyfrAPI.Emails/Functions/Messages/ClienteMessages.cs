@@ -50,7 +50,7 @@ namespace LyfrAPI.Emails.Functions
             catch (Exception)
             {
                 return false;
-            }
+;            }
         }
 
         public string ForgotPasswordEmail(RecoveryPassword recuperarSenha)

@@ -71,10 +71,11 @@ namespace APILyfr
             //usado quando queremos acessar as imagens no arquivo wwwroot
 			app.UseStaticFiles();
 
-            //app.UseStaticFiles(new StaticFileOptions()
+            //código para habilitar a navegação de arquivos entre a API
+            //app.UseDirectoryBrowser(new DirectoryBrowserOptions
             //{
-            //    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"Resources")),
-            //    RequestPath = new PathString("/Resources")
+            //    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")),
+            //    RequestPath = "/navigator"
             //});
 
             app.UseMvc();

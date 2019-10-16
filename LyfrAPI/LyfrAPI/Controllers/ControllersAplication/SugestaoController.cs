@@ -114,16 +114,8 @@ namespace LyfrAPI.Controllers
             try
             {
                 var listaDeSugestoes = new SugestaoAplicacao(_context).GetAllSugestoes();
-
-                if (listaDeSugestoes != null)
-                {
-                    var resposta = JsonConvert.SerializeObject(listaDeSugestoes);
-                    return Ok(resposta);
-                }
-                else
-                {
-                    return BadRequest("Nenhum registro encontrado!");
-                }
+                var resposta = JsonConvert.SerializeObject(listaDeSugestoes);
+                return Ok(resposta);
             }
             catch (Exception)
             {

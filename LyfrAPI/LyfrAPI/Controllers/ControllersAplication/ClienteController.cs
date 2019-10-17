@@ -257,5 +257,28 @@ namespace LyfrAPI.Controllers
                 return BadRequest("Tivemos alguns problemas de conexão. Tente novamente mais tarde.");
             }
         }
+
+        [HttpPost]
+        [Route("GetClienteToUpdateByEmail")]
+        [Authorize]
+        public IActionResult GetClienteToUpdateByEmail([FromBody]string email)
+        {
+            try
+            {
+                if (!new ValidationFields().ValidateEmail(email))
+                {
+                    return BadRequest("Email inválido! Tente novamente.");
+                }
+                else
+                {
+                    var resposta = new ClienteAplicacao(_context, _provedorDiretoriosArquivos).GetClienteByEmail(email);
+                    return Ok(resposta);
+                }
+            }
+            catch (Exception)
+            {
+                return BadRequest("Tivemos alguns problemas de conexão. Tente novamente mais tarde.");
+            }
+        }
     }
 }

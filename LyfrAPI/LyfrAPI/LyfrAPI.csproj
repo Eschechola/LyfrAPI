@@ -4,7 +4,14 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <UserSecretsId>45a1f730-01d1-4bed-906b-164c353c2cb7</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-    <!--<AspNetCoreModuleName>AspNetCoreModuleName</AspNetCoreModuleName>-->
+    <!--linha de codigo para carregar o .net core no servidor-->
+    <AspNetCoreModuleName>AspNetCoreModule</AspNetCoreModuleName>
+    <!-- linha de código para aceitar todos os métodos http no servidor
+    <System.webServer>
+      <modules runAllManagedModulesForAllRequests="false">
+        <remove name="WebDAVModule" />
+      </modules>
+    </System.webServer> -->
   </PropertyGroup>
 
   <ItemGroup>
@@ -50,6 +57,7 @@
     <Folder Include="wwwroot\Autores\Fotos\" />
     <Folder Include="wwwroot\Livros\Capas\None\" />
   </ItemGroup>
+  
 
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 

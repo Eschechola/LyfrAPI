@@ -1,0 +1,9 @@
+C:\Users\CTTarde\Desktop\Eschechola\LyfrAPI\LyfrAPI\LyfrAPI.Validations\bin\Debug\netcoreapp2.2\LyfrAPI.Validations.deps.json
+C:\Users\CTTarde\Desktop\Eschechola\LyfrAPI\LyfrAPI\LyfrAPI.Validations\bin\Debug\netcoreapp2.2\LyfrAPI.Validations.dll
+C:\Users\CTTarde\Desktop\Eschechola\LyfrAPI\LyfrAPI\LyfrAPI.Validations\bin\Debug\netcoreapp2.2\LyfrAPI.Validations.pdb
+C:\Users\CTTarde\Desktop\Eschechola\LyfrAPI\LyfrAPI\LyfrAPI.Validations\obj\Debug\netcoreapp2.2\LyfrAPI.Validations.csprojAssemblyReference.cache
+C:\Users\CTTarde\Desktop\Eschechola\LyfrAPI\LyfrAPI\LyfrAPI.Validations\obj\Debug\netcoreapp2.2\LyfrAPI.Validations.csproj.CoreCompileInputs.cache
+C:\Users\CTTarde\Desktop\Eschechola\LyfrAPI\LyfrAPI\LyfrAPI.Validations\obj\Debug\netcoreapp2.2\LyfrAPI.Validations.AssemblyInfoInputs.cache
+C:\Users\CTTarde\Desktop\Eschechola\LyfrAPI\LyfrAPI\LyfrAPI.Validations\obj\Debug\netcoreapp2.2\LyfrAPI.Validations.AssemblyInfo.cs
+C:\Users\CTTarde\Desktop\Eschechola\LyfrAPI\LyfrAPI\LyfrAPI.Validations\obj\Debug\netcoreapp2.2\LyfrAPI.Validations.dll
+C:\Users\CTTarde\Desktop\Eschechola\LyfrAPI\LyfrAPI\LyfrAPI.Validations\obj\Debug\netcoreapp2.2\LyfrAPI.Validations.pdb

@@ -1,0 +1,9 @@
+C:\Users\CTTarde\Desktop\Eschechola\LyfrAPI\LyfrAPI\LyfrAPI.Encryption\bin\Release\netcoreapp2.2\LyfrAPI.Encryption.deps.json
+C:\Users\CTTarde\Desktop\Eschechola\LyfrAPI\LyfrAPI\LyfrAPI.Encryption\bin\Release\netcoreapp2.2\LyfrAPI.Encryption.dll
+C:\Users\CTTarde\Desktop\Eschechola\LyfrAPI\LyfrAPI\LyfrAPI.Encryption\bin\Release\netcoreapp2.2\LyfrAPI.Encryption.pdb
+C:\Users\CTTarde\Desktop\Eschechola\LyfrAPI\LyfrAPI\LyfrAPI.Encryption\obj\Release\netcoreapp2.2\LyfrAPI.Encryption.csprojAssemblyReference.cache
+C:\Users\CTTarde\Desktop\Eschechola\LyfrAPI\LyfrAPI\LyfrAPI.Encryption\obj\Release\netcoreapp2.2\LyfrAPI.Encryption.csproj.CoreCompileInputs.cache
+C:\Users\CTTarde\Desktop\Eschechola\LyfrAPI\LyfrAPI\LyfrAPI.Encryption\obj\Release\netcoreapp2.2\LyfrAPI.Encryption.AssemblyInfoInputs.cache
+C:\Users\CTTarde\Desktop\Eschechola\LyfrAPI\LyfrAPI\LyfrAPI.Encryption\obj\Release\netcoreapp2.2\LyfrAPI.Encryption.AssemblyInfo.cs
+C:\Users\CTTarde\Desktop\Eschechola\LyfrAPI\LyfrAPI\LyfrAPI.Encryption\obj\Release\netcoreapp2.2\LyfrAPI.Encryption.dll
+C:\Users\CTTarde\Desktop\Eschechola\LyfrAPI\LyfrAPI\LyfrAPI.Encryption\obj\Release\netcoreapp2.2\LyfrAPI.Encryption.pdb

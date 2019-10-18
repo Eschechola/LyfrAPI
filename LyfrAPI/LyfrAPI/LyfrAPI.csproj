@@ -6,12 +6,7 @@
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <!--linha de codigo para carregar o .net core no servidor-->
     <AspNetCoreModuleName>AspNetCoreModule</AspNetCoreModuleName>
-    <!-- linha de código para aceitar todos os métodos http no servidor
-    <System.webServer>
-      <modules runAllManagedModulesForAllRequests="false">
-        <remove name="WebDAVModule" />
-      </modules>
-    </System.webServer> -->
+
   </PropertyGroup>
 
   <ItemGroup>

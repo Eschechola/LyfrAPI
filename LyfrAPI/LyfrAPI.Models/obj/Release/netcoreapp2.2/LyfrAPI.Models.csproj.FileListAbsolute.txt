@@ -1,0 +1,9 @@
+C:\Users\CTTarde\Desktop\Eschechola\LyfrAPI\LyfrAPI\LyfrAPI.Models\bin\Release\netcoreapp2.2\LyfrAPI.Models.deps.json
+C:\Users\CTTarde\Desktop\Eschechola\LyfrAPI\LyfrAPI\LyfrAPI.Models\bin\Release\netcoreapp2.2\LyfrAPI.Models.dll
+C:\Users\CTTarde\Desktop\Eschechola\LyfrAPI\LyfrAPI\LyfrAPI.Models\bin\Release\netcoreapp2.2\LyfrAPI.Models.pdb
+C:\Users\CTTarde\Desktop\Eschechola\LyfrAPI\LyfrAPI\LyfrAPI.Models\obj\Release\netcoreapp2.2\LyfrAPI.Models.csprojAssemblyReference.cache
+C:\Users\CTTarde\Desktop\Eschechola\LyfrAPI\LyfrAPI\LyfrAPI.Models\obj\Release\netcoreapp2.2\LyfrAPI.Models.csproj.CoreCompileInputs.cache
+C:\Users\CTTarde\Desktop\Eschechola\LyfrAPI\LyfrAPI\LyfrAPI.Models\obj\Release\netcoreapp2.2\LyfrAPI.Models.AssemblyInfoInputs.cache
+C:\Users\CTTarde\Desktop\Eschechola\LyfrAPI\LyfrAPI\LyfrAPI.Models\obj\Release\netcoreapp2.2\LyfrAPI.Models.AssemblyInfo.cs
+C:\Users\CTTarde\Desktop\Eschechola\LyfrAPI\LyfrAPI\LyfrAPI.Models\obj\Release\netcoreapp2.2\LyfrAPI.Models.dll
+C:\Users\CTTarde\Desktop\Eschechola\LyfrAPI\LyfrAPI\LyfrAPI.Models\obj\Release\netcoreapp2.2\LyfrAPI.Models.pdb

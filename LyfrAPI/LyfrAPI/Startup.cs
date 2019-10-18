@@ -72,11 +72,11 @@ namespace APILyfr
 			app.UseStaticFiles();
 
             //código para habilitar a navegação de arquivos entre a API
-            //app.UseDirectoryBrowser(new DirectoryBrowserOptions
-            //{
-            //    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")),
-            //    RequestPath = "/navigator"
-            //});
+            app.UseDirectoryBrowser(new DirectoryBrowserOptions
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")),
+                RequestPath = "/navigator"
+            });
 
             app.UseMvc();
         }

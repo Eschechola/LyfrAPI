@@ -13,26 +13,50 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
     <File Include="appsettings.Development.json">
       <publishTime>10/10/2019 14:36:10</publishTime>
     </File>
+    <File Include="dotnet-aspnet-codegenerator-design.dll">
+      <publishTime>02/03/2019 19:52:30</publishTime>
+    </File>
     <File Include="LyfrAPI.Aplicacoes.pdb">
-      <publishTime>10/18/2019 13:53:43</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="LyfrAPI.Context.dll">
+      <publishTime>10/18/2019 13:57:17</publishTime>
+    </File>
+    <File Include="LyfrAPI.Context.pdb">
+      <publishTime>10/18/2019 13:57:17</publishTime>
     </File>
     <File Include="LyfrAPI.deps.json">
-      <publishTime>10/18/2019 13:53:51</publishTime>
+      <publishTime>10/18/2019 14:24:33</publishTime>
     </File>
-    <File Include="LyfrAPI.Files.pdb">
+    <File Include="LyfrAPI.dll">
+      <publishTime>10/18/2019 14:24:32</publishTime>
+    </File>
+    <File Include="LyfrAPI.Emails.dll">
       <publishTime>10/18/2019 13:53:43</publishTime>
     </File>
+    <File Include="LyfrAPI.Encryption.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="LyfrAPI.Encryption.pdb">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="LyfrAPI.Files.pdb">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
     <File Include="LyfrAPI.runtimeconfig.json">
-      <publishTime>10/18/2019 13:53:51</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.CSharp.Workspaces.dll">
-      <publishTime>06/18/2019 14:08:09</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll">
+      <publishTime>02/03/2019 19:51:58</publishTime>
     </File>
     <File Include="System.Composition.Convention.dll">
-      <publishTime>06/18/2019 14:08:11</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="System.Composition.TypedParts.dll">
-      <publishTime>06/18/2019 14:08:12</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
   </ItemGroup>
 </Project>

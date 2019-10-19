@@ -173,6 +173,8 @@ namespace LyfrAPI.Context
                     .HasColumnType("int(11)");
 
                 entity.Property(e => e.Nome).HasColumnType("varchar(40)");
+
+                entity.Property(e => e.Foto).HasColumnType("varchar(400)");
             });
 
             modelBuilder.Entity<Historico>(entity =>

@@ -1,9 +1,12 @@
 ﻿using LyfrAPI.Context;
+using LyfrAPI.Files;
 using LyfrAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LyfrAPI.Models.ModelRoute;
+using Microsoft.Extensions.FileProviders;
 
 namespace LyfrAPI.Aplicacoes
 {
@@ -11,9 +14,24 @@ namespace LyfrAPI.Aplicacoes
     {
         private LyfrDBContext _context;
 
+        //variavel para poder acessar a pasta wwwroot nas funçoes que necessitam de imagem
+        //dependencia será injetada na classe ClienteMessages
+        private PhysicalFileProvider _provedorDiretoriosArquivos;
+
+        //varivel onde vai guardar a extensão do diretório das fotos
+        private string diretorioFotos = "wwwroot/Generos/Fotos";
+
+        //construtor usado para quando NÂO FOR UTILIZAR ARQUIVOS
         public GeneroAplicacao(LyfrDBContext context)
         {
             _context = context;
+        }
+
+        //construtor usado para quando FORMOS UTILIZAR ARQUIVOS, COMO NO CASO DAS FOTOS
+        public GeneroAplicacao(LyfrDBContext context, PhysicalFileProvider provedorDiretoriosArquivos)
+        {
+            _context = context;
+            _provedorDiretoriosArquivos = provedorDiretoriosArquivos;
         }
 
         public string Insert(Genero genero)
@@ -28,6 +46,23 @@ namespace LyfrAPI.Aplicacoes
                     }
                     else
                     {
+                        //chama o método que formata o novo nome do autor
+                        var nomeFoto = new GetNameFiles().GetNovoNome("lyfr_gender_", ".jpg");
+                        //chama o método para salvar a foto
+                        var salvarFoto = new FilesManipulation().ConverterDeBase64EmArquivo(_provedorDiretoriosArquivos.GetFileInfo(diretorioFotos).PhysicalPath, nomeFoto, genero.Foto);
+
+                        //caso tenha conseguido salvar a foto, atribui o link a ela
+                        //senão utiliza uma foto not found
+                        if (salvarFoto)
+                        {
+                            genero.Foto = DefaultRoute.RotaPadrao + "/Generos/Fotos/" + nomeFoto;
+
+                        }
+                        else
+                        {
+                            genero.Foto = DefaultRoute.RotaPadrao + "/Generos/None/notFound.jpg";
+                        }
+
                         _context.Add(genero);
                         _context.SaveChanges();
 

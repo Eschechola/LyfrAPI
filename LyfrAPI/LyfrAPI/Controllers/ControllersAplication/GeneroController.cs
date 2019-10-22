@@ -4,8 +4,10 @@ using LyfrAPI.Models;
 using LyfrAPI.Validations;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.FileProviders;
 using Newtonsoft.Json;
 using System;
+using System.IO;
 
 namespace LyfrAPI.Controllers
 {
@@ -15,6 +17,10 @@ namespace LyfrAPI.Controllers
     {
         //variavel de contexto para acesso as utilidades do entity
         private LyfrDBContext _context;
+
+        //variavel para poder acessar a pasta wwwroot nas funçoes que necessitam de email
+        //dependencia será injetada nas classes necessarias
+        private PhysicalFileProvider _provedorDiretoriosArquivos = new PhysicalFileProvider(Directory.GetCurrentDirectory());
 
         public GeneroController(LyfrDBContext context)
         {
@@ -34,7 +40,7 @@ namespace LyfrAPI.Controllers
                 }
                 else
                 {
-                    var resposta = new GeneroAplicacao(_context).Insert(generoEnviado);
+                    var resposta = new GeneroAplicacao(_context, _provedorDiretoriosArquivos).Insert(generoEnviado);
                     return Ok(resposta);
                 }
             }

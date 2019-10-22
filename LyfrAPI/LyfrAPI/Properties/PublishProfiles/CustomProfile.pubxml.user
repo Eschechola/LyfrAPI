@@ -17,64 +17,64 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>10/10/2019 00:25:30</publishTime>
     </File>
     <File Include="appsettings.production.json">
-      <publishTime>10/16/2019 23:14:11</publishTime>
+      <publishTime>10/19/2019 17:05:28</publishTime>
     </File>
     <File Include="dotnet-aspnet-codegenerator-design.dll">
       <publishTime>03/02/2019 19:52:30</publishTime>
     </File>
     <File Include="LyfrAPI.Aplicacoes.dll">
-      <publishTime>10/16/2019 23:07:54</publishTime>
+      <publishTime>10/19/2019 17:01:47</publishTime>
     </File>
     <File Include="LyfrAPI.Aplicacoes.pdb">
-      <publishTime>10/16/2019 23:07:54</publishTime>
+      <publishTime>10/19/2019 17:01:47</publishTime>
     </File>
     <File Include="LyfrAPI.Context.dll">
-      <publishTime>10/16/2019 23:07:53</publishTime>
+      <publishTime>10/19/2019 01:00:11</publishTime>
     </File>
     <File Include="LyfrAPI.Context.pdb">
-      <publishTime>10/16/2019 23:07:53</publishTime>
+      <publishTime>10/19/2019 01:00:11</publishTime>
     </File>
     <File Include="LyfrAPI.deps.json">
-      <publishTime>10/16/2019 23:14:11</publishTime>
+      <publishTime>10/19/2019 17:01:48</publishTime>
     </File>
     <File Include="LyfrAPI.dll">
-      <publishTime>10/16/2019 23:14:11</publishTime>
+      <publishTime>10/19/2019 17:01:48</publishTime>
     </File>
     <File Include="LyfrAPI.Emails.dll">
-      <publishTime>10/16/2019 23:07:53</publishTime>
+      <publishTime>10/19/2019 01:00:10</publishTime>
     </File>
     <File Include="LyfrAPI.Emails.pdb">
-      <publishTime>10/16/2019 23:07:53</publishTime>
+      <publishTime>10/19/2019 01:00:10</publishTime>
     </File>
     <File Include="LyfrAPI.Encryption.dll">
-      <publishTime>10/16/2019 23:07:51</publishTime>
+      <publishTime>10/19/2019 01:00:09</publishTime>
     </File>
     <File Include="LyfrAPI.Encryption.pdb">
-      <publishTime>10/16/2019 23:07:51</publishTime>
+      <publishTime>10/19/2019 01:00:09</publishTime>
     </File>
     <File Include="LyfrAPI.Files.dll">
-      <publishTime>10/16/2019 23:07:53</publishTime>
+      <publishTime>10/19/2019 17:01:46</publishTime>
     </File>
     <File Include="LyfrAPI.Files.pdb">
-      <publishTime>10/16/2019 23:07:53</publishTime>
+      <publishTime>10/19/2019 17:01:46</publishTime>
     </File>
     <File Include="LyfrAPI.Models.dll">
-      <publishTime>10/16/2019 23:07:51</publishTime>
+      <publishTime>10/19/2019 01:00:09</publishTime>
     </File>
     <File Include="LyfrAPI.Models.pdb">
-      <publishTime>10/16/2019 23:07:51</publishTime>
+      <publishTime>10/19/2019 01:00:09</publishTime>
     </File>
     <File Include="LyfrAPI.pdb">
-      <publishTime>10/16/2019 23:14:11</publishTime>
+      <publishTime>10/19/2019 17:01:48</publishTime>
     </File>
     <File Include="LyfrAPI.runtimeconfig.json">
-      <publishTime>10/16/2019 23:07:55</publishTime>
+      <publishTime>10/19/2019 01:00:13</publishTime>
     </File>
     <File Include="LyfrAPI.Validations.dll">
-      <publishTime>10/16/2019 23:07:51</publishTime>
+      <publishTime>10/19/2019 01:00:09</publishTime>
     </File>
     <File Include="LyfrAPI.Validations.pdb">
-      <publishTime>10/16/2019 23:07:51</publishTime>
+      <publishTime>10/19/2019 01:00:09</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.CSharp.Workspaces.dll">
       <publishTime>08/26/2019 20:33:01</publishTime>
@@ -131,7 +131,7 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>08/26/2019 20:33:00</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>10/16/2019 23:14:11</publishTime>
+      <publishTime>10/19/2019 17:05:28</publishTime>
     </File>
     <File Include="wwwroot/Autores/Fotos/30_09_2019_21_49_27.jpg">
       <publishTime>10/10/2019 00:25:30</publishTime>
@@ -168,6 +168,12 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
     </File>
     <File Include="wwwroot/Email/Templates/Welcome/Welcome.html">
       <publishTime>10/16/2019 23:01:39</publishTime>
+    </File>
+    <File Include="wwwroot/Generos/Fotos/lyfr_gender_19_10_2019_16_56_18.jpg">
+      <publishTime>10/19/2019 16:56:18</publishTime>
+    </File>
+    <File Include="wwwroot/Generos/None/notFound.jpg">
+      <publishTime>10/19/2019 13:48:06</publishTime>
     </File>
     <File Include="wwwroot/Livros/Capas/lyfr_cover10_10_2019_17_12_02.jpg">
       <publishTime>10/13/2019 19:52:01</publishTime>

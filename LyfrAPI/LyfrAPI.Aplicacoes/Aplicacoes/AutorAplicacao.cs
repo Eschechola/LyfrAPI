@@ -27,7 +27,7 @@ namespace LyfrAPI.Aplicacoes
             _context = context;
         }
 
-        //construtor usado para quando FORMOS UTILIZAR ARQUIVOS, COMO NO CASO DO EMAIL
+        //construtor usado para quando FORMOS UTILIZAR ARQUIVOS, COMO NO CASO DAS FOTOS
         public AutorAplicacao(LyfrDBContext context, PhysicalFileProvider provedorDiretoriosArquivos)
         {
             _context = context;

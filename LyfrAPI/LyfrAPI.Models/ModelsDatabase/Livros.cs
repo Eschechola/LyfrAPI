@@ -23,7 +23,7 @@ namespace LyfrAPI.Models
 
         [Required(ErrorMessage = "O ano de lançamento deve ser inserido")]
         [MinLength(4, ErrorMessage = "O ano está inválido")]
-        public string AnoLancamento { get; set; }
+        public string Ano_Lanc { get; set; }
 
         [Required(ErrorMessage = "O Gênero deve ser inserido")]
         public string Genero { get; set; }

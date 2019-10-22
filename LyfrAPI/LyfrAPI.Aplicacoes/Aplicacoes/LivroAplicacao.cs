@@ -99,7 +99,7 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
                     return "Livro é nulo! Por - favor preencha todos os campos e tente novamente!";
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return "Não foi possível se comunicar com a base de dados!";
             }

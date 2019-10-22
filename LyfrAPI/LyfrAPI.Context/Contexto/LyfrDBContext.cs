@@ -261,8 +261,8 @@ namespace LyfrAPI.Context
                     .HasColumnName("Id_Livro")
                     .HasColumnType("int(11)");
 
-                entity.Property(e => e.AnoLancamento)
-                    .HasColumnName("Ano_Lance")
+                entity.Property(e => e.Ano_Lanc)
+                    .HasColumnName("Ano_Lanc")
                     .HasColumnType("varchar(30)");
 
                 entity.Property(e => e.Arquivo).HasColumnType("varchar(200)");

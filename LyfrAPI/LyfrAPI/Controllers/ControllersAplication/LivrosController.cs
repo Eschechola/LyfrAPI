@@ -44,7 +44,7 @@ namespace LyfrAPI.Controllers
                     return Ok(resposta);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return BadRequest("Erro ao comunicar com a base de dados!");
             }
@@ -67,7 +67,7 @@ namespace LyfrAPI.Controllers
                 }
                 else
                 {
-                    return BadRequest("Nenhum cliente cadastrado!");
+                    return BadRequest("Nenhum livro cadastrado!");
                 }
             }
             catch (Exception)
@@ -93,14 +93,89 @@ namespace LyfrAPI.Controllers
                 }
                 else
                 {
-                    return BadRequest("Usuário não encontrado!");
+                    return BadRequest("Livro não encontrado!");
                 }
             }
             catch (Exception)
             {
                 return BadRequest("Erro ao comunicar com a base de dados!");
             }
+        }
 
+        [HttpPost]
+        [Route("GetLivrosByGenero")]
+        [Authorize]
+        public IActionResult GetLivrosByGenero([FromBody]string genero)
+        {
+            try
+            {
+                var resposta = new LivroAplicacao(_context).GetLivrosByGenero(genero);
+
+                if (resposta != null)
+                {
+                    var livrosResposta = JsonConvert.SerializeObject(resposta);
+                    return Ok(livrosResposta);
+                }
+                else
+                {
+                    return BadRequest("Gênero não encontrado!");
+                }
+            }
+            catch (Exception)
+            {
+                return BadRequest("Erro ao comunicar com a base de dados!");
+            }
+        }
+
+        [HttpPost]
+        [Route("GetLivrosByEditora")]
+        [Authorize]
+        public IActionResult GetLivrosByEditora([FromBody]int idEditora)
+        {
+            try
+            {
+                var resposta = new LivroAplicacao(_context).GetLivrosByEditora(idEditora);
+
+                if (resposta != null)
+                {
+                    var livrosResposta = JsonConvert.SerializeObject(resposta);
+                    return Ok(livrosResposta);
+                }
+                else
+                {
+                    return BadRequest("Editora não encontrado!");
+                }
+            }
+            catch (Exception)
+            {
+                return BadRequest("Erro ao comunicar com a base de dados!");
+            }
+        }
+
+
+        [HttpPost]
+        [Route("GetLivrosByAutor")]
+        [Authorize]
+        public IActionResult GetLivrosByAutor([FromBody]int idAutor)
+        {
+            try
+            {
+                var resposta = new LivroAplicacao(_context).GetLivrosByAutor(idAutor);
+
+                if (resposta != null)
+                {
+                    var livrosResposta = JsonConvert.SerializeObject(resposta);
+                    return Ok(livrosResposta);
+                }
+                else
+                {
+                    return BadRequest("Autor não encontrado!");
+                }
+            }
+            catch (Exception)
+            {
+                return BadRequest("Erro ao comunicar com a base de dados!");
+            }
         }
     }
 }

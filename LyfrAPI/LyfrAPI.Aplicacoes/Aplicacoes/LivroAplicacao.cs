@@ -99,7 +99,7 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
                     return "Livro é nulo! Por - favor preencha todos os campos e tente novamente!";
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return "Não foi possível se comunicar com a base de dados!";
             }
@@ -124,7 +124,6 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
                 {
                     //retorna o arquivo .epub em base64
                     primeiroLivro.Arquivo = new FilesManipulation().ConverterDeArquivoEmBase64(_provedorDiretoriosArquivos.GetFileInfo(primeiroLivro.Arquivo).PhysicalPath);
-
                     return primeiroLivro;
                 }
                 else
@@ -171,6 +170,87 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
                     {
                         return listaDeLivros;
                     }
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public List<Livros> GetLivrosByGenero(string genero)
+        {
+            try
+            {
+                if (genero == string.Empty || genero == null || genero == "" || string.IsNullOrWhiteSpace(genero))
+                {
+                    return null;
+                }
+
+                var listaDeLivros = _context.Livros.Where(x => x.Genero == genero).ToList();
+
+
+                if (listaDeLivros != null)
+                {
+                    return listaDeLivros;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public List<Livros> GetLivrosByEditora(int idEditora)
+        {
+            try
+            {
+                if (idEditora < 0)
+                {
+                    return null;
+                }
+
+                var listaDeLivros = _context.Livros.Where(x => x.FkEditora == idEditora).ToList();
+
+
+                if (listaDeLivros != null)
+                {
+                    return listaDeLivros;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public List<Livros> GetLivrosByAutor(int idAutor)
+        {
+            try
+            {
+                if (idAutor < 0)
+                {
+                    return null;
+                }
+
+                var listaDeLivros = _context.Livros.Where(x => x.FkAutor == idAutor).ToList();
+
+
+                if (listaDeLivros != null)
+                {
+                    return listaDeLivros;
                 }
                 else
                 {

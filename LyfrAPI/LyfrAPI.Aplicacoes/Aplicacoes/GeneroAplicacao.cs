@@ -60,7 +60,7 @@ namespace LyfrAPI.Aplicacoes
                         }
                         else
                         {
-                            genero.Foto = DefaultRoute.RotaPadrao + "/Generos/None/notFound.jpg";
+                            genero.Foto = DefaultRoute.RotaPadrao + "/Generos/None/NotFound.jpg";
                         }
 
                         _context.Add(genero);
@@ -146,6 +146,12 @@ namespace LyfrAPI.Aplicacoes
 
                     if (genero != null)
                     {
+                        //pega o diretorio da capa atraves do link
+                        var diretorioFoto = new FilesManipulation().PegarDiretorioLink(genero.Foto);
+
+                        //deleta a capa pelo diretorio passado
+                        var deletePicture = new FilesManipulation().DeletarArquivo(_provedorDiretoriosArquivos.GetFileInfo(diretorioFoto).PhysicalPath);
+
                         _context.Genero.Remove(genero);
                         _context.SaveChanges();
 

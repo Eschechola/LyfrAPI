@@ -9,17 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="wwwroot\Email\DeletePassword\**" />
-    <Compile Remove="wwwroot\Email\ForgotPassword\**" />
-    <Content Remove="wwwroot\Email\DeletePassword\**" />
-    <Content Remove="wwwroot\Email\ForgotPassword\**" />
-    <EmbeddedResource Remove="wwwroot\Email\DeletePassword\**" />
-    <EmbeddedResource Remove="wwwroot\Email\ForgotPassword\**" />
-    <None Remove="wwwroot\Email\DeletePassword\**" />
-    <None Remove="wwwroot\Email\ForgotPassword\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.9.2" />
@@ -45,12 +34,9 @@
     <None Include="wwwroot\Email\Templates\Welcome\images\linkedin@2x.png" />
     <None Include="wwwroot\Email\Templates\Welcome\images\twitter@2x.png" />
     <None Include="wwwroot\Email\Templates\Welcome\Welcome.html" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\Autores\Fotos\" />
-    <Folder Include="wwwroot\Generos\Fotos\" />
-    <Folder Include="wwwroot\Livros\Capas\None\" />
+    <None Include="wwwroot\Livros\Epubs\lyfr_book22_10_2019_16_04_42.epub" />
+    <None Include="wwwroot\Livros\Epubs\lyfr_book23_10_2019_16_36_54.epub" />
+    <None Include="wwwroot\Livros\Epubs\lyfr_book23_10_2019_16_51_31.epub" />
   </ItemGroup>
   
 

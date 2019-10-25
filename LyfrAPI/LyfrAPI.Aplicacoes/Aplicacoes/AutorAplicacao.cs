@@ -47,7 +47,7 @@ namespace LyfrAPI.Aplicacoes
                     else
                     {
                         //chama o método que formata o novo nome do autor
-                        var nomeFoto = new GetNameFiles().GetNovoNome("",".jpg");
+                        var nomeFoto = new GetNameFiles().GetNovoNome("lyfr_author", ".jpg");
                         //chama o método para salvar a foto
                         var salvarFoto = new FilesManipulation().ConverterDeBase64EmArquivo(_provedorDiretoriosArquivos.GetFileInfo(diretorioFotos).PhysicalPath, nomeFoto, autor.Foto);
 
@@ -60,7 +60,7 @@ namespace LyfrAPI.Aplicacoes
                         }
                         else
                         {
-                            autor.Foto = DefaultRoute.RotaPadrao + "/Autores/None/notFound.jpg";
+                            autor.Foto = DefaultRoute.RotaPadrao + "/Autores/None/NotFound.jpg";
                         }
 
                         _context.Add(autor);
@@ -169,6 +169,12 @@ namespace LyfrAPI.Aplicacoes
 
                     if (autor != null)
                     {
+                        //pega o diretorio da capa atraves do link
+                        var diretorioFoto = new FilesManipulation().PegarDiretorioLink(autor.Foto);
+
+                        //deleta a capa pelo diretorio passado
+                        var deletePicture = new FilesManipulation().DeletarArquivo(_provedorDiretoriosArquivos.GetFileInfo(diretorioFoto).PhysicalPath);
+
                         _context.Autores.Remove(autor);
                         _context.SaveChanges();
 

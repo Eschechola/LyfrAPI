@@ -354,3 +354,86 @@ Enivar o nome do autor
 -------------------------------------------------------------------------------------------------
 </pre>
 
+<br><br><br>
+
+<strong><h1>LIVROS</h1></strong>
+
+
+
+<pre>
+OBS: * NO CAMPO FOTO E ARQUIVO ENVIAR EM BASE64. 
+     * ENVIAR TODAS AS FOTOS NO FORMATO .JPG
+     * ENVIAR TODOS OS ARQUIVOS DE LIVROS EM FORMATO .EPUB
+
+
+-------------------------------------------------------------------------------------------------
+
+Inserir
+HTTP - Post
+http://www.lyfrapi.com.br/api/Livros/Insert/
+
+Enviar o JSON do Model Livros via POST
+
+-------------------------------------------------------------------------------------------------
+
+Atualizar
+HTTP - Put
+http://www.lyfrapi.com.br/api/Livros/Update/
+
+Enviar o JSON do Model Livros ja atualizado via PUT
+
+-------------------------------------------------------------------------------------------------
+
+Ler
+
+HTTP - Get
+http://www.lyfrapi.com.br/api/Livros/GetAllLivros/quantidade
+
+* EM QUANTIDADE ENVIAR O NÚMERO DE QUANTOS LIVROS QUER QUE RETORNE, CASO QUERIA TODOS ENVIAR 0
+
+
+HTTP - POST
+http://www.lyfrapi.com.br/api/Livros/GetLivroByTitulo
+
+Enivar o titulo do livro
+* RETORNA JUNTO COM O ARQUIVO BASE64
+
+
+HTTP - POST
+http://www.lyfrapi.com.br/api/Livros/GetLivroByTituloWithoutFile
+
+Enivar o titulo do livro
+* RETORNA SEM O ARQUIVO BASE64
+
+HTTP - POST
+http://www.lyfrapi.com.br/api/Livros/GetLivrosByEditora
+
+Enivar o nome da editora do livro
+* RETORNA SEM O ARQUIVO BASE64
+
+HTTP - POST
+http://www.lyfrapi.com.br/api/Livros/GetLivrosByGenero
+
+Enivar o nome do genero do livro
+* RETORNA SEM O ARQUIVO BASE64
+
+HTTP - POST
+http://www.lyfrapi.com.br/api/Livros/GetLivrosByAutor
+
+Enivar o nome do autor do livro
+* RETORNA SEM O ARQUIVO BASE64
+
+
+-------------------------------------------------------------------------------------------------
+
+Deletar
+
+HTTP - POST
+http://www.lyfrapi.com.br/api/Livros/DeleteByTitulo
+
+Enivar o titulo do livro
+
+-------------------------------------------------------------------------------------------------
+
+</pre>
+

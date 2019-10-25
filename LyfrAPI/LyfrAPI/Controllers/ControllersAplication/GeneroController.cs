@@ -129,7 +129,7 @@ namespace LyfrAPI.Controllers
                 }
                 else
                 {
-                    var resposta = new GeneroAplicacao(_context).DeleteByNome(nome);
+                    var resposta = new GeneroAplicacao(_context, _provedorDiretoriosArquivos).DeleteByNome(nome);
                     return Ok(resposta);
                 }
             }

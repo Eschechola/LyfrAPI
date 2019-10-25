@@ -18,7 +18,6 @@ namespace LyfrAPI.Models
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "O ano de nascimento deve ser inserido")]
-        [RegularExpression(@"(\d{2}\/\d{2}\/\d{4})", ErrorMessage = "A data de nascimento está inválida. Use o modelo DD/MM/YYYY.")]
         public string AnoNasc { get; set; }
 
         [Required(ErrorMessage = "A biografia deve ser inserida")]

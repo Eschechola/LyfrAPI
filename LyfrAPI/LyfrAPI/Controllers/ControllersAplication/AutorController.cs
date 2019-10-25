@@ -108,7 +108,7 @@ namespace LyfrAPI.Controllers
         {
             try
             {
-                var resposta = new AutorAplicacao(_context).DeleteByNome(nome);
+                var resposta = new AutorAplicacao(_context, _provedorDiretoriosArquivos).DeleteByNome(nome);
                 return Ok(resposta);
             }
             catch (Exception)

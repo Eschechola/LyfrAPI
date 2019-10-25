@@ -210,7 +210,7 @@ namespace LyfrAPI.Controllers
         }
 
         [HttpGet]
-        [Route("GetAllClientes")]
+        [Route("GetAllClientes/{numeroDeClientes}")]
         [Authorize]
         public IActionResult GetAllClientes(int numeroDeClientes = 0)
         {

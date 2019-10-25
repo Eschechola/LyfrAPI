@@ -50,10 +50,56 @@ namespace LyfrAPI.Controllers
             }
         }
 
-        [HttpGet]
-        [Route("GetAllLivros")]
+        [HttpPut]
+        [Route("Update")]
         [Authorize]
-        public IActionResult GetAllLivros(int numeroDeLivros = 0)
+        public IActionResult Update([FromBody]Livros livroEnviado)
+        {
+            try
+            {
+                if (!ModelState.IsValid || livroEnviado == null)
+                {
+                    return BadRequest("Dados inválidos! Tente novamente.");
+                }
+                else
+                {
+                    var resposta = new LivroAplicacao(_context).Update(livroEnviado);
+                    return Ok(resposta);
+                }
+            }
+            catch (Exception)
+            {
+                return BadRequest("Erro ao comunicar com a base de dados!");
+            }
+        }
+
+        [HttpDelete]
+        [Route("DeleteByTitulo")]
+        [Authorize]
+        public IActionResult DeleteByTitulo([FromBody]string titulo)
+        {
+            try
+            {
+                if (!ModelState.IsValid || titulo == null)
+                {
+                    return BadRequest("Dados inválidos! Tente novamente.");
+                }
+                else
+                {
+                    var resposta = new LivroAplicacao(_context, _provedorDiretoriosArquivos).DeleteByTitulo(titulo);
+                    return Ok(resposta);
+                }
+            }
+            catch (Exception)
+            {
+                return BadRequest("Erro ao comunicar com a base de dados!");
+            }
+        }
+
+        [HttpGet]
+        [Route("GetAllLivros/{numeroDeLivros}")]
+        [Authorize]
+        public IActionResult GetAllLivros(int numeroDeLivros=0)
         {
             try
             {
@@ -84,7 +130,32 @@ namespace LyfrAPI.Controllers
         {
             try
             {
-                var resposta = new LivroAplicacao(_context).GetLivroByTitulo(titulo);
+                var resposta = new LivroAplicacao(_context, _provedorDiretoriosArquivos).GetLivroByTitulo(titulo);
+
+                if (resposta != null)
+                {
+                    var livroResposta = JsonConvert.SerializeObject(resposta);
+                    return Ok(livroResposta);
+                }
+                else
+                {
+                    return BadRequest("Livro não encontrado!");
+                }
+            }
+            catch (Exception)
+            {
+                return BadRequest("Erro ao comunicar com a base de dados!");
+            }
+        }
+
+        [HttpPost]
+        [Route("GetLivroByTituloWithoutFile")]
+        [Authorize]
+        public IActionResult GetLivroByTituloWithoutFile([FromBody]string titulo)
+        {
+            try
+            {
+                var resposta = new LivroAplicacao(_context).GetLivroByTituloWithoutFile(titulo);
 
                 if (resposta != null)
                 {

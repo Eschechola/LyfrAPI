@@ -137,6 +137,75 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
             }
         }
 
+        public Livros GetLivroByTituloWithoutFile(string titulo)
+        {
+            Livros primeiroLivro = new Livros();
+
+            try
+            {
+                if (titulo == string.Empty || titulo == null || titulo == "" || string.IsNullOrWhiteSpace(titulo))
+                {
+                    return null;
+                }
+
+                var livro = _context.Livros.Where(x => x.Titulo == titulo).ToList();
+                primeiroLivro = livro.FirstOrDefault();
+
+
+                if (primeiroLivro != null)
+                {
+                   return primeiroLivro;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public string DeleteByTitulo(string titulo)
+        {
+            try
+            {
+                if (titulo == string.Empty || titulo == null || titulo == "" || string.IsNullOrWhiteSpace(titulo))
+                {
+                    return "Título é nulo! Tente novamente.";
+                }
+
+                var livroParaExcluir = GetLivroByTitulo(titulo);
+
+                if (livroParaExcluir != null)
+                {
+                    //função que vai deletar o arquivo .epub do livro
+                    var deleteEpub = new FilesManipulation().DeletarArquivo(_provedorDiretoriosArquivos.GetFileInfo(livroParaExcluir.Arquivo).PhysicalPath);
+
+                    //pega o diretorio da capa atraves do link
+                    var diretorioCapa = new FilesManipulation().PegarDiretorioLink(livroParaExcluir.Capa);
+                    
+                    //deleta a capa pelo diretorio passado
+                    var deleteCover = new FilesManipulation().DeletarArquivo(_provedorDiretoriosArquivos.GetFileInfo(diretorioCapa).PhysicalPath);
+
+
+                    _context.Livros.Remove(livroParaExcluir);
+                    _context.SaveChanges();
+
+                    return "Livro " + livroParaExcluir.Titulo + " deletado com sucesso";
+                }
+                else
+                {
+                    return "Livro não encontrador";
+                }
+            }
+            catch (Exception)
+            {
+                return "Não foi possível se comunicar com a base de dados!";
+            }
+        }
+
         public List<Livros> GetAllLivros(int numeroDeLivros = 0)
         {
             var listaDeLivros = new List<Livros>();
@@ -262,5 +331,27 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
                 return null;
             }
         }
+        public string Update(Livros livroAlterado)
+        {
+            try
+            {
+                if (livroAlterado != null)
+                {
+                    _context.Update(livroAlterado);
+                    _context.SaveChanges();
+
+                    return "Livro "+livroAlterado.Titulo+" alterado com sucesso";
+                }
+                else
+                {
+                    return "Livro é nulo! Tente novamente.";
+                }
+            }
+            catch (Exception)
+            {
+                return "Não foi possível se comunicar com a base de dados!";
+            }
+        }
+
     }
 }

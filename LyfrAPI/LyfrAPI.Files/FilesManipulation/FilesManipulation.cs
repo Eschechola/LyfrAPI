@@ -43,5 +43,51 @@ namespace LyfrAPI.Files
                 return false;
             }
         }
+
+        public bool DeletarArquivo(string diretorioArquivo)
+        {
+            try
+            {
+                //se for o arquivo NotFound não deleta
+                if (diretorioArquivo.IndexOf("NotFound") >= 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    File.Delete(diretorioArquivo);
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public string PegarDiretorioLink(string link)
+        {
+            try
+            {
+                //pega a posição dos caracteres br/ (Final do link)
+                var indexChar = link.IndexOf("br/");
+
+                //diretorio que sera retornada
+                string diretorioLink = "";
+
+                //i começa em 3 pois ele vai pegar a primeira ocorrencia do br/ no caso o caracter 'b'
+                //em 3 ele ja tira a / e os caracteres
+                for (int i = indexChar + 3; i < link.Length; i++)
+                {
+                    diretorioLink += link[i];
+                }
+
+                return "wwwroot/" + diretorioLink;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
     }
 }

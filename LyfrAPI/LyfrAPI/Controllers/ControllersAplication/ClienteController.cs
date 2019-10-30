@@ -216,7 +216,6 @@ namespace LyfrAPI.Controllers
         {
             try
             {
-                
                 var listaDeClientes = new ClienteAplicacao(_context).GetAllClientes(numeroDeClientes);
 
                 if (listaDeClientes != null)

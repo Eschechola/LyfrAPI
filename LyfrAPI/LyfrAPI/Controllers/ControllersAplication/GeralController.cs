@@ -1,0 +1,40 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using LyfrAPI.Aplicacoes.Aplicacoes;
+using LyfrAPI.Context;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+
+namespace LyfrAPI.Controllers.ControllersAplication
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class GeralController : ControllerBase
+    {
+        //variavel de contexto para acesso as utilidades do entity
+        private LyfrDBContext _context;
+
+        public GeralController(LyfrDBContext context)
+        {
+            _context = context;
+        }
+
+        [HttpPost]
+        [Route("GetInformacoesSite")]
+        public IActionResult GetInformacoesSite()
+        {
+            try
+            {
+                var informacoes = new GeralAplicacao(_context).GetInformacoesSite();
+                return Ok(informacoes);
+            }
+            catch (Exception)
+            {
+                return BadRequest("Não foi possível se comunicar com a base de dados");
+            }
+        }
+
+    }
+}

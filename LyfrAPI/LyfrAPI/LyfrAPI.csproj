@@ -37,6 +37,10 @@
     <None Include="wwwroot\Livros\Epubs\lyfr_book22_10_2019_16_04_42.epub" />
     <None Include="wwwroot\Livros\Epubs\lyfr_book23_10_2019_16_36_54.epub" />
     <None Include="wwwroot\Livros\Epubs\lyfr_book23_10_2019_16_51_31.epub" />
+    <None Include="wwwroot\Livros\Epubs\lyfr_book24_10_2019_16_20_53.epub" />
+    <None Include="wwwroot\Livros\Epubs\lyfr_book24_10_2019_16_35_19.epub" />
+    <None Include="wwwroot\Livros\Epubs\lyfr_book24_10_2019_16_50_08.epub" />
+    <None Include="wwwroot\Livros\Epubs\lyfr_book24_10_2019_17_15_39.epub" />
   </ItemGroup>
   
 

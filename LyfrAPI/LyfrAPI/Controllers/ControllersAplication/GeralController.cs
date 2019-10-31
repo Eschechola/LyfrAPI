@@ -21,7 +21,7 @@ namespace LyfrAPI.Controllers.ControllersAplication
             _context = context;
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("GetInformacoesSite")]
         public IActionResult GetInformacoesSite()
         {
@@ -32,7 +32,7 @@ namespace LyfrAPI.Controllers.ControllersAplication
             }
             catch (Exception)
             {
-                return BadRequest("Não foi possível se comunicar com a base de dados");
+                return BadRequest("Erro ao comunicar com a base de dados!");
             }
         }
 

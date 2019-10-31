@@ -2,6 +2,7 @@
 using LyfrAPI.Files;
 using LyfrAPI.Models;
 using LyfrAPI.Models.ModelRoute;
+using LyfrAPI.Models.ModelsDatabase;
 using Microsoft.Extensions.FileProviders;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using System.Text;
 
 namespace LyfrAPI.Aplicacoes.Aplicacoes
 {
-    public class LivroAplicacao
+    public class LivrosAplicacao
     {
         //variavel de contexto
         private LyfrDBContext _context;
@@ -26,13 +27,13 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
         private string diretorioCapas = "wwwroot/Livros/Capas";
 
         //construtor usado para quando NÂO FOR UTILIZAR ARQUIVOS
-        public LivroAplicacao(LyfrDBContext context)
+        public LivrosAplicacao(LyfrDBContext context)
         {
             _context = context;
         }
 
         //construtor usado para quando FORMOS UTILIZAR ARQUIVOS, COMO NO CASO DO EMAIL
-        public LivroAplicacao(LyfrDBContext context, PhysicalFileProvider provedorDiretoriosArquivos)
+        public LivrosAplicacao(LyfrDBContext context, PhysicalFileProvider provedorDiretoriosArquivos)
         {
             _context = context;
             _provedorDiretoriosArquivos = provedorDiretoriosArquivos;
@@ -118,6 +119,60 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
 
                 var livro = _context.Livros.Where(x => x.Titulo == titulo).ToList();
                 primeiroLivro = livro.FirstOrDefault();
+
+
+                if (primeiroLivro != null)
+                {
+                    //retorna o arquivo .epub em base64
+                    primeiroLivro.Arquivo = new FilesManipulation().ConverterDeArquivoEmBase64(_provedorDiretoriosArquivos.GetFileInfo(primeiroLivro.Arquivo).PhysicalPath);
+                    return primeiroLivro;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public LivrosData GetLivroByTituloWithAutorEditora(string titulo)
+        {
+            LivrosData primeiroLivro = new LivrosData();
+
+            try
+            {
+                if (titulo == string.Empty || titulo == null || titulo == "" || string.IsNullOrWhiteSpace(titulo))
+                {
+                    return null;
+                }
+
+                var queryNoBanco = from l in _context.Livros
+                             join a in _context.Autores on l.FkAutor equals a.IdAutor
+                             join e in _context.Editora on l.FkEditora equals e.IdEditora
+                             where l.Titulo.Equals(titulo)
+                             select new LivrosData
+                             {
+                                 IdLivro = l.IdLivro,
+                                 Titulo = l.Titulo,
+                                 Autor = a.Nome,
+                                 Editora = e.Nome,
+                                 Ano_Lanc = l.Ano_Lanc,
+                                 Genero = l.Genero,
+                                 Sinopse = l.Sinopse,
+                                 Capa = l.Capa,
+                                 Arquivo = l.Arquivo,
+                                 Isbn = l.Isbn,
+                                 Idioma = l.Idioma,
+                                 IdMediaNota = l.IdMediaNota,
+                                 TotalAcessos = l.TotalAcessos
+                             };
+
+                var livroRetornar = queryNoBanco.Select(x => x).ToList();
+
+                primeiroLivro = livroRetornar.FirstOrDefault();
 
 
                 if (primeiroLivro != null)

@@ -21,7 +21,7 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
             {
                 var informacoesSite = new GeralQuantidade
                 {
-                    QuantidadeLivros = new LivroAplicacao(_context).GetAllLivros(0).Count,
+                    QuantidadeLivros = new LivrosAplicacao(_context).GetAllLivros(0).Count,
                     QuantidadeClientes = new ClienteAplicacao(_context).GetAllClientes(0).Count,
                     QuantidadeAutores = new AutorAplicacao(_context).GetAllAutores(0).Count,
                     QuantidadeEditoras = new EditoraAplicacao(_context).GetAllEditoras(0).Count

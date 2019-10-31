@@ -40,7 +40,7 @@ namespace LyfrAPI.Controllers
                 }
                 else
                 {
-                    var resposta = new LivroAplicacao(_context, _provedorDiretoriosArquivos).Insert(livroEnviado);
+                    var resposta = new LivrosAplicacao(_context, _provedorDiretoriosArquivos).Insert(livroEnviado);
                     return Ok(resposta);
                 }
             }
@@ -63,7 +63,7 @@ namespace LyfrAPI.Controllers
                 }
                 else
                 {
-                    var resposta = new LivroAplicacao(_context).Update(livroEnviado);
+                    var resposta = new LivrosAplicacao(_context).Update(livroEnviado);
                     return Ok(resposta);
                 }
             }
@@ -86,7 +86,7 @@ namespace LyfrAPI.Controllers
                 }
                 else
                 {
-                    var resposta = new LivroAplicacao(_context, _provedorDiretoriosArquivos).DeleteByTitulo(titulo);
+                    var resposta = new LivrosAplicacao(_context, _provedorDiretoriosArquivos).DeleteByTitulo(titulo);
                     return Ok(resposta);
                 }
             }
@@ -104,7 +104,7 @@ namespace LyfrAPI.Controllers
             try
             {
 
-                var listaDeLivros = new LivroAplicacao(_context).GetAllLivros(numeroDeLivros);
+                var listaDeLivros = new LivrosAplicacao(_context).GetAllLivros(numeroDeLivros);
 
                 if (listaDeLivros != null)
                 {
@@ -130,7 +130,33 @@ namespace LyfrAPI.Controllers
         {
             try
             {
-                var resposta = new LivroAplicacao(_context, _provedorDiretoriosArquivos).GetLivroByTitulo(titulo);
+                var resposta = new LivrosAplicacao(_context, _provedorDiretoriosArquivos).GetLivroByTitulo(titulo);
+
+                if (resposta != null)
+                {
+                    var livroResposta = JsonConvert.SerializeObject(resposta);
+                    return Ok(livroResposta);
+                }
+                else
+                {
+                    return BadRequest("Livro não encontrado!");
+                }
+            }
+            catch (Exception)
+            {
+                return BadRequest("Erro ao comunicar com a base de dados!");
+            }
+        }
+
+
+        [HttpPost]
+        [Route("GetLivroByTituloWithAutorEditora")]
+        [Authorize]
+        public IActionResult GetLivroByTituloWithAutorEditora([FromBody]string titulo)
+        {
+            try
+            {
+                var resposta = new LivrosAplicacao(_context, _provedorDiretoriosArquivos).GetLivroByTituloWithAutorEditora(titulo);
 
                 if (resposta != null)
                 {
@@ -155,7 +181,7 @@ namespace LyfrAPI.Controllers
         {
             try
             {
-                var resposta = new LivroAplicacao(_context).GetLivroByTituloWithoutFile(titulo);
+                var resposta = new LivrosAplicacao(_context).GetLivroByTituloWithoutFile(titulo);
 
                 if (resposta != null)
                 {
@@ -180,7 +206,7 @@ namespace LyfrAPI.Controllers
         {
             try
             {
-                var resposta = new LivroAplicacao(_context).GetLivrosByGenero(genero);
+                var resposta = new LivrosAplicacao(_context).GetLivrosByGenero(genero);
 
                 if (resposta != null)
                 {
@@ -205,7 +231,7 @@ namespace LyfrAPI.Controllers
         {
             try
             {
-                var resposta = new LivroAplicacao(_context).GetLivrosByEditora(idEditora);
+                var resposta = new LivrosAplicacao(_context).GetLivrosByEditora(idEditora);
 
                 if (resposta != null)
                 {
@@ -231,7 +257,7 @@ namespace LyfrAPI.Controllers
         {
             try
             {
-                var resposta = new LivroAplicacao(_context).GetLivrosByAutor(idAutor);
+                var resposta = new LivrosAplicacao(_context).GetLivrosByAutor(idAutor);
 
                 if (resposta != null)
                 {

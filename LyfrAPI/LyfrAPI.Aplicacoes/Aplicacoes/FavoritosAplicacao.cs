@@ -35,13 +35,13 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
                     return "Favoritos é nula! Por - favor preencha todos os campos e tente novamente!";
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return "Não foi possível se comunicar com a base de dados!";
             }
         }
 
-        public List<FavoritosData> GetFavoritosByUsuario(int idUsuario)
+        public List<Livros> GetFavoritosByUsuario(int idUsuario)
         {
             try
             {
@@ -58,7 +58,14 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
 
                 var favoritosRetornar = queryNoBanco.Select(x => x).ToList();
 
-                return favoritosRetornar;
+                var listaDeLivros = new List<Livros>();
+
+                foreach(var item in favoritosRetornar)
+                {
+                    listaDeLivros.Add(_context.Livros.Where(x => x.Titulo.Equals(item.TituloLivro)).ToList()[0]);
+                }
+
+                return listaDeLivros;
             }
             catch (Exception)
             {

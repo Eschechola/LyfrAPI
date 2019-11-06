@@ -156,7 +156,7 @@ namespace LyfrAPI.Controllers
         {
             try
             {
-                var resposta = new LivrosAplicacao(_context, _provedorDiretoriosArquivos).GetLivroByTituloWithAutorEditora(titulo);
+                var resposta = new LivrosAplicacao(_context).GetLivroByTituloWithAutorEditora(titulo);
 
                 if (resposta != null)
                 {
@@ -166,6 +166,31 @@ namespace LyfrAPI.Controllers
                 else
                 {
                     return BadRequest("Livro não encontrado!");
+                }
+            }
+            catch (Exception)
+            {
+                return BadRequest("Erro ao comunicar com a base de dados!");
+            }
+        }
+
+        [HttpGet]
+        [Route("Search/{palavraPesquisar}")]
+        [Authorize]
+        public IActionResult SearchLivros(string palavraPesquisar)
+        {
+            try
+            {
+                var resposta = new LivrosAplicacao(_context).SearchLivros(palavraPesquisar);
+
+                if (resposta != null)
+                {
+                    var livroResposta = JsonConvert.SerializeObject(resposta);
+                    return Ok(livroResposta);
+                }
+                else
+                {
+                    return BadRequest("Nenhum livro encontrado!");
                 }
             }
             catch (Exception)

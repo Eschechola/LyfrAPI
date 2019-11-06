@@ -222,6 +222,36 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
             }
         }
 
+
+        public List<Livros> SearchLivros(string palavraPesquisar)
+        {
+            try
+            {
+                if (palavraPesquisar == string.Empty || palavraPesquisar == null || palavraPesquisar == "" || string.IsNullOrWhiteSpace(palavraPesquisar))
+                {
+                    return null;
+                }
+
+                var livrosEncontrados = _context.Livros.Where(x => x.Titulo.ToLower().Contains(palavraPesquisar.ToLower())).ToList();
+
+
+                if (livrosEncontrados != null)
+                {
+                    return livrosEncontrados;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+
+
         public string DeleteByTitulo(string titulo)
         {
             try

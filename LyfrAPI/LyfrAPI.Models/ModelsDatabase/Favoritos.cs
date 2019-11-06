@@ -6,7 +6,7 @@ namespace LyfrAPI.Models
 {
     public partial class Favoritos
     {
-        public int IdFavoritos { get; set; }
+        public int Id_Favoritos { get; set; }
 
         [Required(ErrorMessage = "O id do livro deve ser inserido")]
         public int? FkIdLivro { get; set; }

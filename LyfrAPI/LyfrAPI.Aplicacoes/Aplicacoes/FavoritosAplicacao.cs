@@ -35,7 +35,7 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
                     return "Favoritos é nula! Por - favor preencha todos os campos e tente novamente!";
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return "Não foi possível se comunicar com a base de dados!";
             }
@@ -51,7 +51,7 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
                                    where idUsuario.Equals(f.FkIdCliente)
                                    select new FavoritosData
                                    {
-                                       IdFavoritos = f.IdFavoritos,
+                                       IdFavoritos = f.Id_Favoritos,
                                        EmailCliente = c.Email,
                                        TituloLivro = l.Titulo
                                    };

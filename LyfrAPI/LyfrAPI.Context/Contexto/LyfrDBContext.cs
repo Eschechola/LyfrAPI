@@ -129,7 +129,7 @@ namespace LyfrAPI.Context
 
             modelBuilder.Entity<Favoritos>(entity =>
             {
-                entity.HasKey(e => e.IdFavoritos);
+                entity.HasKey(e => e.Id_Favoritos);
 
                 entity.ToTable("favoritos");
 
@@ -139,7 +139,7 @@ namespace LyfrAPI.Context
                 entity.HasIndex(e => e.FkIdLivro)
                     .HasName("Fk_Id_Livro");
 
-                entity.Property(e => e.IdFavoritos)
+                entity.Property(e => e.Id_Favoritos)
                     .HasColumnName("Id_Favoritos")
                     .HasColumnType("int(11)");
 

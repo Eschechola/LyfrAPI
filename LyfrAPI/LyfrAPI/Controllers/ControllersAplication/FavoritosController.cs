@@ -50,7 +50,7 @@ namespace LyfrAPI.Controllers
         {
             try 
             {
-                if(!ModelState.IsValid || idUsuario < 0)
+                if(idUsuario < 0)
                 {
                     return BadRequest("Dados inválidos! Tente novamente.");
                 }
@@ -64,6 +64,30 @@ namespace LyfrAPI.Controllers
             {
                 return BadRequest("Erro ao comunicar com a base de dados!");
             } 
+        }
+
+
+        [HttpDelete]
+        [Authorize]
+        [Route("DeleteById/{idUsuario}/{idLivro}")]
+        public IActionResult DeleteById(int idUsuario = -1, int idLivro = -1)
+        {
+            try
+            {
+                if (idUsuario < 0 || idLivro < 0)
+                {
+                    return BadRequest("Dados inválidos! Tente novamente.");
+                }
+                else
+                {
+                    var resposta = new FavoritosAplicacao(_context).Delete(idUsuario, idLivro);
+                    return Ok(resposta);
+                }
+            }
+            catch (Exception)
+            {
+                return BadRequest("Erro ao comunicar com a base de dados!");
+            }
         }
     }
 }

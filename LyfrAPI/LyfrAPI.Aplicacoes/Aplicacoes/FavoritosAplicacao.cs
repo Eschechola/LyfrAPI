@@ -72,5 +72,38 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
                 return null;
             }
         }
+
+        public string Delete(int idCliente, int idLivro)
+        {
+            try
+            {
+                if (idLivro < 0 || idCliente < 0)
+                {
+                    
+                    return "Insira um ID válido";
+
+                }
+                else
+                {
+
+                    var favoritoPegar = _context.Favoritos.Where(x => x.FkIdLivro.Equals(idLivro) && x.FkIdCliente.Equals(idCliente)).ToList().FirstOrDefault();
+
+                    if (favoritoPegar != null)
+                    {
+                        _context.Favoritos.Remove(favoritoPegar);
+                        _context.SaveChanges();
+                        return "O livro de id " + idLivro + " foi deletado com sucesso da sua lista";
+                    }
+                    else
+                    {
+                        return "Nenhum livro encontrado na sua lista!";
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return "Não foi possível se comunicar com a base de dados!";
+            }
+        }
     }
 }

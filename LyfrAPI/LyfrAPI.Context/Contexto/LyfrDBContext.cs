@@ -23,7 +23,6 @@ namespace LyfrAPI.Context
         public virtual DbSet<Favoritos> Favoritos { get; set; }
         public virtual DbSet<Genero> Genero { get; set; }
         public virtual DbSet<Historico> Historico { get; set; }
-        public virtual DbSet<Historicopagamento> Historicopagamento { get; set; }
         public virtual DbSet<Livros> Livros { get; set; }
         public virtual DbSet<Livrosclientes> Livrosclientes { get; set; }
         public virtual DbSet<Paginasmarcadas> Paginasmarcadas { get; set; }
@@ -212,37 +211,6 @@ namespace LyfrAPI.Context
                     .WithMany(p => p.Historico)
                     .HasForeignKey(d => d.FkIdLivro)
                     .HasConstraintName("Fk_Id_Livro1");
-            });
-
-            modelBuilder.Entity<Historicopagamento>(entity =>
-            {
-                entity.HasKey(e => e.IdHistoricoPagamento);
-
-                entity.ToTable("historicopagamento");
-
-                entity.HasIndex(e => e.FkIdCliente)
-                    .HasName("Fk_Id_Cliente6");
-
-                entity.Property(e => e.IdHistoricoPagamento)
-                    .HasColumnName("Id_HistoricoPagamento")
-                    .HasColumnType("int(11)");
-
-                entity.Property(e => e.DataPagam)
-                    .HasColumnName("Data_Pagam")
-                    .HasColumnType("varchar(30)");
-
-                entity.Property(e => e.DataVenc)
-                    .HasColumnName("Data_Venc")
-                    .HasColumnType("varchar(30)");
-
-                entity.Property(e => e.FkIdCliente)
-                    .HasColumnName("Fk_Id_Cliente")
-                    .HasColumnType("int(11)");
-
-                entity.HasOne(d => d.FkIdClienteNavigation)
-                    .WithMany(p => p.Historicopagamento)
-                    .HasForeignKey(d => d.FkIdCliente)
-                    .HasConstraintName("Fk_Id_Cliente6");
             });
 
             modelBuilder.Entity<Livros>(entity =>

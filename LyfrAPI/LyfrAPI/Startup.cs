@@ -69,7 +69,10 @@ namespace APILyfr
             app.UseAuthentication();
 
             //usado quando queremos acessar as imagens no arquivo wwwroot
-			app.UseStaticFiles();
+	    app.UseStaticFiles(new StaticFileOptions
+            {
+                ServeUnknownFileTypes = true,
+            });
 
             //código para habilitar a navegação de arquivos entre a API
             //app.UseDirectoryBrowser(new DirectoryBrowserOptions

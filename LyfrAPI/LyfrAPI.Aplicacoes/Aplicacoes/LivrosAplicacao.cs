@@ -205,6 +205,8 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
 
                 var livro = _context.Livros.Where(x => x.Titulo == titulo).ToList();
                 primeiroLivro = livro.FirstOrDefault();
+                primeiroLivro.Arquivo = "http://www.lyfrapi.com.br/" + primeiroLivro.Arquivo;
+                primeiroLivro.Arquivo = primeiroLivro.Arquivo.Replace("/wwwroot", "");
 
 
                 if (primeiroLivro != null)

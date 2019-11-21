@@ -110,6 +110,19 @@ namespace LyfrAPI.Aplicacoes
             }
         }
 
+        public Autores GetAutorById(int id)
+        {
+            try
+            {
+                var autor = _context.Autores.Where(x => x.IdAutor.Equals(id));
+                return autor.ToList().FirstOrDefault();
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
         public List<Autores> GetAllAutores(int numeroDeAutores=0)
         {
             List<Autores> listaDeAutores = new List<Autores>();

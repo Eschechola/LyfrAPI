@@ -125,6 +125,7 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
                 {
                     //retorna o arquivo .epub em base64
                     primeiroLivro.Arquivo = new FilesManipulation().ConverterDeArquivoEmBase64(_provedorDiretoriosArquivos.GetFileInfo(primeiroLivro.Arquivo).PhysicalPath);
+
                     return primeiroLivro;
                 }
                 else
@@ -157,8 +158,8 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
                              {
                                  IdLivro = l.IdLivro,
                                  Titulo = l.Titulo,
-                                 Autor = a.Nome,
-                                 Editora = e.Nome,
+                                 Autor = new AutorAplicacao(_context).GetAutorByNome(a.Nome),
+                                 Editora = new EditoraAplicacao(_context).GetEditoraByNome(e.Nome),
                                  Ano_Lanc = l.Ano_Lanc,
                                  Genero = l.Genero,
                                  Sinopse = l.Sinopse,
@@ -192,7 +193,7 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
             }
         }
 
-        public Livros GetLivroByTituloWithoutFile(string titulo)
+        public LivrosData GetLivroByTituloWithoutFile(string titulo)
         {
             Livros primeiroLivro = new Livros();
 
@@ -209,9 +210,28 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
                 primeiroLivro.Arquivo = primeiroLivro.Arquivo.Replace("/wwwroot", "");
 
 
+
                 if (primeiroLivro != null)
                 {
-                   return primeiroLivro;
+                    var livroComAutorEditora = new LivrosData
+                    {
+                        IdLivro = primeiroLivro.IdLivro,
+                        Titulo = primeiroLivro.Titulo,
+                        Arquivo = primeiroLivro.Arquivo,
+                        Ano_Lanc = primeiroLivro.Ano_Lanc,
+                        Capa = primeiroLivro.Capa,
+                        Genero = primeiroLivro.Genero,
+                        Idioma = primeiroLivro.Idioma,
+                        Isbn = primeiroLivro.Isbn,
+                        Sinopse = primeiroLivro.Sinopse,
+                        IdMediaNota = primeiroLivro.IdMediaNota,
+                        TotalAcessos = primeiroLivro.TotalAcessos,
+                        Editora = new EditoraAplicacao(_context).GetEditoraById(primeiroLivro.FkEditora),
+                        Autor = new AutorAplicacao(_context).GetAutorById(primeiroLivro.FkAutor)
+                    };
+
+
+                    return livroComAutorEditora;
                 }
                 else
                 {

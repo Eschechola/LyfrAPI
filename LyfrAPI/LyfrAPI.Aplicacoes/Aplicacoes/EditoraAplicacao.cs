@@ -120,6 +120,20 @@ namespace LyfrAPI.Aplicacoes
             }
         }
 
+        public Editora GetEditoraById(int id)
+        {
+            try
+            {
+                var editora = _context.Editora.Where(x => x.IdEditora.Equals(id));
+
+                return editora.ToList().FirstOrDefault();
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
         public string DeleteByNome(string nome)
         {
             try

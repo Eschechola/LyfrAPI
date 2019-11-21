@@ -8,8 +8,8 @@ namespace LyfrAPI.Models.ModelsDatabase
     {
         public int IdLivro { get; set; }
         public string Titulo { get; set; }
-        public string Autor { get; set; }
-        public string Editora { get; set; }
+        public Autores Autor { get; set; }
+        public Editora Editora { get; set; }
         public string Ano_Lanc { get; set; }
         public string Genero { get; set; }
         public string Sinopse { get; set; }

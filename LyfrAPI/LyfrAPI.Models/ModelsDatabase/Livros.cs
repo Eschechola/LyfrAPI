@@ -18,8 +18,8 @@ namespace LyfrAPI.Models
 
         [Required(ErrorMessage = "O Título deve ser inserido.")]
         public string Titulo { get; set; }
-        public int? FkAutor { get; set; }
-        public int? FkEditora { get; set; }
+        public int FkAutor { get; set; }
+        public int FkEditora { get; set; }
 
         [Required(ErrorMessage = "O ano de lançamento deve ser inserido")]
         [MinLength(4, ErrorMessage = "O ano está inválido")]

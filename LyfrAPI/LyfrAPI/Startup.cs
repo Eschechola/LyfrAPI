@@ -98,7 +98,7 @@ namespace APILyfr
             //    RequestPath = "/navigator"
             //});
 
-            app.UseMvc();
+            app.UseMvc();  
         }
     }
 }

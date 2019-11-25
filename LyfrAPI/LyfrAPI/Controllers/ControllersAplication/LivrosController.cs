@@ -160,7 +160,13 @@ namespace LyfrAPI.Controllers
 
                 if (resposta != null)
                 {
-                    var livroResposta = JsonConvert.SerializeObject(resposta);
+                    var livroResposta = JsonConvert.SerializeObject(resposta, Formatting.Indented,
+                        new JsonSerializerSettings
+                        {
+                            ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                        }
+                    );
+
                     return Ok(livroResposta);
                 }
                 else
@@ -210,7 +216,13 @@ namespace LyfrAPI.Controllers
 
                 if (resposta != null)
                 {
-                    var livroResposta = JsonConvert.SerializeObject(resposta);
+                    var livroResposta = JsonConvert.SerializeObject(resposta, Formatting.Indented,
+                        new JsonSerializerSettings
+                        {
+                            ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                        }
+                    );
+
                     return Ok(livroResposta);
                 }
                 else

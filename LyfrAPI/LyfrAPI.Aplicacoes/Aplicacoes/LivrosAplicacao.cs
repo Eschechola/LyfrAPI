@@ -224,8 +224,8 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
                         Idioma = primeiroLivro.Idioma,
                         Isbn = primeiroLivro.Isbn,
                         Sinopse = primeiroLivro.Sinopse,
-                        IdMediaNota = primeiroLivro.IdMediaNota,
-                        TotalAcessos = primeiroLivro.TotalAcessos,
+                        IdMediaNota = 0,
+                        TotalAcessos = 0,
                         Editora = new EditoraAplicacao(_context).GetEditoraById(primeiroLivro.FkEditora),
                         Autor = new AutorAplicacao(_context).GetAutorById(primeiroLivro.FkAutor)
                     };
@@ -238,7 +238,7 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
                     return null;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return null;
             }

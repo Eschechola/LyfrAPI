@@ -43,7 +43,6 @@ namespace LyfrAPI.Models
         [Required(ErrorMessage = "O idioma deve ser inserido.")]
         public string Idioma { get; set; }
 
-        public float? IdMediaNota { get; set; }
         public int? TotalAcessos { get; set; }
 
         public Autores FkAutorNavigation { get; set; }

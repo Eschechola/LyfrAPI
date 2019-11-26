@@ -89,6 +89,9 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
                             livro.Capa = DefaultRoute.RotaPadrao + "/Livros/Capas/None/NotFound.jpg";
                         }
 
+                        //define o total de acessos do livro como 0
+                        livro.TotalAcessos = 0;
+
                         _context.Add(livro);
                         _context.SaveChanges();
 
@@ -103,6 +106,19 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
             catch (Exception)
             {
                 return "Não foi possível se comunicar com a base de dados!";
+            }
+        }
+
+        public Livros GetById(int idLivro)
+        {
+            try
+            {
+                var livro = _context.Livros.Where(x => x.IdLivro.Equals(idLivro));
+                return livro.ToList().FirstOrDefault();
+            }
+            catch (Exception)
+            {
+                return null;
             }
         }
 
@@ -123,6 +139,10 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
 
                 if (primeiroLivro != null)
                 {
+                    //adiciona 1 ao acesso do livro
+                    primeiroLivro.TotalAcessos += 1;
+                    _context.Livros.Update(primeiroLivro);
+
                     //retorna o arquivo .epub em base64
                     primeiroLivro.Arquivo = new FilesManipulation().ConverterDeArquivoEmBase64(_provedorDiretoriosArquivos.GetFileInfo(primeiroLivro.Arquivo).PhysicalPath);
 
@@ -167,7 +187,6 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
                                  Arquivo = l.Arquivo,
                                  Isbn = l.Isbn,
                                  Idioma = l.Idioma,
-                                 IdMediaNota = l.IdMediaNota,
                                  TotalAcessos = l.TotalAcessos
                              };
 
@@ -224,8 +243,7 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
                         Idioma = primeiroLivro.Idioma,
                         Isbn = primeiroLivro.Isbn,
                         Sinopse = primeiroLivro.Sinopse,
-                        IdMediaNota = 0,
-                        TotalAcessos = 0,
+                        TotalAcessos = primeiroLivro.TotalAcessos,
                         Editora = new EditoraAplicacao(_context).GetEditoraById(primeiroLivro.FkEditora),
                         Autor = new AutorAplicacao(_context).GetAutorById(primeiroLivro.FkAutor)
                     };
@@ -238,7 +256,7 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
                     return null;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }
@@ -313,7 +331,7 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
             }
         }
 
-        public List<Livros> GetAllLivros(int numeroDeLivros = 0)
+        public List<LivrosData> GetAllLivros(int numeroDeLivros = 0)
         {
             var listaDeLivros = new List<Livros>();
             try
@@ -325,35 +343,51 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
                     //caso o numero passado for igual a 0 ele vai retornar todos
                     if (numeroDeLivros != 0 && numeroDeLivros > 0)
                     {
-                        //lista auxiliar caso tenha sido passado uma limitação, por exemplo retornar os 5 ou os 6 ultimos livros
-                        var listaDeLivrosComNumeroDeLivros = new List<Livros>();
-
-                        //contador ja começa com o número do ultimo cliente da lista
-                        int indiceUltimoCliente = listaDeLivros.Count - 1;
-
-                        //contador para se comparar com o número passado
-                        int i = 0;
-                        while (i < numeroDeLivros)
-                        {
-                            listaDeLivrosComNumeroDeLivros.Add(listaDeLivros[indiceUltimoCliente]);
-                            indiceUltimoCliente--;
-                            i++;
-                        }
-
-                        return listaDeLivrosComNumeroDeLivros;
+                        listaDeLivros = listaDeLivros.TakeLast(numeroDeLivros).ToList();
                     }
-                    else
+
+                    var listaAutorEditora = new List<LivrosData>();
+
+                    //pega o objeto de autor e o objeto de editora
+                    for(int i = 0; i< listaDeLivros.Count;i++)
                     {
-                        return listaDeLivros;
+                        //atribui uma lista nula de livros pra não ocorrer repetição 
+                        var autor = new AutorAplicacao(_context).GetAutorById(listaDeLivros[i].FkAutor);
+                        autor.Livros = new List<Livros>();
+
+                        //atribui uma lista nula de livros pra não ocorrer repetição
+                        var editora = new EditoraAplicacao(_context).GetEditoraById(listaDeLivros[i].FkEditora);
+                        editora.Livros = new List<Livros>();
+
+                        listaAutorEditora.Add(
+                            new LivrosData
+                            {
+                                IdLivro = listaDeLivros[i].IdLivro,
+                                Titulo = listaDeLivros[i].Titulo,
+                                Capa = listaDeLivros[i].Capa,
+                                Ano_Lanc = listaDeLivros[i].Ano_Lanc,
+                                Arquivo = listaDeLivros[i].Arquivo,
+                                Sinopse = listaDeLivros[i].Sinopse,
+                                Genero = listaDeLivros[i].Genero,
+                                Idioma = listaDeLivros[i].Idioma,
+                                Isbn = listaDeLivros[i].Isbn,
+                                Autor = autor,
+                                Editora = editora,
+                                TotalAcessos = listaDeLivros[i].TotalAcessos,
+                            }
+                        );
                     }
+
+                    return listaAutorEditora;
                 }
                 else
                 {
                     return null;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                var erro = ex.Message;
                 return null;
             }
         }

@@ -247,10 +247,6 @@ namespace LyfrAPI.Context
 
                 entity.Property(e => e.Genero).HasColumnType("varchar(30)");
 
-                entity.Property(e => e.IdMediaNota)
-                    .HasColumnName("Id_MediaNota")
-                    .HasColumnType("float(5,3)");
-
                 entity.Property(e => e.Idioma).HasColumnType("varchar(40)");
 
                 entity.Property(e => e.Isbn)

@@ -235,26 +235,11 @@ namespace LyfrAPI.Aplicacoes
                     //caso o numero passado for igual a 0 ele vai retornar todos
                     if (numeroDeClientes != 0 && numeroDeClientes > 0)
                     {
-                        //lista auxiliar caso tenha sido passado uma limitação, por exemplo retornar os 5 ou os 6 ultimos clientes
-                        var listaDeClientesComNumeroDeClientes = new List<Cliente>();
-
-                        //contador ja começa com o número do ultimo cliente da lista
-                        int indiceUltimoCliente = listaDeClientes.Count - 1;
-                        //contador para se comparar com o número passado
-                        int i = 0;
-                        while (i < numeroDeClientes)
-                        {
-                            listaDeClientesComNumeroDeClientes.Add(listaDeClientes[indiceUltimoCliente]);
-                            indiceUltimoCliente--;
-                            i++;
-                        }
-
-                        return listaDeClientesComNumeroDeClientes;
+                        listaDeClientes = listaDeClientes.TakeLast(numeroDeClientes).ToList();
                     }
-                    else
-                    {
-                        return listaDeClientes;
-                    }
+
+                    return listaDeClientes;
+
                 }
                 else
                 {

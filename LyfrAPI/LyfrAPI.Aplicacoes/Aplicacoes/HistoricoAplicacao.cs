@@ -1,38 +1,38 @@
 ﻿using LyfrAPI.Context;
 using LyfrAPI.Models;
+using LyfrAPI.Models.ModelsDatabase;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
-using LyfrAPI.Models.ModelsDatabase;
+using System.Text;
 
 namespace LyfrAPI.Aplicacoes.Aplicacoes
 {
-    public class FavoritosAplicacao
+    public class HistoricoAplicacao
     {
         private LyfrDBContext _context;
 
-        public FavoritosAplicacao(LyfrDBContext context)
+        public HistoricoAplicacao(LyfrDBContext context)
         {
             _context = context;
         }
 
 
-        public string Insert(Favoritos favoritos)
+        public string Insert(Historico historico)
         {
             try
             {
-                if (favoritos != null)
+                if (historico != null)
                 {
-                    _context.Add(favoritos);
+                    _context.Add(historico);
                     _context.SaveChanges();
 
-                    return "Favoritos cadastrado com sucesso!";
+                    return "Histórico cadastrado com sucesso!";
 
                 }
                 else
                 {
-                    return "Favoritos é nulo! Por - favor preencha todos os campos e tente novamente!";
+                    return "Histórico é nulo! Por - favor preencha todos os campos e tente novamente!";
                 }
             }
             catch (Exception)
@@ -41,27 +41,28 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
             }
         }
 
-        public List<Livros> GetFavoritosByUsuario(int idUsuario)
+        public List<Livros> GetHistoricoByUsuario(int idUsuario)
         {
             try
             {
                 //realiza uma query no banco de favoritos onde o fkidcliente seja igual ao id do usuario
                 //retornando uma lista de favoritos
-                var queryNoBanco = from f in _context.Favoritos
-                                   join c in _context.Cliente on f.FkIdCliente equals c.IdCliente
-                                   where idUsuario.Equals(f.FkIdCliente)
-                                   select new Favoritos
+                var queryNoBanco = from h in _context.Historico
+                                   join c in _context.Cliente on h.FkIdCliente equals c.IdCliente
+                                   where idUsuario.Equals(h.FkIdCliente)
+                                   select new Historico
                                    {
-                                       Id_Favoritos = f.Id_Favoritos,
-                                       FkIdCliente = f.FkIdCliente,
-                                       FkIdLivro = f.FkIdLivro
+                                       IdHistorico = h.IdHistorico,
+                                       DataLeitura = h.DataLeitura,
+                                       FkIdCliente = h.FkIdCliente,
+                                       FkIdLivro = h.FkIdLivro
                                    };
 
                 //lista de livros que será retornada
                 var listaDeLivros = new List<Livros>();
 
-                //adiciona os livros de acordo com o fkidlivros na lista de favoritos
-                foreach(var item in queryNoBanco.ToList())
+                //adiciona os livros de acordo com o fkidlivros na lista de historico
+                foreach (var item in queryNoBanco.ToList())
                 {
                     listaDeLivros.Add(_context.Livros.Where(x => x.IdLivro.Equals(item.FkIdLivro)).ToList().FirstOrDefault());
                 }
@@ -80,22 +81,23 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
             {
                 if (idLivro < 0 || idCliente < 0)
                 {
-                    
+
                     return "Insira um ID válido";
 
                 }
                 else
                 {
-                    
-                    var favoritoPegar = _context.Favoritos.Where(x => x.FkIdLivro.Equals(idLivro) && x.FkIdCliente.Equals(idCliente)).ToList().FirstOrDefault();
+                    //pega o historico que tem o id do livro e o id do cliente e deleta do banco
+                    var historicoPegar = _context.Historico.Where(x => x.FkIdLivro.Equals(idLivro) && x.FkIdCliente.Equals(idCliente)).ToList().FirstOrDefault();
 
-                    if (favoritoPegar != null)
+                    if (historicoPegar != null)
                     {
-                        _context.Favoritos.Remove(favoritoPegar);
+                        _context.Historico.Remove(historicoPegar);
                         _context.SaveChanges();
 
+                        //pega o livro para informar o nome
                         var livro = new LivrosAplicacao(_context).GetById(idLivro);
-                        return "O livro de id " + livro.Titulo + " foi deletado com sucesso da sua lista";
+                        return "O livro de id " + livro.Titulo + " foi deletado com sucesso do seu histórico";
                     }
                     else
                     {

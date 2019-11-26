@@ -35,7 +35,7 @@ namespace APILyfr.Controllers
                 //gera o token e retorna um HTTP com STATUS 200 (SUCESSO)
                 var tokenDeSeguranca = GerarTokenJWT();
                 //gera o o dia e a hora que será finalizado pegando como padrao o horario de brasilia
-                var horaExpiracao = DateTime.Now.AddHours(-1).ToString();
+                var horaExpiracao = DateTime.Now.AddHours(2).ToString();
                 //retorna a hora que irá expirar e o token de segurança
                 return Ok(new Token { HoraExpiracao = horaExpiracao, TokenString = tokenDeSeguranca});
             }

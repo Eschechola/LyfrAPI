@@ -108,7 +108,13 @@ namespace LyfrAPI.Controllers
 
                 if (listaDeLivros != null)
                 {
-                    var resposta = JsonConvert.SerializeObject(listaDeLivros);
+                    var resposta = JsonConvert.SerializeObject(listaDeLivros, Formatting.Indented,
+                        new JsonSerializerSettings
+                        {
+                            ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                        }
+                    );
+
                     return Ok(resposta);
                 }
                 else

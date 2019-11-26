@@ -7,8 +7,6 @@ using LyfrAPI.Validations;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Hosting;
 using System.IO;
 using Microsoft.Extensions.FileProviders;
 using LyfrAPI.Models.ModelsEmail;

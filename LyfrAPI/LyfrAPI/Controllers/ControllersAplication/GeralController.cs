@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using LyfrAPI.Aplicacoes.Aplicacoes;
 using LyfrAPI.Context;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LyfrAPI.Controllers.ControllersAplication

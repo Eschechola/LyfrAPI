@@ -63,7 +63,7 @@ namespace LyfrAPI.Controllers
                 }
                 else
                 {
-                    var resposta = new LivrosAplicacao(_context).Update(livroEnviado);
+                    var resposta = new LivrosAplicacao(_context, _provedorDiretoriosArquivos).Update(livroEnviado);
                     return Ok(resposta);
                 }
             }

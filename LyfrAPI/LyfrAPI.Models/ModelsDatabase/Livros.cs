@@ -31,16 +31,13 @@ namespace LyfrAPI.Models
         [Required(ErrorMessage = "A sinopse deve ser inserida")]
         public string Sinopse { get; set; }
 
-        [Required(ErrorMessage = "A capa deve ser inserida")]
         public string Capa { get; set; }
 
-        [Required(ErrorMessage = "O arquivo deve ser inserida")]
         public string Arquivo { get; set; }
 
         [Required(ErrorMessage = "O ISBN deve ser inserido")]
         public string Isbn { get; set; }
 
-        [Required(ErrorMessage = "O idioma deve ser inserido.")]
         public string Idioma { get; set; }
 
         public int? TotalAcessos { get; set; }

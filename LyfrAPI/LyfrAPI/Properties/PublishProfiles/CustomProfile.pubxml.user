@@ -17,70 +17,79 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>10/14/2019 08:30:06</publishTime>
     </File>
     <File Include="appsettings.production.json">
-      <publishTime>11/13/2019 12:12:11</publishTime>
+      <publishTime>11/27/2019 21:50:08</publishTime>
     </File>
     <File Include="dotnet-aspnet-codegenerator-design.dll">
       <publishTime>09/24/2019 19:58:14</publishTime>
     </File>
     <File Include="LyfrAPI.Aplicacoes.dll">
-      <publishTime>11/13/2019 11:01:50</publishTime>
+      <publishTime>11/27/2019 21:48:23</publishTime>
     </File>
     <File Include="LyfrAPI.Aplicacoes.pdb">
-      <publishTime>11/13/2019 11:01:50</publishTime>
+      <publishTime>11/27/2019 21:48:23</publishTime>
     </File>
     <File Include="LyfrAPI.Context.dll">
-      <publishTime>11/13/2019 10:31:40</publishTime>
+      <publishTime>11/27/2019 21:48:17</publishTime>
     </File>
     <File Include="LyfrAPI.Context.pdb">
-      <publishTime>11/13/2019 10:31:40</publishTime>
+      <publishTime>11/27/2019 21:48:17</publishTime>
     </File>
     <File Include="LyfrAPI.deps.json">
-      <publishTime>11/13/2019 12:12:08</publishTime>
+      <publishTime>11/27/2019 21:48:34</publishTime>
     </File>
     <File Include="LyfrAPI.dll">
-      <publishTime>11/13/2019 12:11:10</publishTime>
+      <publishTime>11/27/2019 21:48:31</publishTime>
     </File>
     <File Include="LyfrAPI.Emails.dll">
-      <publishTime>11/13/2019 10:31:33</publishTime>
+      <publishTime>11/27/2019 21:48:15</publishTime>
     </File>
     <File Include="LyfrAPI.Emails.pdb">
-      <publishTime>11/13/2019 10:31:33</publishTime>
+      <publishTime>11/27/2019 21:48:15</publishTime>
     </File>
     <File Include="LyfrAPI.Encryption.dll">
-      <publishTime>11/13/2019 10:31:23</publishTime>
+      <publishTime>11/25/2019 11:42:50</publishTime>
     </File>
     <File Include="LyfrAPI.Encryption.pdb">
-      <publishTime>11/13/2019 10:31:23</publishTime>
+      <publishTime>11/25/2019 11:42:51</publishTime>
     </File>
     <File Include="LyfrAPI.Files.dll">
-      <publishTime>11/13/2019 10:31:36</publishTime>
+      <publishTime>11/27/2019 21:48:13</publishTime>
     </File>
     <File Include="LyfrAPI.Files.pdb">
-      <publishTime>11/13/2019 10:31:36</publishTime>
+      <publishTime>11/27/2019 21:48:13</publishTime>
     </File>
     <File Include="LyfrAPI.Models.dll">
-      <publishTime>11/13/2019 10:31:23</publishTime>
+      <publishTime>11/27/2019 21:48:04</publishTime>
     </File>
     <File Include="LyfrAPI.Models.pdb">
-      <publishTime>11/13/2019 10:31:23</publishTime>
+      <publishTime>11/27/2019 21:48:04</publishTime>
     </File>
     <File Include="LyfrAPI.pdb">
-      <publishTime>11/13/2019 12:11:10</publishTime>
+      <publishTime>11/27/2019 21:48:31</publishTime>
     </File>
     <File Include="LyfrAPI.runtimeconfig.json">
-      <publishTime>11/06/2019 15:12:04</publishTime>
+      <publishTime>11/27/2019 21:48:34</publishTime>
     </File>
     <File Include="LyfrAPI.Validations.dll">
-      <publishTime>11/13/2019 10:31:23</publishTime>
+      <publishTime>11/25/2019 11:42:50</publishTime>
     </File>
     <File Include="LyfrAPI.Validations.pdb">
-      <publishTime>11/13/2019 10:31:23</publishTime>
+      <publishTime>11/25/2019 11:42:50</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.CSharp.Workspaces.dll">
       <publishTime>09/11/2019 20:30:16</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.Workspaces.dll">
       <publishTime>09/11/2019 20:30:26</publishTime>
+    </File>
+    <File Include="Microsoft.EntityFrameworkCore.Abstractions.dll">
+      <publishTime>06/18/2019 21:21:18</publishTime>
+    </File>
+    <File Include="Microsoft.EntityFrameworkCore.dll">
+      <publishTime>06/18/2019 21:21:26</publishTime>
+    </File>
+    <File Include="Microsoft.EntityFrameworkCore.Relational.dll">
+      <publishTime>06/18/2019 21:21:34</publishTime>
     </File>
     <File Include="Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll">
       <publishTime>09/24/2019 19:57:40</publishTime>
@@ -104,16 +113,19 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>09/24/2019 19:57:52</publishTime>
     </File>
     <File Include="MySqlConnector.dll">
-      <publishTime>01/16/2019 15:11:42</publishTime>
+      <publishTime>10/04/2019 21:40:04</publishTime>
     </File>
     <File Include="NuGet.Frameworks.dll">
       <publishTime>09/11/2019 20:29:44</publishTime>
     </File>
     <File Include="Pomelo.EntityFrameworkCore.MySql.dll">
-      <publishTime>02/07/2019 23:10:26</publishTime>
+      <publishTime>10/15/2019 20:23:22</publishTime>
     </File>
     <File Include="Pomelo.JsonObject.dll">
       <publishTime>02/07/2019 22:47:50</publishTime>
+    </File>
+    <File Include="Remotion.Linq.dll">
+      <publishTime>09/11/2019 20:29:53</publishTime>
     </File>
     <File Include="System.Composition.AttributedModel.dll">
       <publishTime>09/11/2019 20:29:54</publishTime>
@@ -130,8 +142,11 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
     <File Include="System.Composition.TypedParts.dll">
       <publishTime>09/11/2019 20:29:59</publishTime>
     </File>
+    <File Include="System.Interactive.Async.dll">
+      <publishTime>07/11/2018 13:48:42</publishTime>
+    </File>
     <File Include="web.config">
-      <publishTime>11/13/2019 12:12:11</publishTime>
+      <publishTime>11/27/2019 21:50:08</publishTime>
     </File>
     <File Include="wwwroot/Autores/Fotos/30_09_2019_21_49_27.jpg">
       <publishTime>10/10/2019 00:25:30</publishTime>
@@ -152,7 +167,7 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>06/11/2019 14:42:03</publishTime>
     </File>
     <File Include="wwwroot/Autores/None/notFound.jpg">
-      <publishTime>10/14/2019 08:30:06</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/Email/Templates/Welcome/images/1.png">
       <publishTime>01/01/0001 00:00:00</publishTime>

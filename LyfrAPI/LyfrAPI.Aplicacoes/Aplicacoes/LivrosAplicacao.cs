@@ -3,11 +3,13 @@ using LyfrAPI.Files;
 using LyfrAPI.Models;
 using LyfrAPI.Models.ModelRoute;
 using LyfrAPI.Models.ModelsDatabase;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace LyfrAPI.Aplicacoes.Aplicacoes
 {
@@ -472,13 +474,61 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
                 return null;
             }
         }
-        public string Update(Livros livroAlterado)
+        public async Task<string> Update(Livros livroAlterado)
         {
             try
             {
                 if (livroAlterado != null)
                 {
-                    _context.Update(livroAlterado);
+                    var livro = new List<Livros>();
+                    if(!String.IsNullOrEmpty(livroAlterado.Capa))
+                    {
+                        //chama o método que formata o novo nome da capa
+                        var nomeCapa = new GetNameFiles().GetNovoNome("lyfr_cover", ".jpg");
+
+                        //chama o método para salvar a capa
+                        var salvarCapa = new FilesManipulation().ConverterDeBase64EmArquivo(_provedorDiretoriosArquivos.GetFileInfo(diretorioCapas).PhysicalPath, nomeCapa, livroAlterado.Capa);
+
+                        //caso tenha conseguido salvar a foto, atribui o link a ela
+                        //senão utiliza uma foto not found
+                        if (salvarCapa)
+                        {
+                            livroAlterado.Capa = DefaultRoute.RotaPadrao + "/Livros/Capas/" + nomeCapa;
+                        }
+                        else
+                        {
+                            livroAlterado.Capa = DefaultRoute.RotaPadrao + "/Livros/Capas/None/NotFound.jpg";
+                        }
+                    }
+                    else
+                    {
+                        livro = _context.Livros.Where(x => x.Titulo == livroAlterado.Titulo).ToList();
+                        livroAlterado.Capa = livro[0].Capa;
+                    }
+
+                    if(!String.IsNullOrEmpty(livroAlterado.Arquivo)){
+                        //chama o método que formata o novo nome do livro
+                        var nomeLivro = new GetNameFiles().GetNovoNome("lyfr_book", ".epub");
+
+                        //chama o método para salvar o livro
+                        var salvarLivro = new FilesManipulation().ConverterDeBase64EmArquivo(_provedorDiretoriosArquivos.GetFileInfo(diretorioLivros).PhysicalPath, nomeLivro, livroAlterado.Arquivo);
+
+                        if (salvarLivro)
+                        {
+                            livroAlterado.Arquivo = "wwwroot/Livros/Epubs/" + nomeLivro;
+                        }
+                        else
+                        {
+                            livroAlterado.Arquivo = "wwwroot/Livros/Epubs/None/NotFound.html";
+                        }
+                    }
+                    else
+                    {
+                      livro = _context.Livros.Where(x => x.Titulo == livroAlterado.Titulo).ToList();
+                        livroAlterado.Arquivo = livro[0].Arquivo;
+                    }
+
+                    _context.Livros.Update(livroAlterado);
                     _context.SaveChanges();
 
                     return "Livro "+livroAlterado.Titulo+" alterado com sucesso";
@@ -488,8 +538,9 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
                     return "Livro é nulo! Tente novamente.";
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                var erro = ex.Message;
                 return "Não foi possível se comunicar com a base de dados!";
             }
         }

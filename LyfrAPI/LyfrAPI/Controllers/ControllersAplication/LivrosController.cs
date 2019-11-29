@@ -67,7 +67,7 @@ namespace LyfrAPI.Controllers
                     return Ok(resposta);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return BadRequest("Erro ao comunicar com a base de dados!");
             }

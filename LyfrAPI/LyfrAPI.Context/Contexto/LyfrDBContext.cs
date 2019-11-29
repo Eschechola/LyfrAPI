@@ -24,8 +24,6 @@ namespace LyfrAPI.Context
         public virtual DbSet<Genero> Genero { get; set; }
         public virtual DbSet<Historico> Historico { get; set; }
         public virtual DbSet<Livros> Livros { get; set; }
-        public virtual DbSet<Livrosclientes> Livrosclientes { get; set; }
-        public virtual DbSet<Paginasmarcadas> Paginasmarcadas { get; set; }
         public virtual DbSet<Sugestao> Sugestao { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -272,80 +270,7 @@ namespace LyfrAPI.Context
                     .HasConstraintName("Fk_Editora");
             });
 
-            modelBuilder.Entity<Livrosclientes>(entity =>
-            {
-                entity.HasKey(e => e.IdLivrosClientes);
-
-                entity.ToTable("livrosclientes");
-
-                entity.HasIndex(e => e.FkIdCliente)
-                    .HasName("Fk_Id_Cliente2");
-
-                entity.HasIndex(e => e.FkIdLivro)
-                    .HasName("Fk_Id_Livro2");
-
-                entity.Property(e => e.IdLivrosClientes)
-                    .HasColumnName("Id_LivrosClientes")
-                    .HasColumnType("int(11)");
-
-                entity.Property(e => e.FkIdCliente)
-                    .HasColumnName("Fk_Id_Cliente")
-                    .HasColumnType("int(11)");
-
-                entity.Property(e => e.FkIdLivro)
-                    .HasColumnName("Fk_Id_Livro")
-                    .HasColumnType("int(11)");
-
-                entity.Property(e => e.Nota).HasColumnType("int(11)");
-
-                entity.HasOne(d => d.FkIdClienteNavigation)
-                    .WithMany(p => p.Livrosclientes)
-                    .HasForeignKey(d => d.FkIdCliente)
-                    .HasConstraintName("Fk_Id_Cliente2");
-
-                entity.HasOne(d => d.FkIdLivroNavigation)
-                    .WithMany(p => p.Livrosclientes)
-                    .HasForeignKey(d => d.FkIdLivro)
-                    .HasConstraintName("Fk_Id_Livro2");
-            });
-
-            modelBuilder.Entity<Paginasmarcadas>(entity =>
-            {
-                entity.HasKey(e => e.IdPaginasMarcadas);
-
-                entity.ToTable("paginasmarcadas");
-
-                entity.HasIndex(e => e.FkIdCliente)
-                    .HasName("Fk_Id_Cliente3");
-
-                entity.HasIndex(e => e.FkIdLivro)
-                    .HasName("Fk_Id_Livro3");
-
-                entity.Property(e => e.IdPaginasMarcadas)
-                    .HasColumnName("Id_Paginas_Marcadas")
-                    .HasColumnType("int(11)");
-
-                entity.Property(e => e.FkIdCliente)
-                    .HasColumnName("Fk_Id_Cliente")
-                    .HasColumnType("int(11)");
-
-                entity.Property(e => e.FkIdLivro)
-                    .HasColumnName("Fk_Id_Livro")
-                    .HasColumnType("int(11)");
-
-                entity.Property(e => e.NumPag).HasColumnType("int(11)");
-
-                entity.HasOne(d => d.FkIdClienteNavigation)
-                    .WithMany(p => p.Paginasmarcadas)
-                    .HasForeignKey(d => d.FkIdCliente)
-                    .HasConstraintName("Fk_Id_Cliente3");
-
-                entity.HasOne(d => d.FkIdLivroNavigation)
-                    .WithMany(p => p.Paginasmarcadas)
-                    .HasForeignKey(d => d.FkIdLivro)
-                    .HasConstraintName("Fk_Id_Livro3");
-            });
-
+         
             modelBuilder.Entity<Sugestao>(entity =>
             {
                 entity.HasKey(e => e.idSugestao);

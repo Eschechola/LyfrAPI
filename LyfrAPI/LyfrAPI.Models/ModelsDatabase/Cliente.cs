@@ -10,8 +10,6 @@ namespace LyfrAPI.Models
         {
             Favoritos = new HashSet<Favoritos>();
             Historico = new HashSet<Historico>();
-            Livrosclientes = new HashSet<Livrosclientes>();
-            Paginasmarcadas = new HashSet<Paginasmarcadas>();
             Sugestao = new HashSet<Sugestao>();
         }
 
@@ -73,8 +71,6 @@ namespace LyfrAPI.Models
 
         public ICollection<Favoritos> Favoritos { get; set; }
         public ICollection<Historico> Historico { get; set; }
-        public ICollection<Livrosclientes> Livrosclientes { get; set; }
-        public ICollection<Paginasmarcadas> Paginasmarcadas { get; set; }
         public ICollection<Sugestao> Sugestao { get; set; }
     }
 }

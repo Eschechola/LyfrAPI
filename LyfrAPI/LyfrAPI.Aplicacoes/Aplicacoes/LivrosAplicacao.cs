@@ -474,73 +474,96 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
                 return null;
             }
         }
-        public async Task<string> Update(Livros livroAlterado)
+
+        private Livros GetLivroById(int idLivro)
         {
             try
             {
-                if (livroAlterado != null)
+                var livro = _context.Livros.Where(x => x.IdLivro.Equals(idLivro));
+
+                return livro.ToList().FirstOrDefault();
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+
+        public string Update(Livros livroRecebido)
+        {
+            try
+            {
+                var livroAlterar = GetLivroById(livroRecebido.IdLivro);
+
+                if (livroRecebido != null)
                 {
-                    var livro = new List<Livros>();
-                    if(!String.IsNullOrEmpty(livroAlterado.Capa))
+                    //caso a capa enviada tenha sido diferente de nulo
+                    if (livroRecebido.Capa != null)
                     {
-                        //chama o método que formata o novo nome da capa
-                        var nomeCapa = new GetNameFiles().GetNovoNome("lyfr_cover", ".jpg");
+                        //pega o nome do arquivo atraves do link
+                        var nomeCapa = new GetNameFiles().GetCoverNameFileByLink(livroAlterar.Capa);
+                        var diretorioCapa = diretorioCapas + "/" + nomeCapa;
 
-                        //chama o método para salvar a capa
-                        var salvarCapa = new FilesManipulation().ConverterDeBase64EmArquivo(_provedorDiretoriosArquivos.GetFileInfo(diretorioCapas).PhysicalPath, nomeCapa, livroAlterado.Capa);
+                        //deleta o arquivo antigo
+                        var deletarArquivo = new FilesManipulation().DeletarArquivo(_provedorDiretoriosArquivos.GetFileInfo(diretorioCapa).PhysicalPath);
 
-                        //caso tenha conseguido salvar a foto, atribui o link a ela
-                        //senão utiliza uma foto not found
-                        if (salvarCapa)
-                        {
-                            livroAlterado.Capa = DefaultRoute.RotaPadrao + "/Livros/Capas/" + nomeCapa;
-                        }
-                        else
-                        {
-                            livroAlterado.Capa = DefaultRoute.RotaPadrao + "/Livros/Capas/None/NotFound.jpg";
-                        }
+                        //escreve a capa nova
+                        var nomeNovaCapa = new GetNameFiles().GetNovoNome("lyfr_cover", ".jpg");
+                        var escreverNovaCapa = new FilesManipulation().ConverterDeBase64EmArquivo(_provedorDiretoriosArquivos.GetFileInfo(diretorioCapas).PhysicalPath, nomeNovaCapa, livroRecebido.Capa);
+
+                        //atribui a nova capa ao livro que será alterado
+                        livroAlterar.Capa = DefaultRoute.RotaPadrao + "/Livros/Capas/" + nomeNovaCapa;
+
                     }
-                    else
+
+                    if (livroRecebido.Arquivo!=null)
                     {
-                        livro = _context.Livros.Where(x => x.Titulo == livroAlterado.Titulo).ToList();
-                        livroAlterado.Capa = livro[0].Capa;
+                        //pega o nome do arquivo através dos dados no banco
+                        var nomeArquivo = new GetNameFiles().GetFileNameFileByLink(livroAlterar.Arquivo);
+                        var diretorioArquivo = diretorioLivros + "/" + nomeArquivo;
+
+                        //deleta o arquivo antigo
+                        var deletarArquivo = new FilesManipulation().DeletarArquivo(_provedorDiretoriosArquivos.GetFileInfo(diretorioArquivo).PhysicalPath);
+
+                        //escreve o novo arquivo
+                        var nomeNovoArquivo = new GetNameFiles().GetNovoNome("lyfr_book", ".epub");
+                        var escreverNovoLivro = new FilesManipulation().ConverterDeBase64EmArquivo(_provedorDiretoriosArquivos.GetFileInfo(diretorioLivros).PhysicalPath, nomeNovoArquivo, livroRecebido.Arquivo);
+
+                        livroAlterar.Arquivo = diretorioArquivo;
                     }
 
-                    if(!String.IsNullOrEmpty(livroAlterado.Arquivo)){
-                        //chama o método que formata o novo nome do livro
-                        var nomeLivro = new GetNameFiles().GetNovoNome("lyfr_book", ".epub");
-
-                        //chama o método para salvar o livro
-                        var salvarLivro = new FilesManipulation().ConverterDeBase64EmArquivo(_provedorDiretoriosArquivos.GetFileInfo(diretorioLivros).PhysicalPath, nomeLivro, livroAlterado.Arquivo);
-
-                        if (salvarLivro)
-                        {
-                            livroAlterado.Arquivo = "wwwroot/Livros/Epubs/" + nomeLivro;
-                        }
-                        else
-                        {
-                            livroAlterado.Arquivo = "wwwroot/Livros/Epubs/None/NotFound.html";
-                        }
-                    }
-                    else
+                    //atribui os dados enviados ao livro que será alterado
+                    var livro = new Livros
                     {
-                      livro = _context.Livros.Where(x => x.Titulo == livroAlterado.Titulo).ToList();
-                        livroAlterado.Arquivo = livro[0].Arquivo;
-                    }
+                        IdLivro = livroAlterar.IdLivro,
+                        Titulo = livroAlterar.Titulo,
+                        Ano_Lanc = livroAlterar.Ano_Lanc,
+                        Arquivo = livroAlterar.Arquivo,
+                        Capa = livroAlterar.Capa,
+                        FkAutor = livroAlterar.FkAutor,
+                        FkEditora = livroAlterar.FkEditora,
+                        Genero = livroAlterar.Genero,
+                        Idioma = livroAlterar.Idioma,
+                        Isbn = livroAlterar.Isbn,
+                        Sinopse = livroAlterar.Sinopse,
+                        TotalAcessos = livroAlterar.TotalAcessos
+                    };
 
-                    _context.Livros.Update(livroAlterado);
+                    //atualiza o livro no banco de dados
+                    _context.Livros.Update(livro);
                     _context.SaveChanges();
 
-                    return "Livro "+livroAlterado.Titulo+" alterado com sucesso";
+                    return "Livro atualizado com sucesso";
+
                 }
                 else
                 {
-                    return "Livro é nulo! Tente novamente.";
+                    return "Dados enviados estão inválidos. Tente novamente";
                 }
             }
             catch (Exception ex)
             {
-                var erro = ex.Message;
                 return "Não foi possível se comunicar com a base de dados!";
             }
         }

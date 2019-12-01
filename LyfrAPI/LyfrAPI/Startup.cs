@@ -28,8 +28,10 @@ namespace APILyfr
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<LyfrDBContext>(options => {
-                options.UseMySql(Configuration.GetConnectionString("MyConnection"));
-            });
+                    options.UseMySql(Configuration.GetConnectionString("MyConnection"));
+                    options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+                }
+            );
 
             services.AddDirectoryBrowser();
 

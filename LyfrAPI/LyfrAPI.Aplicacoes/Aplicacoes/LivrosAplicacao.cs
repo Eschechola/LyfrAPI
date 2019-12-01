@@ -562,7 +562,7 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
                     return "Dados enviados estão inválidos. Tente novamente";
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return "Não foi possível se comunicar com a base de dados!";
             }

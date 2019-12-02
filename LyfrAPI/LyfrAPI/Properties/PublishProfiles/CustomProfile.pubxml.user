@@ -6,81 +6,81 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYfw1AlnDtEW6MnYhSHYJCgAAAAACAAAAAAAQZgAAAAEAACAAAAA0gA1svQoIias0LatSs5/y2Xuk1bkNsZFqpFVUkILaHAAAAAAOgAAAAAIAACAAAAAKBKD+QKie3ZMAnQQ5+QlMFfefrLu5wgrZnSfY63VQuSAAAAA2/iLCcAJM6KDYIiB4VxjCKLGskrfmq5Vb2bxikHxnFUAAAACtgNRp1JHzYMcczUPVDb01KIIWFswxy2vUl8Ql/FNwxheL5j5B0r41L5WOnnzHSAvUS67s6imvWbAMYxkbPi3u</EncryptedPassword>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAE//1ijLsR0KLctC7+3PyTQAAAAACAAAAAAAQZgAAAAEAACAAAABPAwG8k+HZbCg5hPRdJP+3+WVJCz4E6NdFTYy28njpAwAAAAAOgAAAAAIAACAAAADfi8KBuAhd//Ics3SMGUozNwnXaQh4brVp4A8H11vJviAAAADRLAwCiMp+pxQQ6Q3yzc/dk9bKpBMU6304c2RzhhWQqEAAAADq2M38I/UlgfPXCi/co3hGWkeyPVQ+ucsInYPANrfX563PM7R7ZDOxxw9NqvpN72jHviYKqDMBusrZUByMEM0a</EncryptedPassword>
     <_PublishTargetUrl>ftp://marte.hostingzone.com.br/wwwroot</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="appsettings.Development.json">
-      <publishTime>11/14/2019 23:56:45</publishTime>
+      <publishTime>10/10/2019 14:36:10</publishTime>
     </File>
     <File Include="appsettings.json">
-      <publishTime>11/14/2019 23:56:45</publishTime>
+      <publishTime>10/10/2019 14:36:10</publishTime>
     </File>
     <File Include="appsettings.production.json">
-      <publishTime>11/30/2019 23:55:34</publishTime>
+      <publishTime>12/02/2019 15:58:56</publishTime>
     </File>
     <File Include="dotnet-aspnet-codegenerator-design.dll">
       <publishTime>09/24/2019 19:58:14</publishTime>
     </File>
     <File Include="LyfrAPI.Aplicacoes.dll">
-      <publishTime>11/30/2019 23:55:23</publishTime>
+      <publishTime>12/02/2019 15:58:46</publishTime>
     </File>
     <File Include="LyfrAPI.Aplicacoes.pdb">
-      <publishTime>11/30/2019 23:55:23</publishTime>
+      <publishTime>12/02/2019 15:58:46</publishTime>
     </File>
     <File Include="LyfrAPI.Context.dll">
-      <publishTime>11/30/2019 23:54:54</publishTime>
+      <publishTime>12/02/2019 15:58:44</publishTime>
     </File>
     <File Include="LyfrAPI.Context.pdb">
-      <publishTime>11/30/2019 23:54:54</publishTime>
+      <publishTime>12/02/2019 15:58:44</publishTime>
     </File>
     <File Include="LyfrAPI.deps.json">
-      <publishTime>11/30/2019 23:55:26</publishTime>
+      <publishTime>12/02/2019 15:58:48</publishTime>
     </File>
     <File Include="LyfrAPI.dll">
-      <publishTime>11/30/2019 23:55:26</publishTime>
+      <publishTime>12/02/2019 15:58:48</publishTime>
     </File>
     <File Include="LyfrAPI.Emails.dll">
-      <publishTime>11/30/2019 23:54:53</publishTime>
+      <publishTime>12/02/2019 15:58:45</publishTime>
     </File>
     <File Include="LyfrAPI.Emails.pdb">
-      <publishTime>11/30/2019 23:54:53</publishTime>
+      <publishTime>12/02/2019 15:58:45</publishTime>
     </File>
     <File Include="LyfrAPI.Encryption.dll">
-      <publishTime>11/30/2019 23:54:52</publishTime>
+      <publishTime>12/02/2019 15:58:42</publishTime>
     </File>
     <File Include="LyfrAPI.Encryption.pdb">
-      <publishTime>11/30/2019 23:54:52</publishTime>
+      <publishTime>12/02/2019 15:58:42</publishTime>
     </File>
     <File Include="LyfrAPI.Files.dll">
-      <publishTime>11/30/2019 23:54:54</publishTime>
+      <publishTime>12/02/2019 15:58:45</publishTime>
     </File>
     <File Include="LyfrAPI.Files.pdb">
-      <publishTime>11/30/2019 23:54:54</publishTime>
+      <publishTime>12/02/2019 15:58:45</publishTime>
     </File>
     <File Include="LyfrAPI.Models.dll">
-      <publishTime>11/30/2019 23:54:52</publishTime>
+      <publishTime>12/02/2019 15:58:42</publishTime>
     </File>
     <File Include="LyfrAPI.Models.pdb">
-      <publishTime>11/30/2019 23:54:52</publishTime>
+      <publishTime>12/02/2019 15:58:42</publishTime>
     </File>
     <File Include="LyfrAPI.pdb">
-      <publishTime>11/30/2019 23:55:26</publishTime>
+      <publishTime>12/02/2019 15:58:48</publishTime>
     </File>
     <File Include="LyfrAPI.runtimeconfig.json">
-      <publishTime>11/30/2019 23:55:27</publishTime>
+      <publishTime>12/02/2019 15:58:48</publishTime>
     </File>
     <File Include="LyfrAPI.Validations.dll">
-      <publishTime>11/30/2019 23:54:51</publishTime>
+      <publishTime>12/02/2019 15:58:42</publishTime>
     </File>
     <File Include="LyfrAPI.Validations.pdb">
-      <publishTime>11/30/2019 23:54:51</publishTime>
+      <publishTime>12/02/2019 15:58:42</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.CSharp.Workspaces.dll">
-      <publishTime>08/26/2019 20:33:01</publishTime>
+      <publishTime>06/18/2019 14:08:09</publishTime>
     </File>
     <File Include="Microsoft.CodeAnalysis.Workspaces.dll">
-      <publishTime>08/26/2019 20:32:51</publishTime>
+      <publishTime>06/18/2019 14:08:02</publishTime>
     </File>
     <File Include="Microsoft.EntityFrameworkCore.Abstractions.dll">
       <publishTime>06/18/2019 21:21:18</publishTime>
@@ -116,7 +116,7 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>10/04/2019 21:40:04</publishTime>
     </File>
     <File Include="NuGet.Frameworks.dll">
-      <publishTime>08/26/2019 20:32:54</publishTime>
+      <publishTime>06/18/2019 14:08:09</publishTime>
     </File>
     <File Include="Pomelo.EntityFrameworkCore.MySql.dll">
       <publishTime>10/15/2019 20:23:22</publishTime>
@@ -125,172 +125,178 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>02/07/2019 22:47:50</publishTime>
     </File>
     <File Include="Remotion.Linq.dll">
-      <publishTime>08/29/2019 01:42:52</publishTime>
+      <publishTime>10/03/2019 14:33:34</publishTime>
     </File>
     <File Include="System.Composition.AttributedModel.dll">
-      <publishTime>08/26/2019 20:33:00</publishTime>
+      <publishTime>06/18/2019 14:08:11</publishTime>
     </File>
     <File Include="System.Composition.Convention.dll">
-      <publishTime>08/26/2019 20:33:00</publishTime>
+      <publishTime>06/18/2019 14:08:11</publishTime>
     </File>
     <File Include="System.Composition.Hosting.dll">
-      <publishTime>08/26/2019 20:33:00</publishTime>
+      <publishTime>06/18/2019 14:08:12</publishTime>
     </File>
     <File Include="System.Composition.Runtime.dll">
-      <publishTime>08/26/2019 20:33:00</publishTime>
+      <publishTime>06/18/2019 14:08:12</publishTime>
     </File>
     <File Include="System.Composition.TypedParts.dll">
-      <publishTime>08/26/2019 20:33:00</publishTime>
+      <publishTime>06/18/2019 14:08:12</publishTime>
     </File>
     <File Include="System.Interactive.Async.dll">
-      <publishTime>08/29/2019 01:43:03</publishTime>
+      <publishTime>10/03/2019 14:32:36</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>11/30/2019 23:55:34</publishTime>
+      <publishTime>12/02/2019 15:58:56</publishTime>
     </File>
     <File Include="wwwroot/Autores/Fotos/30_09_2019_21_49_27.jpg">
       <publishTime>10/10/2019 00:25:30</publishTime>
     </File>
     <File Include="wwwroot/Autores/Fotos/lyfr_author25_10_2019_00_50_15.jpg">
-      <publishTime>11/30/2019 23:52:11</publishTime>
+      <publishTime>11/06/2019 13:35:22</publishTime>
     </File>
     <File Include="wwwroot/Autores/Fotos/lyfr_author25_10_2019_01_03_55.jpg">
-      <publishTime>11/30/2019 23:51:48</publishTime>
+      <publishTime>11/06/2019 13:35:22</publishTime>
     </File>
     <File Include="wwwroot/Autores/Fotos/lyfr_author25_10_2019_01_06_41.jpg">
-      <publishTime>11/30/2019 23:51:47</publishTime>
+      <publishTime>11/06/2019 13:35:22</publishTime>
     </File>
     <File Include="wwwroot/Autores/Fotos/lyfr_author25_10_2019_01_13_22.jpg">
-      <publishTime>11/30/2019 23:51:48</publishTime>
+      <publishTime>11/06/2019 13:35:22</publishTime>
     </File>
     <File Include="wwwroot/Autores/Fotos/lyfr_author25_10_2019_01_14_20.jpg">
-      <publishTime>11/30/2019 23:51:46</publishTime>
+      <publishTime>11/06/2019 13:35:22</publishTime>
     </File>
     <File Include="wwwroot/Autores/Fotos/lyfr_author29_11_2019_16_50_51.jpg">
-      <publishTime>11/30/2019 23:51:47</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Autores/Fotos/lyfr_author31_10_2019_14_18_39.jpg">
-      <publishTime>11/30/2019 23:51:46</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Autores/Fotos/lyfr_author31_10_2019_16_38_38.jpg">
-      <publishTime>11/30/2019 23:51:45</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Autores/None/notFound.jpg">
-      <publishTime>11/30/2019 23:51:49</publishTime>
+      <publishTime>10/10/2019 14:36:10</publishTime>
     </File>
     <File Include="wwwroot/Email/Templates/Welcome/images/1.png">
-      <publishTime>11/30/2019 23:51:59</publishTime>
+      <publishTime>10/10/2019 14:36:10</publishTime>
     </File>
     <File Include="wwwroot/Email/Templates/Welcome/images/2.png">
-      <publishTime>11/30/2019 23:51:58</publishTime>
+      <publishTime>10/10/2019 14:36:10</publishTime>
     </File>
     <File Include="wwwroot/Email/Templates/Welcome/images/3.png">
-      <publishTime>11/30/2019 23:51:57</publishTime>
+      <publishTime>10/10/2019 14:36:10</publishTime>
     </File>
     <File Include="wwwroot/Email/Templates/Welcome/images/facebook%402x.png">
-      <publishTime>11/30/2019 23:51:56</publishTime>
+      <publishTime>10/10/2019 14:36:10</publishTime>
     </File>
     <File Include="wwwroot/Email/Templates/Welcome/images/fundo1.png">
-      <publishTime>11/30/2019 23:51:56</publishTime>
+      <publishTime>10/10/2019 14:36:10</publishTime>
     </File>
     <File Include="wwwroot/Email/Templates/Welcome/images/Icon_Lyfr3.png">
-      <publishTime>11/30/2019 23:51:55</publishTime>
+      <publishTime>10/10/2019 14:36:10</publishTime>
     </File>
     <File Include="wwwroot/Email/Templates/Welcome/images/instagram%402x.png">
-      <publishTime>11/30/2019 23:51:54</publishTime>
+      <publishTime>10/10/2019 14:36:10</publishTime>
     </File>
     <File Include="wwwroot/Email/Templates/Welcome/images/linkedin%402x.png">
-      <publishTime>11/30/2019 23:51:53</publishTime>
+      <publishTime>10/10/2019 14:36:10</publishTime>
     </File>
     <File Include="wwwroot/Email/Templates/Welcome/images/twitter%402x.png">
-      <publishTime>11/30/2019 23:51:52</publishTime>
+      <publishTime>10/10/2019 14:36:10</publishTime>
     </File>
     <File Include="wwwroot/Email/Templates/Welcome/Welcome.html">
-      <publishTime>11/30/2019 23:51:51</publishTime>
+      <publishTime>10/16/2019 16:23:45</publishTime>
     </File>
     <File Include="wwwroot/Generos/Fotos/lyfr_gender_19_10_2019_16_56_18.jpg">
-      <publishTime>11/30/2019 23:52:16</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Generos/Fotos/lyfr_gender_23_10_2019_00_43_25.jpg">
-      <publishTime>11/30/2019 23:52:16</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Generos/Fotos/lyfr_gender_23_10_2019_13_51_26.jpg">
-      <publishTime>11/30/2019 23:52:15</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Generos/Fotos/lyfr_gender_23_10_2019_14_51_46.jpg">
-      <publishTime>11/30/2019 23:52:15</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Generos/Fotos/lyfr_gender_23_10_2019_14_52_05.jpg">
-      <publishTime>11/30/2019 23:52:12</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Generos/Fotos/lyfr_gender_23_10_2019_14_52_31.jpg">
-      <publishTime>11/30/2019 23:52:12</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Generos/Fotos/lyfr_gender_23_10_2019_14_52_44.jpg">
-      <publishTime>11/30/2019 23:52:10</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Generos/Fotos/lyfr_gender_23_10_2019_14_53_02.jpg">
-      <publishTime>11/30/2019 23:52:09</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Generos/Fotos/lyfr_gender_23_10_2019_14_53_58.jpg">
-      <publishTime>11/30/2019 23:52:08</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Generos/Fotos/lyfr_gender_23_10_2019_14_54_12.jpg">
-      <publishTime>11/30/2019 23:52:06</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Generos/Fotos/lyfr_gender_23_10_2019_14_54_23.jpg">
-      <publishTime>11/30/2019 23:52:05</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Generos/Fotos/lyfr_gender_24_10_2019_15_09_07.jpg">
-      <publishTime>11/30/2019 23:52:03</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Generos/Fotos/lyfr_gender_24_10_2019_15_25_38.jpg">
-      <publishTime>11/30/2019 23:52:01</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Generos/None/notFound.jpg">
-      <publishTime>11/30/2019 23:52:17</publishTime>
+      <publishTime>10/22/2019 15:03:37</publishTime>
     </File>
     <File Include="wwwroot/Livros/Capas/lyfr_cover10_10_2019_17_12_02.jpg">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="wwwroot/Livros/Capas/lyfr_cover22_10_2019_16_04_42.jpg">
-      <publishTime>11/30/2019 23:52:23</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Livros/Capas/lyfr_cover23_10_2019_16_36_54.jpg">
-      <publishTime>11/30/2019 23:52:23</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Livros/Capas/lyfr_cover23_10_2019_16_51_31.jpg">
-      <publishTime>11/30/2019 23:52:22</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Livros/Capas/lyfr_cover24_10_2019_16_20_53.jpg">
-      <publishTime>11/30/2019 23:52:22</publishTime>
+      <publishTime>11/06/2019 13:35:22</publishTime>
     </File>
     <File Include="wwwroot/Livros/Capas/lyfr_cover24_10_2019_16_35_19.jpg">
-      <publishTime>11/30/2019 23:52:21</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Livros/Capas/lyfr_cover24_10_2019_16_50_08.jpg">
-      <publishTime>11/30/2019 23:52:20</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Livros/Capas/lyfr_cover24_10_2019_17_15_39.jpg">
-      <publishTime>11/30/2019 23:52:20</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Livros/Capas/lyfr_cover27_11_2019_17_30_36.jpg">
-      <publishTime>11/30/2019 23:52:19</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Livros/Capas/lyfr_cover29_11_2019_16_57_02.jpg">
-      <publishTime>11/30/2019 23:52:19</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Livros/Capas/lyfr_cover31_10_2019_15_17_22.jpg">
-      <publishTime>11/30/2019 23:52:18</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Livros/Capas/lyfr_cover31_10_2019_16_41_41.jpg">
-      <publishTime>11/30/2019 23:52:18</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Livros/Capas/lyfr_cover31_10_2019_16_49_27.jpg">
-      <publishTime>11/30/2019 23:52:17</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Livros/Capas/None/NotFound.jpg">
-      <publishTime>11/30/2019 23:52:24</publishTime>
+      <publishTime>11/06/2019 13:35:22</publishTime>
+    </File>
+    <File Include="wwwroot/Livros/Epubs/lyfr_book02_12_2019_15_26_43.epub">
+      <publishTime>12/02/2019 15:26:44</publishTime>
+    </File>
+    <File Include="wwwroot/Livros/Epubs/lyfr_book02_12_2019_15_27_50.epub">
+      <publishTime>12/02/2019 15:27:51</publishTime>
     </File>
     <File Include="wwwroot/Livros/Epubs/lyfr_book10_10_2019_17_12_02.epub">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -299,49 +305,49 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>11/30/2019 23:52:45</publishTime>
     </File>
     <File Include="wwwroot/Livros/Epubs/lyfr_book23_10_2019_16_36_54.epub">
-      <publishTime>11/30/2019 23:52:44</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Livros/Epubs/lyfr_book23_10_2019_16_51_31.epub">
-      <publishTime>11/30/2019 23:52:43</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Livros/Epubs/lyfr_book24_10_2019_16_20_53.epub">
       <publishTime>06/11/2019 14:42:03</publishTime>
     </File>
     <File Include="wwwroot/Livros/Epubs/lyfr_book24_10_2019_16_35_19.epub">
-      <publishTime>11/30/2019 23:52:41</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Livros/Epubs/lyfr_book24_10_2019_16_50_08.epub">
-      <publishTime>11/30/2019 23:52:39</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Livros/Epubs/lyfr_book24_10_2019_17_15_39.epub">
-      <publishTime>11/30/2019 23:52:48</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Livros/Epubs/lyfr_book27_11_2019_16_39_33.epub">
-      <publishTime>11/30/2019 23:52:33</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Livros/Epubs/lyfr_book27_11_2019_16_59_09.epub">
-      <publishTime>11/30/2019 23:52:33</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Livros/Epubs/lyfr_book27_11_2019_17_30_36.epub">
-      <publishTime>11/30/2019 23:52:31</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Livros/Epubs/lyfr_book29_11_2019_16_57_02.epub">
-      <publishTime>11/30/2019 23:52:28</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Livros/Epubs/lyfr_book31_10_2019_15_17_22.epub">
-      <publishTime>11/30/2019 23:52:26</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Livros/Epubs/lyfr_book31_10_2019_16_41_41.epub">
-      <publishTime>11/30/2019 23:52:32</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Livros/Epubs/lyfr_book31_10_2019_16_49_27.epub">
-      <publishTime>11/30/2019 23:52:25</publishTime>
+      <publishTime>12/02/2019 13:50:03</publishTime>
     </File>
     <File Include="wwwroot/Livros/Epubs/None/imgs/icon.png">
-      <publishTime>11/30/2019 23:52:48</publishTime>
+      <publishTime>10/10/2019 16:18:33</publishTime>
     </File>
     <File Include="wwwroot/Livros/Epubs/None/NotFound.html">
-      <publishTime>11/30/2019 23:52:46</publishTime>
+      <publishTime>10/10/2019 16:25:00</publishTime>
     </File>
   </ItemGroup>
   <ItemGroup>

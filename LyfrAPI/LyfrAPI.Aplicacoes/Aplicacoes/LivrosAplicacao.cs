@@ -530,7 +530,7 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
                         var nomeNovoArquivo = new GetNameFiles().GetNovoNome("lyfr_book", ".epub");
                         var escreverNovoLivro = new FilesManipulation().ConverterDeBase64EmArquivo(_provedorDiretoriosArquivos.GetFileInfo(diretorioLivros).PhysicalPath, nomeNovoArquivo, livroRecebido.Arquivo);
 
-                        livroAlterar.Arquivo = diretorioArquivo;
+                        livroAlterar.Arquivo = diretorioLivros+"/"+nomeNovoArquivo;
                     }
 
                     //atribui os dados enviados ao livro que será alterado

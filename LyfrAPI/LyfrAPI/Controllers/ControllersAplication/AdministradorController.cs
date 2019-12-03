@@ -54,6 +54,39 @@ namespace LyfrAPI.Controllers
         }
 
         [HttpPost]
+        [Route("GetAdministradorByEmail")]
+        [Authorize]
+        public IActionResult GetAdministradorByEmail([FromBody]string email)
+        {
+            try
+            {
+                if (email.Equals(string.Empty))
+                {
+                    return BadRequest("Login inválido! Tente novamente.");
+                }
+                else
+                {
+                    var resposta = new AdministradorAplicacao(_context).GetAdminByEmail(email);
+
+                    if (resposta != null)
+                    {
+                        var adminResposta = JsonConvert.SerializeObject(resposta);
+                        return Ok(adminResposta);
+                    }
+                    else
+                    {
+                        return BadRequest("Administrador não cadastrado!");
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return BadRequest("Erro ao comunicar com a base de dados!");
+            }
+
+        }
+
+        [HttpPost]
         [Route("GetAdministrador")]
         [Authorize]
         public IActionResult GetAdministrador([FromBody]AdministradorLogin adminEnviado)
@@ -76,8 +109,8 @@ namespace LyfrAPI.Controllers
                         }
                         else
                         {
-                            var clienteResposta = JsonConvert.SerializeObject(resposta);
-                            return Ok(clienteResposta);
+                            var adminResposta = JsonConvert.SerializeObject(resposta);
+                            return Ok(adminResposta);
                         }
                     }
                     else
@@ -90,7 +123,6 @@ namespace LyfrAPI.Controllers
             {
                 return BadRequest("Erro ao comunicar com a base de dados!");
             }
-
         }
 
         [HttpGet]

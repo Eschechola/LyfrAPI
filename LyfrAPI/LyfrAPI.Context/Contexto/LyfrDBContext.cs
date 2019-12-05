@@ -181,34 +181,34 @@ namespace LyfrAPI.Context
                 entity.ToTable("historico");
 
                 entity.HasIndex(e => e.FkIdCliente)
-                    .HasName("Fk_Id_Cliente1");
+                    .HasName("FkIdCliente");
 
                 entity.HasIndex(e => e.FkIdLivro)
-                    .HasName("Fk_Id_Livro1");
+                    .HasName("FkIdLivro");
 
                 entity.Property(e => e.IdHistorico)
-                    .HasColumnName("Id_Historico")
+                    .HasColumnName("IdHistorico")
                     .HasColumnType("int(11)");
 
                 entity.Property(e => e.DataLeitura).HasColumnType("varchar(30)");
 
                 entity.Property(e => e.FkIdCliente)
-                    .HasColumnName("Fk_Id_Cliente")
+                    .HasColumnName("FkIdCliente")
                     .HasColumnType("int(11)");
 
                 entity.Property(e => e.FkIdLivro)
-                    .HasColumnName("Fk_Id_Livro")
+                    .HasColumnName("FkIdLivro")
                     .HasColumnType("int(11)");
 
                 entity.HasOne(d => d.FkIdClienteNavigation)
                     .WithMany(p => p.Historico)
                     .HasForeignKey(d => d.FkIdCliente)
-                    .HasConstraintName("Fk_Id_Cliente1");
+                    .HasConstraintName("FkIdCliente");
 
                 entity.HasOne(d => d.FkIdLivroNavigation)
                     .WithMany(p => p.Historico)
                     .HasForeignKey(d => d.FkIdLivro)
-                    .HasConstraintName("Fk_Id_Livro1");
+                    .HasConstraintName("FkIdLivro");
             });
 
             modelBuilder.Entity<Livros>(entity =>

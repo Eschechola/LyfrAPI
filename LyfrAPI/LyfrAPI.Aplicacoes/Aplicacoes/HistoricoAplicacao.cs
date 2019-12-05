@@ -97,7 +97,7 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
 
                         //pega o livro para informar o nome
                         var livro = new LivrosAplicacao(_context).GetById(idLivro);
-                        return "O livro de id " + livro.Titulo + " foi deletado com sucesso do seu histórico";
+                        return "O livro " + livro.Titulo + " foi deletado com sucesso do seu histórico";
                     }
                     else
                     {

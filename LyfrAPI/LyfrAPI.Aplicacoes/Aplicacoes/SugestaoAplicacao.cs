@@ -172,6 +172,8 @@ namespace LyfrAPI.Aplicacoes
                     var resposta = new SugestaoMessages().RespostaSugestao(sugestao);
                     if (resposta)
                     {
+                        //atualiza o status da sugestão
+                        UpdateState(infoSugestao.Id);
                         return "Resposta enviada com sucesso!";
                     }
                     else

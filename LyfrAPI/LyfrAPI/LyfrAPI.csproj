@@ -34,6 +34,15 @@
     <None Include="wwwroot\Email\Templates\Welcome\images\linkedin@2x.png" />
     <None Include="wwwroot\Email\Templates\Welcome\images\twitter@2x.png" />
     <None Include="wwwroot\Email\Templates\Welcome\Welcome.html" />
+    <None Include="wwwroot\Livros\Epubs\lyfr_book02_12_2019_15_26_43.epub" />
+    <None Include="wwwroot\Livros\Epubs\lyfr_book02_12_2019_15_27_50.epub" />
+    <None Include="wwwroot\Livros\Epubs\lyfr_book02_12_2019_16_19_54.epub" />
+    <None Include="wwwroot\Livros\Epubs\lyfr_book02_12_2019_16_27_27.epub" />
+    <None Include="wwwroot\Livros\Epubs\lyfr_book02_12_2019_16_37_26.epub" />
+    <None Include="wwwroot\Livros\Epubs\lyfr_book02_12_2019_16_46_12.epub" />
+    <None Include="wwwroot\Livros\Epubs\lyfr_book02_12_2019_16_56_21.epub" />
+    <None Include="wwwroot\Livros\Epubs\lyfr_book02_12_2019_17_01_29.epub" />
+    <None Include="wwwroot\Livros\Epubs\lyfr_book02_12_2019_17_09_40.epub" />
     <None Include="wwwroot\Livros\Epubs\lyfr_book22_10_2019_16_04_42.epub" />
     <None Include="wwwroot\Livros\Epubs\lyfr_book23_10_2019_16_36_54.epub" />
     <None Include="wwwroot\Livros\Epubs\lyfr_book23_10_2019_16_51_31.epub" />
@@ -41,6 +50,13 @@
     <None Include="wwwroot\Livros\Epubs\lyfr_book24_10_2019_16_35_19.epub" />
     <None Include="wwwroot\Livros\Epubs\lyfr_book24_10_2019_16_50_08.epub" />
     <None Include="wwwroot\Livros\Epubs\lyfr_book24_10_2019_17_15_39.epub" />
+    <None Include="wwwroot\Livros\Epubs\lyfr_book27_11_2019_16_39_33.epub" />
+    <None Include="wwwroot\Livros\Epubs\lyfr_book27_11_2019_16_59_09.epub" />
+    <None Include="wwwroot\Livros\Epubs\lyfr_book27_11_2019_17_30_36.epub" />
+    <None Include="wwwroot\Livros\Epubs\lyfr_book29_11_2019_16_57_02.epub" />
+    <None Include="wwwroot\Livros\Epubs\lyfr_book31_10_2019_15_17_22.epub" />
+    <None Include="wwwroot\Livros\Epubs\lyfr_book31_10_2019_16_41_41.epub" />
+    <None Include="wwwroot\Livros\Epubs\lyfr_book31_10_2019_16_49_27.epub" />
   </ItemGroup>
   
 

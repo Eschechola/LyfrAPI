@@ -41,7 +41,7 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
             }
         }
 
-        public List<Livros> GetHistoricoByUsuario(int idUsuario)
+        public List<HistoricoData> GetHistoricoByUsuario(int idUsuario)
         {
             try
             {
@@ -49,25 +49,17 @@ namespace LyfrAPI.Aplicacoes.Aplicacoes
                 //retornando uma lista de favoritos
                 var queryNoBanco = from h in _context.Historico
                                    join c in _context.Cliente on h.FkIdCliente equals c.IdCliente
+                                   join l in _context.Livros on h.FkIdLivro equals l.IdLivro
                                    where idUsuario.Equals(h.FkIdCliente)
-                                   select new Historico
+                                   select new HistoricoData
                                    {
-                                       IdHistorico = h.IdHistorico,
-                                       DataLeitura = h.DataLeitura,
-                                       FkIdCliente = h.FkIdCliente,
-                                       FkIdLivro = h.FkIdLivro
+                                        NomeLivro = l.Titulo,
+                                        DataLeitura = h.DataLeitura
                                    };
 
-                //lista de livros que será retornada
-                var listaDeLivros = new List<Livros>();
+                var listaHistorico = queryNoBanco.ToList();
 
-                //adiciona os livros de acordo com o fkidlivros na lista de historico
-                foreach (var item in queryNoBanco.ToList())
-                {
-                    listaDeLivros.Add(_context.Livros.Where(x => x.IdLivro.Equals(item.FkIdLivro)).ToList().FirstOrDefault());
-                }
-
-                return listaDeLivros;
+                return listaHistorico;
             }
             catch (Exception)
             {

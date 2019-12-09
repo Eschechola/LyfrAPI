@@ -47,9 +47,6 @@ namespace LyfrAPI.Aplicacoes
                     }
                     else
                     {
-                        //atribui a data atual na variavel data de cadastro
-                        cliente.Data_Cadastro = DateTime.Now.AddHours(-1).ToString();
-                        //
                         _context.Add(cliente);
                         //
                         _context.SaveChanges();

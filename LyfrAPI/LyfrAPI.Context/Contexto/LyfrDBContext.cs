@@ -82,33 +82,13 @@ namespace LyfrAPI.Context
                     .HasColumnName("Id_Cliente")
                     .HasColumnType("int(11)");
 
-                entity.Property(e => e.Cep)
-                    .HasColumnName("CEP")
-                    .HasColumnType("varchar(10)");
-
-                entity.Property(e => e.Cidade).HasColumnType("varchar(40)");
-
                 entity.Property(e => e.Cpf).HasColumnType("varchar(20)");
-
-                entity.Property(e => e.DataNasc)
-                    .HasColumnName("Data_Nasc")
-                    .HasColumnType("varchar(30)");
 
                 entity.Property(e => e.Email).HasColumnType("varchar(70)");
 
-                entity.Property(e => e.Estado).HasColumnType("char(2)");
-
                 entity.Property(e => e.Nome).HasColumnType("varchar(80)");
 
-                entity.Property(e => e.Numero).HasColumnType("varchar(30)");
-
-                entity.Property(e => e.Rua).HasColumnType("varchar(100)");
-
                 entity.Property(e => e.Senha).HasColumnType("varchar(70)");
-
-                entity.Property(e => e.Telefone).HasColumnType("varchar(20)");
-
-                entity.Property(e => e.Data_Cadastro).HasColumnType("varchar(30)");
             });
 
             modelBuilder.Entity<Editora>(entity =>

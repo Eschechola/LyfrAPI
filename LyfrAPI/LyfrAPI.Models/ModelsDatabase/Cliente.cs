@@ -32,42 +32,10 @@ namespace LyfrAPI.Models
         [MaxLength(70, ErrorMessage = "O email deve ter no máximo 70 caracteres")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "A rua deve ser inserida.")]
-        [MaxLength(100, ErrorMessage = "A rua deve ter no máximo 100 caracteres")]
-        public string Rua { get; set; }
-
-        [Required(ErrorMessage = "O número deve ser inserido.")]
-        [MaxLength(10, ErrorMessage = "O numero deve ter no máximo 10 caracteres")]
-        public string Numero { get; set; }
-
-        [Required(ErrorMessage = "O CEP deve ser inserido.")]
-        [RegularExpression(@"^\d{5}-?\d{3}$", ErrorMessage = "O CEP está inválido.")]
-        [MinLength(8, ErrorMessage = "O CEP deve ter no mínimo 8 caracteres")]
-        public string Cep { get; set; }
-
-        [Required(ErrorMessage = "A cidade deve ser inserida.")]
-        [MaxLength(40, ErrorMessage = "A cidade deve ter no máximo 40 caracteres")]
-        [MinLength(5, ErrorMessage = "A cidade deve ter no mínimo 5 caracteres")]
-        public string Cidade { get; set; }
-
-        [Required(ErrorMessage = "O estado deve ser inserido.")]
-        [StringLength(2, ErrorMessage = "O estado só contem 2 caracteres")]
-        [RegularExpression(@"\w\D*", ErrorMessage = "O estado só pode conter letras")]
-        public string Estado { get; set; }
-
-        [Required(ErrorMessage = "A data de nascimento deve ser inserida.")]
-        [RegularExpression(@"(\d{2}\/\d{2}\/\d{4})", ErrorMessage = "A data de nascimento está inválida. Use o modelo DD/MM/YYYY.")]
-        public string DataNasc { get; set; }
-
         [Required(ErrorMessage = "A senha deve ser inserida.")]
         [MinLength(6, ErrorMessage = "A senha deve ter no mínimo 6 caracteres")]
         [MaxLength(80, ErrorMessage = "A senha deve ter no máximo 80 caracteres.")]
         public string Senha { get; set; }
-
-        [Required(ErrorMessage = "O telefone deve ser inserido.")]
-        public string Telefone { get; set; }
-
-        public string Data_Cadastro { get; set; }
 
         public ICollection<Favoritos> Favoritos { get; set; }
         public ICollection<Historico> Historico { get; set; }

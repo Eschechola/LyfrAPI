@@ -34,6 +34,15 @@ namespace LyfrAPI.Context
 
                 entity.ToTable("administrador");
 
+                entity.HasKey(e => e.IdAdministrador)
+                    .HasName("PRIMARY");
+
+                entity.Property(e => e.IdAdministrador)
+                    .HasColumnName("Id_Administrador")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.Login).HasColumnType("varchar(40)");
+
                 entity.Property(e => e.Login).HasColumnType("varchar(40)");
 
                 entity.Property(e => e.Cpf).HasColumnType("varchar(20)");

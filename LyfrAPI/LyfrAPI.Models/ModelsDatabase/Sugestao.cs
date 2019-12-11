@@ -6,7 +6,7 @@ namespace LyfrAPI.Models
 {
     public partial class Sugestao
     {
-        public int idSugestao { get; set; }
+        public int IdSugestao { get; set; }
         public int? FkIdCliente { get; set; }
 
         [Required(ErrorMessage ="A mensagem deve ser inserida.")]

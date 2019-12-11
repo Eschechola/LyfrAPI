@@ -21,7 +21,6 @@ namespace LyfrAPI.Models
         public string AnoNasc { get; set; }
 
         [Required(ErrorMessage = "A biografia deve ser inserida")]
-        [MinLength(100, ErrorMessage = "A biografia deve ter no mínimo 100 caracteres")]
         public string Bio { get; set; }
 
         [Required(ErrorMessage = "A foto deve ser inserida")]

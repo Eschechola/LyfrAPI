@@ -27,5 +27,7 @@ namespace LyfrAPI.Models
         [RegularExpression(@"^\d{3}\.?\d{3}\.?\d{3}-?\d{2}$")]
         [MinLength(11, ErrorMessage = "O nome deve conter no mínimo 11 caracteres)")]
         public string Cpf { get; set; }
+
+        public int IdAdministrador { get; set; }
     }
 }

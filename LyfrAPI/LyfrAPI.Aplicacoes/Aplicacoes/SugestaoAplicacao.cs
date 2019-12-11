@@ -78,7 +78,7 @@ namespace LyfrAPI.Aplicacoes
                     return null;
                 }
 
-                var sugestao = _context.Sugestao.Where(x => x.idSugestao == idSugestao).ToList();
+                var sugestao = _context.Sugestao.Where(x => x.IdSugestao == idSugestao).ToList();
                 primeiraSugestao = sugestao.FirstOrDefault();
 
 
@@ -105,7 +105,7 @@ namespace LyfrAPI.Aplicacoes
                                    join c in _context.Cliente on s.FkIdCliente equals c.IdCliente
                                    select new SugestaoResposta
                                    {
-                                       Id = s.idSugestao,
+                                       Id = s.IdSugestao,
                                        Cpf = c.Cpf,
                                        Email = c.Email,
                                        Atendido = s.Atendido,
